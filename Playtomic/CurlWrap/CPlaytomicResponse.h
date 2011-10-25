@@ -5,7 +5,7 @@
 #include "boost/shared_ptr.hpp"
 
 
-class CPlaytomicResponse
+class DllExport CPlaytomicResponse
 {
 public:
 	CPlaytomicResponse();

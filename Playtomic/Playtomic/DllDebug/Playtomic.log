@@ -1,0 +1,735 @@
+﻿Build started 10/25/2011 10:38:47 AM.
+Project "Z:\Documents\gameapi-cpp\Playtomic\Playtomic\Playtomic.vcxproj" on node 2 (build target(s)).
+InitializeBuildStatus:
+  Creating "DllDebug\Playtomic.unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"Z:\Documents\gameapi-cpp\Playtomic\/currlib/include" /I"Z:\Documents\gameapi-cpp\Playtomic\/Boost" /I"Z:\Documents\gameapi-cpp\Playtomic\\" /ZI /nologo /W3 /WX- /Od /Oy- /D CURL_STATICLIB /D CREATE_DLL /D JSON_DLL_BUILD /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"DllDebug\\" /Fd"DllDebug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\CurlWrap\CConnectionInterface.cpp ..\CurlWrap\CPlaytomicResponse.cpp ..\CurlWrap\CPost.cpp ..\CurlWrap\CRequest.cpp CData.cpp CGameVars.cpp CGeoIp.cpp CLeaderboard.cpp CLevel.cpp CLink.cpp CLog.cpp CLogRequest.cpp CPlayerLevels.cpp CPlaytomic.cpp CScore.cpp
+  CConnectionInterface.cpp
+z:\documents\gameapi-cpp\playtomic\json\include\reader.h(173): warning C4251: 'Json::Reader::nodes_' : class 'std::stack<_Ty>' needs to have dll-interface to be used by clients of class 'Json::Reader'
+          with
+          [
+              _Ty=Json::Value *
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\reader.h(174): warning C4251: 'Json::Reader::errors_' : class 'std::deque<_Ty>' needs to have dll-interface to be used by clients of class 'Json::Reader'
+          with
+          [
+              _Ty=Json::Reader::ErrorInfo
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\reader.h(175): warning C4251: 'Json::Reader::document_' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Json::Reader'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\reader.h(181): warning C4251: 'Json::Reader::commentsBefore_' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Json::Reader'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\writer.h(50): warning C4251: 'Json::FastWriter::document_' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Json::FastWriter'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\writer.h(101): warning C4251: 'Json::StyledWriter::childValues_' : class 'std::vector<_Ty>' needs to have dll-interface to be used by clients of class 'Json::StyledWriter'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\writer.h(102): warning C4251: 'Json::StyledWriter::document_' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Json::StyledWriter'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\writer.h(103): warning C4251: 'Json::StyledWriter::indentString_' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Json::StyledWriter'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\writer.h(159): warning C4251: 'Json::StyledStreamWriter::childValues_' : class 'std::vector<_Ty>' needs to have dll-interface to be used by clients of class 'Json::StyledStreamWriter'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\writer.h(161): warning C4251: 'Json::StyledStreamWriter::indentString_' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Json::StyledStreamWriter'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\json\include\writer.h(163): warning C4251: 'Json::StyledStreamWriter::indentation_' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Json::StyledStreamWriter'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  Generating Code...
+  Compiling...
+  CScore.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(30): warning C4251: 'Playtomic::CScore::mName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(33): warning C4251: 'Playtomic::CScore::mRelativeDate' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(34): warning C4251: 'Playtomic::CScore::mCustomData' : class 'std::map<_Kty,_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+  CPlaytomic.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(63): warning C4251: 'Playtomic::CLog::mTrackUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(64): warning C4251: 'Playtomic::CLog::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(65): warning C4251: 'Playtomic::CLog::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(68): warning C4251: 'Playtomic::CLog::mTimer' : class 'CTimer' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          z:\documents\gameapi-cpp\playtomic\tools\timer.h(15) : see declaration of 'CTimer'
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(73): warning C4251: 'Playtomic::CLog::mQueue' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(74): warning C4251: 'Playtomic::CLog::mCustomMetrics' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(75): warning C4251: 'Playtomic::CLog::mLevelCounters' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(76): warning C4251: 'Playtomic::CLog::mLevelAverages' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(77): warning C4251: 'Playtomic::CLog::mlevelRangeds' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(30): warning C4251: 'Playtomic::CScore::mName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(33): warning C4251: 'Playtomic::CScore::mRelativeDate' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(34): warning C4251: 'Playtomic::CScore::mCustomData' : class 'std::map<_Kty,_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(42): warning C4251: 'Playtomic::CLevel::mLevelId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(43): warning C4251: 'Playtomic::CLevel::mPlayerId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(44): warning C4251: 'Playtomic::CLevel::mPlayerName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(45): warning C4251: 'Playtomic::CLevel::mPlayerSource' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(46): warning C4251: 'Playtomic::CLevel::mName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(47): warning C4251: 'Playtomic::CLevel::mData' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(48): warning C4251: 'Playtomic::CLevel::mThum' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(54): warning C4251: 'Playtomic::CLevel::mRelativeDate' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(55): warning C4251: 'Playtomic::CLevel::mCustomData' : class 'std::map<_Kty,_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplayerlevels.h(61): warning C4251: 'Playtomic::CPlaytomicPlayerLevels::mLevelId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomicPlayerLevels'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.cpp(31): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  CPlayerLevels.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(42): warning C4251: 'Playtomic::CLevel::mLevelId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(43): warning C4251: 'Playtomic::CLevel::mPlayerId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(44): warning C4251: 'Playtomic::CLevel::mPlayerName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(45): warning C4251: 'Playtomic::CLevel::mPlayerSource' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(46): warning C4251: 'Playtomic::CLevel::mName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(47): warning C4251: 'Playtomic::CLevel::mData' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(48): warning C4251: 'Playtomic::CLevel::mThum' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(54): warning C4251: 'Playtomic::CLevel::mRelativeDate' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(55): warning C4251: 'Playtomic::CLevel::mCustomData' : class 'std::map<_Kty,_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplayerlevels.h(61): warning C4251: 'Playtomic::CPlaytomicPlayerLevels::mLevelId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomicPlayerLevels'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  CLogRequest.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\clogrequest.h(23): warning C4251: 'Playtomic::CLogRequest::mData' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLogRequest'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clogrequest.h(24): warning C4251: 'Playtomic::CLogRequest::mTrackUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLogRequest'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  CLog.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(63): warning C4251: 'Playtomic::CLog::mTrackUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(64): warning C4251: 'Playtomic::CLog::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(65): warning C4251: 'Playtomic::CLog::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(68): warning C4251: 'Playtomic::CLog::mTimer' : class 'CTimer' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          z:\documents\gameapi-cpp\playtomic\tools\timer.h(15) : see declaration of 'CTimer'
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(73): warning C4251: 'Playtomic::CLog::mQueue' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(74): warning C4251: 'Playtomic::CLog::mCustomMetrics' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(75): warning C4251: 'Playtomic::CLog::mLevelCounters' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(76): warning C4251: 'Playtomic::CLog::mLevelAverages' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(77): warning C4251: 'Playtomic::CLog::mlevelRangeds' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clogrequest.h(23): warning C4251: 'Playtomic::CLogRequest::mData' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLogRequest'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clogrequest.h(24): warning C4251: 'Playtomic::CLogRequest::mTrackUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLogRequest'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  CLink.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\clink.h(15): warning C4251: 'Playtomic::CLink::mClick' : class 'std::map<_Kty,_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLink'
+          with
+          [
+              _Kty=std::string,
+              _Ty=int
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(63): warning C4251: 'Playtomic::CLog::mTrackUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(64): warning C4251: 'Playtomic::CLog::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(65): warning C4251: 'Playtomic::CLog::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(68): warning C4251: 'Playtomic::CLog::mTimer' : class 'CTimer' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          z:\documents\gameapi-cpp\playtomic\tools\timer.h(15) : see declaration of 'CTimer'
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(73): warning C4251: 'Playtomic::CLog::mQueue' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(74): warning C4251: 'Playtomic::CLog::mCustomMetrics' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(75): warning C4251: 'Playtomic::CLog::mLevelCounters' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(76): warning C4251: 'Playtomic::CLog::mLevelAverages' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clog.h(77): warning C4251: 'Playtomic::CLog::mlevelRangeds' : class 'std::list<_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLog'
+          with
+          [
+              _Ty=std::string
+          ]
+  CLevel.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(42): warning C4251: 'Playtomic::CLevel::mLevelId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(43): warning C4251: 'Playtomic::CLevel::mPlayerId' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(44): warning C4251: 'Playtomic::CLevel::mPlayerName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(45): warning C4251: 'Playtomic::CLevel::mPlayerSource' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(46): warning C4251: 'Playtomic::CLevel::mName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(47): warning C4251: 'Playtomic::CLevel::mData' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(48): warning C4251: 'Playtomic::CLevel::mThum' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(54): warning C4251: 'Playtomic::CLevel::mRelativeDate' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\clevel.h(55): warning C4251: 'Playtomic::CLevel::mCustomData' : class 'std::map<_Kty,_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CLevel'
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+  CLeaderboard.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(30): warning C4251: 'Playtomic::CScore::mName' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(33): warning C4251: 'Playtomic::CScore::mRelativeDate' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cscore.h(34): warning C4251: 'Playtomic::CScore::mCustomData' : class 'std::map<_Kty,_Ty>' needs to have dll-interface to be used by clients of class 'Playtomic::CScore'
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  CGeoIp.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  CGameVars.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  CData.cpp
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(55): warning C4251: 'Playtomic::CPlaytomic::mGameGuid' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(56): warning C4251: 'Playtomic::CPlaytomic::mSourceUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+z:\documents\gameapi-cpp\playtomic\playtomic\cplaytomic.h(57): warning C4251: 'Playtomic::CPlaytomic::mBaseUrl' : class 'std::basic_string<_Elem,_Traits,_Ax>' needs to have dll-interface to be used by clients of class 'Playtomic::CPlaytomic'
+          with
+          [
+              _Elem=char,
+              _Traits=std::char_traits<char>,
+              _Ax=std::allocator<char>
+          ]
+  CRequest.cpp
+  CPost.cpp
+  CPlaytomicResponse.cpp
+  Generating Code...
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.dll" /NOLOGO /LIBPATH:"Z:\Documents\gameapi-cpp\Playtomic\\currlib\lib\debug" /LIBPATH:"Z:\Documents\gameapi-cpp\Playtomic\\Boost\lib\debug" libcurld.lib winmm.lib ws2_32.lib wldap32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"DllDebug\Playtomic.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.lib" /MACHINE:X86 /DLL DllDebug\CConnectionInterface.obj
+  DllDebug\CPlaytomicResponse.obj
+  DllDebug\CPost.obj
+  DllDebug\CRequest.obj
+  DllDebug\json_reader.obj
+  DllDebug\json_value.obj
+  DllDebug\json_writer.obj
+  DllDebug\MD5.obj
+  DllDebug\StringHelper.obj
+  DllDebug\timer.obj
+  DllDebug\CData.obj
+  DllDebug\CGameVars.obj
+  DllDebug\CGeoIp.obj
+  DllDebug\CLeaderboard.obj
+  DllDebug\CLevel.obj
+  DllDebug\CLink.obj
+  DllDebug\CLog.obj
+  DllDebug\CLogRequest.obj
+  DllDebug\CPlayerLevels.obj
+  DllDebug\CPlaytomic.obj
+  DllDebug\CScore.obj
+  LINK : Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.dll not found or not built by the last incremental link; performing full link
+     Creating library Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.lib and object Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.exp
+  Playtomic.vcxproj -> Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.dll
+Manifest:
+  C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\Playtomic.dll;#2" /manifest DllDebug\Playtomic.dll.intermediate.manifest
+FinalizeBuildStatus:
+  Deleting file "DllDebug\Playtomic.unsuccessfulbuild".
+  Touching "DllDebug\Playtomic.lastbuildstate".
+Done Building Project "Z:\Documents\gameapi-cpp\Playtomic\Playtomic\Playtomic.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:09.89

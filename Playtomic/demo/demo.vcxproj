@@ -85,7 +85,7 @@
       <AdditionalDependencies>Playtomic.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
-      <PreprocessorDefinitions>LINK_DLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LINK_DLL; BOOST_ALL_NO_LIB</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'">
@@ -94,7 +94,7 @@
       <AdditionalDependencies>Playtomic.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
-      <PreprocessorDefinitions>LINK_DLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LINK_DLL; BOOST_ALL_NO_LIB</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
