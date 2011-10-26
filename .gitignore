@@ -12,3 +12,10 @@
 *.suo
 *.ilk
 *.filters
+Playtomic/demo/DllDebug/demo.log
+
+Playtomic/demo/DLLRelease/demo.log
+
+Playtomic/Debug/demo.ilk
+
+Playtomic/Debug/Playtomic.lib

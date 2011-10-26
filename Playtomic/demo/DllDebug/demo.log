@@ -1,31 +1,9 @@
-﻿Build started 10/25/2011 10:39:57 AM.
-Project "Z:\Documents\gameapi-cpp\Playtomic\demo\demo.vcxproj" on node 2 (build target(s)).
-InitializeBuildStatus:
-  Touching "DllDebug\demo.unsuccessfulbuild".
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"Z:\Documents\gameapi-cpp\Playtomic\/currlib/include" /I"Z:\Documents\gameapi-cpp\Playtomic\/Boost" /I"Z:\Documents\gameapi-cpp\Playtomic\\" /Zi /nologo /W1 /WX- /O2 /Oy- /D LINK_DLL /D BOOST_ALL_NO_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"DllDebug\\" /Fd"DllDebug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CDemo.cpp main.cpp modules\CDataMenu.cpp modules\CScoreMenu.cpp modules\LogMenu.cpp modules\MainMenu.cpp
-  CDemo.cpp
-  main.cpp
-  CDataMenu.cpp
-  CScoreMenu.cpp
-  LogMenu.cpp
-  MainMenu.cpp
-  Generating Code...
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\demo.exe" /NOLOGO /LIBPATH:"Z:\Documents\gameapi-cpp\Playtomic\\DllDebug" /LIBPATH:"Z:\Documents\gameapi-cpp\Playtomic\\currlib\lib\debug" /LIBPATH:"Z:\Documents\gameapi-cpp\Playtomic\\Boost\lib\debug" Playtomic.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"DllDebug\demo.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\demo.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\demo.lib" /MACHINE:X86 DllDebug\CDemo.obj
-  DllDebug\main.obj
-  DllDebug\CDataMenu.obj
-  DllDebug\CScoreMenu.obj
-  DllDebug\LogMenu.obj
-  DllDebug\MainMenu.obj
-  demo.vcxproj -> Z:\Documents\gameapi-cpp\Playtomic\DllDebug\demo.exe
-Manifest:
-  C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"Z:\Documents\gameapi-cpp\Playtomic\DllDebug\demo.exe;#1" /manifest DllDebug\demo.exe.intermediate.manifest
-FinalizeBuildStatus:
-  Deleting file "DllDebug\demo.unsuccessfulbuild".
-  Touching "DllDebug\demo.lastbuildstate".
-Done Building Project "Z:\Documents\gameapi-cpp\Playtomic\demo\demo.vcxproj" (build target(s)).
+﻿Build started 10/26/2011 10:18:39 AM.
+Project "Z:\Documents\gameapi-cpp\Playtomic\demo\demo.vcxproj" on node 2 (clean target(s)).
+_PrepareForClean:
+  Deleting file "DllDebug\demo.lastbuildstate".
+Done Building Project "Z:\Documents\gameapi-cpp\Playtomic\demo\demo.vcxproj" (clean target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:31.70
+Time Elapsed 00:00:00.04
