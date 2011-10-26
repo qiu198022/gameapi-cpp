@@ -18,7 +18,9 @@ struct SLevelList
 	bool						sSucceded;
 };
 
-class DllExport CPlayerLevelDelegate
+typedef boost::shared_ptr<SLevelList> SLevelListPtr;
+
+class DllExport IPlayerLevelDelegate
 {
 public:
 	virtual void RateLevelComplete(CPlaytomicResponsePtr& result)=0;
@@ -32,14 +34,14 @@ class  DllExport CPlaytomicPlayerLevels
 {
 public:
 	CPlaytomicPlayerLevels();
-	void SetDelegate(CPlayerLevelDelegate* targetDelegate);
+	void SetDelegate(IPlayerLevelDelegate* targetDelegate);
 	// synchronous calls
-	SLevelList				LoadLevel(const std::string& levelId);
+	SLevelListPtr			LoadLevel(const std::string& levelId);
 	CPlaytomicResponsePtr	RateLevelId(const std::string& levelId, int rating);
-	SLevelList				List(const std::string& mode, int page, int perPage,
-								bool includeDAta, bool includeThumbs,
-								const CustomData& customFilter);
-	SLevelList				SaveLevel(CLevel& level);
+	SLevelListPtr			List(const std::string& mode, int page, int perPage,
+							bool includeDAta, bool includeThumbs,
+							const CustomData& customFilter);
+	SLevelListPtr			SaveLevel(CLevel& level);
 
 	// asynchronous calls
 	//
@@ -57,7 +59,7 @@ public:
 private:
 	void					AddLevel(const FData& level, const std::string& levelId,
 									std::list<CLevel>& levelList);
-	CPlayerLevelDelegate*	mDelegate;
+	IPlayerLevelDelegate*	mDelegate;
 	std::string				mLevelId;
 };
 

@@ -9,3 +9,6 @@
 *.idb
 *.unsuccessfulbuild
 *.pdb
+*.suo
+*.ilk
+*.filters

@@ -5,6 +5,7 @@
 #include <string>
 #include "Playtomic/CPlaytomic.h"
 #include "Playtomic/CGameVars.h"
+#include "CLevelMenu.h"
 #include "CDataMenu.h"
 
 
@@ -16,6 +17,8 @@ void CMainMenu::ShowOptionMenu()
 	std::cout << "2:Test Logs" << std::endl;
 	std::cout << "3:Test GameVars" << std::endl;
 	std::cout << "4:Get Data" << std::endl;
+	std::cout << "5:Test Player Levels" << std::endl;
+	std::cout << "0:Quit" << std::endl;
 }
 
 int CMainMenu::GetOption()
@@ -38,6 +41,10 @@ int CMainMenu::GetOption()
 	else if( input.compare("4") == 0)
 	{
 		return 4;
+	}
+	else if( input.compare("5") == 0)
+	{
+		return 5;
 	}
 	else if( input.compare("0") == 0)
 	{
@@ -69,16 +76,28 @@ void CMainMenu::ProcessOption(int optionId)
 		if (response->ResponseSucceded())
 		{
 			
-			FData value;
-			if(value.size() == 0)
+			FData array;
+			array = response->ResponseData();
+			if(array.size() == 0)
 			{
 				std::cout << " empty game vars" << std::endl;
 				break;
 			}
-			value = response->ResponseData().get("GameVar1",value);
-			std::cout << "GameVar1 == " << value.asString() << std::endl; 
-			value = response->ResponseData().get("GameVar2",value);
-			std::cout << "GameVar2 == " << value.asString() << std::endl; 
+			else
+			{
+				FData value;
+				for (size_t i = 0; i < array.size(); i++)
+				{
+					value = array[i];
+
+					FData name;
+					name = value.get("Name", name);
+					FData varValue;
+					varValue = value.get("Value",varValue);
+
+					std::cout << name.asString() << "=" << varValue.asString() << std::endl; 
+				}
+			}
 		}
 		else
 		{
@@ -88,8 +107,11 @@ void CMainMenu::ProcessOption(int optionId)
 	case 4:
 		mOwner->ChangeModule(new CDataMenu(mOwner));
 		break;
+	case 5:
+		mOwner->ChangeModule(new CLevelMenu(mOwner));
+		break;
 	case 0:
-		mOwner->ChangeModule(new CMainMenu(mOwner));
+		mOwner->ChangeModule(NULL);
 		return;
 	default:
 		break;

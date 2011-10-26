@@ -108,6 +108,7 @@
     <ClCompile Include="CDemo.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="modules\CDataMenu.cpp" />
+    <ClCompile Include="modules\CLevelMenu.cpp" />
     <ClCompile Include="modules\CScoreMenu.cpp" />
     <ClCompile Include="modules\LogMenu.cpp" />
     <ClCompile Include="modules\MainMenu.cpp" />
@@ -116,6 +117,7 @@
     <ClInclude Include="CDemo.h" />
     <ClInclude Include="modules\CBase.h" />
     <ClInclude Include="modules\CDataMenu.h" />
+    <ClInclude Include="modules\CLevelMenu.h" />
     <ClInclude Include="modules\CScoreMenu.h" />
     <ClInclude Include="modules\LogMenu.h" />
     <ClInclude Include="modules\MainMenu.h" />

@@ -10,12 +10,12 @@ CPlaytomicPlayerLevels::CPlaytomicPlayerLevels()
 	mDelegate = 0;
 }
 
-void CPlaytomicPlayerLevels::SetDelegate(CPlayerLevelDelegate* targetDelegate)
+void CPlaytomicPlayerLevels::SetDelegate(IPlayerLevelDelegate* targetDelegate)
 {
 	mDelegate = targetDelegate;
 }
 
-SLevelList CPlaytomicPlayerLevels::LoadLevel( const std::string& levelId )
+SLevelListPtr CPlaytomicPlayerLevels::LoadLevel( const std::string& levelId )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -23,14 +23,14 @@ SLevelList CPlaytomicPlayerLevels::LoadLevel( const std::string& levelId )
 		IdString + kPlayerLevelUrl3 + levelId;
 
 	CPlaytomicResponsePtr response = gConnectionInterface->PerformSyncRequest(url.c_str());
-	SLevelList returnList;
-	returnList.sErrorCode = response->ResponseError();
-	returnList.sSucceded = response->ResponseSucceded();
+	SLevelListPtr returnList(new SLevelList);
+	returnList->sErrorCode = response->ResponseError();
+	returnList->sSucceded = response->ResponseSucceded();
 	if(!response->ResponseSucceded())
 	{
 		return returnList;
 	}
-	AddLevel(response->ResponseData(), levelId, returnList.sLevelList);
+	AddLevel(response->ResponseData(), levelId, returnList->sLevelList);
 
 	return returnList;
 }
@@ -48,7 +48,7 @@ CPlaytomicResponsePtr CPlaytomicPlayerLevels::RateLevelId( const std::string& le
 	return response;
 }
 
-SLevelList CPlaytomicPlayerLevels::List( const std::string& mode, 
+SLevelListPtr CPlaytomicPlayerLevels::List( const std::string& mode, 
 	int page, int perPage,
 	bool includeData, bool includeThumbs,
 	const CustomData& customFilter )
@@ -95,10 +95,10 @@ SLevelList CPlaytomicPlayerLevels::List( const std::string& mode,
 		}
 	}
 	CPlaytomicResponsePtr response = gConnectionInterface->PerformSyncRequest(url.c_str(), &postData);
-	SLevelList returnList;
-	returnList.sErrorCode = response->ResponseError();
-	returnList.sSucceded = response->ResponseSucceded();
-	if (!returnList.sSucceded)
+	SLevelListPtr returnList( new SLevelList);
+	returnList->sErrorCode = response->ResponseError();
+	returnList->sSucceded = response->ResponseSucceded();
+	if (!returnList->sSucceded)
 	{
 		return returnList;
 	}
@@ -119,12 +119,12 @@ SLevelList CPlaytomicPlayerLevels::List( const std::string& mode,
 		value = levelArray[i].get("LevelId", value);
 
 	
-		AddLevel(levelArray[i], value.asString(), returnList.sLevelList);
+		AddLevel(levelArray[i], value.asString(), returnList->sLevelList);
 	}
 	return returnList;
 }
 
-SLevelList CPlaytomicPlayerLevels::SaveLevel( CLevel& level )
+SLevelListPtr CPlaytomicPlayerLevels::SaveLevel( CLevel& level )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -159,9 +159,9 @@ SLevelList CPlaytomicPlayerLevels::SaveLevel( CLevel& level )
 	}
 
 	CPlaytomicResponsePtr response = gConnectionInterface->PerformSyncRequest(url.c_str(), &postData);
-	SLevelList returnList;
-	returnList.sErrorCode = response->ResponseError();
-	returnList.sSucceded = response->ResponseSucceded();
+	SLevelListPtr returnList(new SLevelList);
+	returnList->sErrorCode = response->ResponseError();
+	returnList->sSucceded = response->ResponseSucceded();
 	if(!response->ResponseSucceded())
 	{
 		return returnList;
@@ -170,7 +170,7 @@ SLevelList CPlaytomicPlayerLevels::SaveLevel( CLevel& level )
 	FData id;
 	id = response->ResponseData().get("LevelId", id);
 	std::list<CLevel> levelList;
-	AddLevel(response->ResponseData(), id.asString(), returnList.sLevelList);
+	AddLevel(response->ResponseData(), id.asString(), returnList->sLevelList);
 
 	return returnList;
 }

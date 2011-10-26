@@ -75,6 +75,7 @@ public:
 
 	void	GeneralAsync(const std::string& mode,int day,int month, int year, RequestDelegate targetDelegate);
 
+	void	CustomMetricAsync(const std::string& name, RequestDelegate targetDelegate);
 	void	CustomMetricAsync(const std::string& name, int day, int month, int year, RequestDelegate targetDelegate);
 
 	void	LevelCounterMetricAsync(const std::string& name, const std::string& level,

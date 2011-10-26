@@ -11,7 +11,7 @@ void CDemo::Init()
 
 void CDemo::Start()
 {
-	while (1)
+	while (mCurrentModule)
 	{
 		Update();
 	}

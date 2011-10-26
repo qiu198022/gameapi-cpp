@@ -8,6 +8,5 @@ int main()
 	CDemo main;
 	main.Init();
 	main.Start();
-	system("Pause");
 	return 0;
 }

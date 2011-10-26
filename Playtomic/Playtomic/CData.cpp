@@ -157,9 +157,10 @@ CPlaytomicResponsePtr CData::LevelMetricType( const std::string& type,
 	char date[60];
 	sprintf_s(date,59,"%d",  gPlaytomic->GameId());
 	std::string url(kDataLevelUrl1);
-	url += gPlaytomic->GetGameGuid() + kDataLevelUrl2 + cleanName + kDataLevelUrl3;
+	url += gPlaytomic->GetGameGuid() + kDataLevelUrl2 + type + kDataLevelUrl3;
 	url += date;
-	url += kDataLevelUrl4 + cleanLevel ;
+	url += kDataLevelUrl4 + cleanName ;
+	url += kDataLevelUrl5 + cleanLevel ;
 	sprintf_s(date,59,"%d%s%d%s%d", day, kDataLevelUrl7, month, kDataLevelUrl8, year);
 	url += kDataLevelUrl6;url += date;
 
@@ -231,6 +232,10 @@ void CData::GeneralAsync( const std::string& mode,int day,int month, int year,
 	GetDataAsync(url, targetDelegate);
 }
 
+void CData::CustomMetricAsync( const std::string& name, RequestDelegate targetDelegate )
+{
+	CustomMetricAsync(name, 0,0,0, targetDelegate);
+}
 void CData::CustomMetricAsync( const std::string& name, int day, int month, int year,
 	RequestDelegate targetDelegate )
 {
@@ -382,9 +387,10 @@ void CData::LevelMetricTypeAsync( const std::string& type, const std::string nam
 	char date[60];
 	sprintf_s(date,59,"%d",  gPlaytomic->GameId());
 	std::string url(kDataLevelUrl1);
-	url += gPlaytomic->GetGameGuid() + kDataLevelUrl2 + cleanName + kDataLevelUrl3;
+	url += gPlaytomic->GetGameGuid() + kDataLevelUrl2 + type + kDataLevelUrl3;
 	url += date;
-	url += kDataLevelUrl4 + cleanLevel ;
+	url += kDataLevelUrl4 + cleanName ;
+	url += kDataLevelUrl5 + cleanLevel ;
 	sprintf_s(date,59,"%d%s%d%s%d", day, kDataLevelUrl7, month, kDataLevelUrl8, year);
 	url += kDataLevelUrl6;url += date;
 
