@@ -3,3 +3,9 @@
 *.obj
 *.pdb
 *.manifest
+*.user
+*.log
+*.lastbuildstate
+*.idb
+*.unsuccessfulbuild
+*.pdb

@@ -8,7 +8,7 @@
 struct SThreadedRequest
 {
 	std::string		sUrl;
-	CPost*			sPost;
+	CPostPtr		sPost;
 	RequestDelegate sTargetDelegate;
 	void operator()();
 };
@@ -18,9 +18,9 @@ void SThreadedRequest::operator()()
 	CRequest request;
 	SRequestResult data;
 	request.CreateQuery(sUrl.c_str());
-	if(sPost)
+	if(sPost.get() != NULL)
 	{
-		request.SetPostData(sPost);
+		request.SetPostData(sPost.get());
 	}
 	ERequestResult res = request.Perform(&data);
 
@@ -161,7 +161,12 @@ CPlaytomicResponsePtr CConnectionInterface::PerformSyncRequest(const char* url, 
 	
 }
 
-void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPost* postData )
+void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate)
+{
+	PerformAsyncRequest(url, targetDelegate, CPostPtr());
+}
+
+void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData )
 {
 	SThreadedRequest x;
 	x.sPost = postData;

@@ -6,6 +6,7 @@
 
 #ifdef CREATE_DLL
 #define DllExport __declspec(dllexport)
+#pragma warning (disable: 4251)
 #else
 #ifdef LINK_DLL
 #define DllExport __declspec(dllimport)

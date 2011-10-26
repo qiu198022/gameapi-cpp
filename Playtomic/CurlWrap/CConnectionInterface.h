@@ -4,9 +4,14 @@
 #include "CPlaytomicResponse.h"
 #include "../Tools/FastDelegate.h"
 
-typedef fastdelegate::FastDelegate1<CPlaytomicResponsePtr&> RequestDelegate;
-class CPost;
+#ifndef _CPOST_H_
+#include "CPost.h"
+#endif
 
+typedef fastdelegate::FastDelegate1<CPlaytomicResponsePtr&> RequestDelegate;
+
+
+typedef boost::shared_ptr<CPost> CPostPtr;
 
 class CConnectionInterface
 {
@@ -21,7 +26,8 @@ public:
 
 	CPlaytomicResponsePtr PerformSyncRequest(const char* url, CPost* postData = NULL);
 
-	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPost* postData = NULL);
+	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate);
+	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData);
 
 private:
 	CConnectionInterface();

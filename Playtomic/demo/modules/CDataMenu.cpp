@@ -62,7 +62,6 @@ void CDataMenu::ProcessOption(int optionId)
 	std::string name;
 	std::string group;
 	std::string unique;
-	int intValue;
 	switch (optionId)
 	{
 	case 1:
@@ -83,8 +82,15 @@ void CDataMenu::ProcessOption(int optionId)
 		if (response->ResponseSucceded())
 		{
 			FData value;
-			value = response->ResponseData().get("Views",value);
-			std::cout << "hi metric = " << value.asString() << std::endl; 
+			if(response->ResponseData().size() > 0)
+			{
+				value = response->ResponseData().get("Views",value);
+				if(value.isString())
+				{
+					std::cout << "hi metric = " << value.asString() << std::endl; 
+				}
+				
+			}			
 		}
 		else
 		{
@@ -106,12 +112,17 @@ void CDataMenu::ProcessOption(int optionId)
 
 		break;
 	case 4:
-		response = Playtomic::gPlaytomic->Data()->Views();
+		response = Playtomic::gPlaytomic->Data()->Playtime();
 		if (response->ResponseSucceded())
 		{
 			FData value;
-			value = response->ResponseData().get("Views",value);
-			std::cout << "views = " << value.asInt() << std::endl; 
+			value = response->ResponseData().get("Value",value);
+			if(value.isString())
+			{
+				std::string strValue = value.asString();
+				std::cout << "Playtime = " << strValue << std::endl; 
+			}
+			
 		}
 		else
 		{

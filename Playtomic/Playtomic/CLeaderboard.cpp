@@ -13,7 +13,7 @@ CLeaderboard::CLeaderboard()
 	mDelegate = NULL;
 }
 
-void CLeaderboard::SetDelegate(CLeaderboardDelegate* targetDelegate)
+void CLeaderboard::SetDelegate(ILeaderboardDelegate* targetDelegate)
 {
 	mDelegate = targetDelegate;
 }
@@ -60,7 +60,7 @@ CPlaytomicResponsePtr CLeaderboard::SaveTable( const std::string& tableName, con
 	return gConnectionInterface->PerformSyncRequest(url.c_str(), &postData);
 }
 
-SSCoreTable CLeaderboard::ListTable( const std::string& tableName, bool highest, const std::string& mode, int page, int perPage, CustomData customFilter )
+SSCoreTablePtr CLeaderboard::ListTable( const std::string& tableName, bool highest, const std::string& mode, int page, int perPage,const CustomData& customFilter )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -83,7 +83,7 @@ SSCoreTable CLeaderboard::ListTable( const std::string& tableName, bool highest,
 	if(customFilter.size() > 0)
 	{
 		int fieldNumber = 0;
-		CustomData::iterator it = customFilter.begin();
+		CustomData::const_iterator it = customFilter.begin();
 		for(;it != customFilter.end(); it++)
 		{
 			sprintf_s(buff,299,"%d", fieldNumber);
@@ -102,15 +102,15 @@ SSCoreTable CLeaderboard::ListTable( const std::string& tableName, bool highest,
 
 	CPlaytomicResponsePtr request = gConnectionInterface->PerformSyncRequest(url.c_str(),&postData);
 
-	SSCoreTable returnScores;
-	returnScores.sErrorCode = request->ResponseError();
+	SSCoreTablePtr returnScores(new SSCoreTable);
+	returnScores->sErrorCode = request->ResponseError();
 	if(!request->ResponseSucceded())
 	{
-		returnScores.sSucceded = false;
+		returnScores->sSucceded = false;
 		
 		return returnScores;
 	}
-	returnScores.sSucceded = true;
+	returnScores->sSucceded = true;
 	FData	scoreTable(Json::arrayValue);
 
 	const FData& queryData = request->ResponseData();
@@ -122,7 +122,7 @@ SSCoreTable CLeaderboard::ListTable( const std::string& tableName, bool highest,
 	
 	FData value;
 	value = queryData.get("NumScores", value);
-	returnScores.sScoreCount = value.asInt();
+	returnScores->sScoreCount = value.asInt();
 	for (size_t i = 0; i < ScoreList.size(); i++)
 	{
 		FData currentScore;
@@ -151,16 +151,16 @@ SSCoreTable CLeaderboard::ListTable( const std::string& tableName, bool highest,
 			customData.insert(std::make_pair((*it).asString(), (*it).asString()));
 		}
 
-		returnScores.sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
+		returnScores->sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
 	}
 	
 	return returnScores;
 }
 
-SSCoreTable CLeaderboard::SaveAndListTable( const std::string& tableName,
+SSCoreTablePtr CLeaderboard::SaveAndListTable( const std::string& tableName,
 											const CScore& score, bool highest, 
 											bool allowDuplicates, const std::string& mode,
-											int perPage, CustomData customFilter )
+											int perPage,const CustomData &customFilter )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -210,7 +210,7 @@ SSCoreTable CLeaderboard::SaveAndListTable( const std::string& tableName,
 	if(customFilter.size() > 0)
 	{
 		int fieldNumber = 0;
-		CustomData::iterator it = customFilter.begin();
+		CustomData::const_iterator it = customFilter.begin();
 		for(;it != customFilter.end(); it++)
 		{
 			sprintf_s(buff,299,"%d", fieldNumber);
@@ -228,15 +228,15 @@ SSCoreTable CLeaderboard::SaveAndListTable( const std::string& tableName,
 	
 	CPlaytomicResponsePtr request(gConnectionInterface->PerformSyncRequest(url.c_str(),&postData));
 
-	SSCoreTable returnScores;
-	returnScores.sErrorCode = request->ResponseError();
+	SSCoreTablePtr returnScores(new SSCoreTable);
+	returnScores->sErrorCode = request->ResponseError();
 	if(!request->ResponseSucceded())
 	{
-		returnScores.sSucceded = false;
+		returnScores->sSucceded = false;
 
 		return returnScores;
 	}
-	returnScores.sSucceded = true;
+	returnScores->sSucceded = true;
 	FData	scoreTable(Json::arrayValue);
 
 	const FData& queryData = request->ResponseData();
@@ -248,7 +248,7 @@ SSCoreTable CLeaderboard::SaveAndListTable( const std::string& tableName,
 
 	FData value;
 	value = queryData.get("NumScores", value);
-	returnScores.sScoreCount = value.asInt();
+	returnScores->sScoreCount = value.asInt();
 	for (size_t i = 0; i < ScoreList.size(); i++)
 	{
 		FData currentScore;
@@ -277,7 +277,7 @@ SSCoreTable CLeaderboard::SaveAndListTable( const std::string& tableName,
 			customData.insert(std::make_pair(it.key().asString(), (*it).asString()));
 		}
 
-		returnScores.sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
+		returnScores->sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
 	}
 
 	return returnScores;
@@ -292,21 +292,21 @@ void CLeaderboard::SaveTableAsync( const std::string& tableName, const CScore& s
 	std::string url = kLeaderboardUrl1 + gPlaytomic->GetGameGuid() + kLeaderboardUrl2 +
 		IdString + kLeaderboardUrl3;
 
-	CPost postData;
-	postData.AddText("url", gPlaytomic->GetSourceUrl().c_str());
-	postData.AddText("table", tableName.c_str());
-	postData.AddText("highest", highest ? "y": "n");
-	postData.AddText("name", score.GetName().c_str());
+	CPostPtr postData(new CPost);
+	postData->AddText("url", gPlaytomic->GetSourceUrl().c_str());
+	postData->AddText("table", tableName.c_str());
+	postData->AddText("highest", highest ? "y": "n");
+	postData->AddText("name", score.GetName().c_str());
 	char buff[300];
 	sprintf_s(buff,299,"%d", score.GetPoints());
-	postData.AddText("points", buff);
+	postData->AddText("points", buff);
 
 	sprintf_s(buff,299,"%s%d",gPlaytomic->GetSourceUrl().c_str(), score.GetPoints());
-	postData.AddText("auth", MD5(buff).hexdigest().c_str());
+	postData->AddText("auth", MD5(buff).hexdigest().c_str());
 
 	CustomData customData = score.GetCustomData();
 	sprintf_s(buff,299,"%d", customData.size());
-	postData.AddText("customfields", buff);
+	postData->AddText("customfields", buff);
 
 	int fieldNumber = 0;
 	CustomData::iterator it = customData.begin();
@@ -320,37 +320,39 @@ void CLeaderboard::SaveTableAsync( const std::string& tableName, const CScore& s
 		std::string value = it->second;
 		fieldNumber++;
 
-		postData.AddText(ckey.c_str(), it->first.c_str() );
-		postData.AddText(cdata.c_str(), it->second.c_str());
+		postData->AddText(ckey.c_str(), it->first.c_str() );
+		postData->AddText(cdata.c_str(), it->second.c_str());
 	}
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::SaveComple),&postData);
+	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::SaveComple),postData);
 }
 
-void CLeaderboard::ListTableAsync( const std::string& tableName, bool highest, const std::string& mode, int page, int perPage, CustomData customFilter )
+void CLeaderboard::ListTableAsync( const std::string& tableName, bool highest,
+	const std::string& mode, int page,
+	int perPage,const  CustomData& customFilter )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
 	std::string url = kLeaderboardUrl1 + gPlaytomic->GetGameGuid() + kLeaderboardUrlList +
 		IdString + kLeaderboardUrl3;
 
-	CPost postData;
-	postData.AddText("url", gPlaytomic->GetSourceUrl().c_str());
-	postData.AddText("table", tableName.c_str());
-	postData.AddText("highest", highest ? "y": "n");
-	postData.AddText("mode", mode.c_str());
+	CPostPtr postData(new CPost);
+	postData->AddText("url", gPlaytomic->GetSourceUrl().c_str());
+	postData->AddText("table", tableName.c_str());
+	postData->AddText("highest", highest ? "y": "n");
+	postData->AddText("mode", mode.c_str());
 	char buff[300];
 	sprintf_s(buff,299,"%d", page);
-	postData.AddText("page", buff);
+	postData->AddText("page", buff);
 	sprintf_s(buff, 299,"%d", perPage);
-	postData.AddText("perpage", buff);
+	postData->AddText("perpage", buff);
 	sprintf_s(buff, 299,"%d", customFilter.size());
-	postData.AddText("numfilters", buff);
+	postData->AddText("numfilters", buff);
 
 	if(customFilter.size() > 0)
 	{
 		int fieldNumber = 0;
-		CustomData::iterator it = customFilter.begin();
+		CustomData::const_iterator it = customFilter.begin();
 		for(;it != customFilter.end(); it++)
 		{
 			sprintf_s(buff,299,"%d", fieldNumber);
@@ -361,40 +363,40 @@ void CLeaderboard::ListTableAsync( const std::string& tableName, bool highest, c
 			std::string value = it->second;
 			fieldNumber++;
 
-			postData.AddText(ckey.c_str(), it->first.c_str() );
-			postData.AddText(cdata.c_str(), it->second.c_str());
+			postData->AddText(ckey.c_str(), it->first.c_str() );
+			postData->AddText(cdata.c_str(), it->second.c_str());
 		}		
 	}
 
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::ListComple),&postData);
+	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::ListComple),postData);
 }
 
 void CLeaderboard::SaveAndListTableAsync( const std::string& tableName,
 	const CScore& score, bool highest, 
 	bool allowDuplicates, const std::string& mode,
-	int perPage, CustomData customFilter )
+	int perPage,const CustomData& customFilter )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
 	std::string url = kLeaderboardUrl1 + gPlaytomic->GetGameGuid() + kLeaderboardUrlSaveAndList +
 		IdString + kLeaderboardUrl3;
 
-	CPost postData;
-	postData.AddText("url", gPlaytomic->GetSourceUrl().c_str());
-	postData.AddText("table", tableName.c_str());
-	postData.AddText("highest", highest ? "y": "n");
-	postData.AddText("name", score.GetName().c_str());
+	CPostPtr postData(new CPost);
+	postData->AddText("url", gPlaytomic->GetSourceUrl().c_str());
+	postData->AddText("table", tableName.c_str());
+	postData->AddText("highest", highest ? "y": "n");
+	postData->AddText("name", score.GetName().c_str());
 	char buff[300];
 	sprintf_s(buff,299,"%d", score.GetPoints());
-	postData.AddText("points", buff);
+	postData->AddText("points", buff);
 
 	sprintf_s(buff,299,"%s%d",gPlaytomic->GetSourceUrl().c_str(), score.GetPoints());
-	postData.AddText("auth", MD5(buff).hexdigest().c_str());
+	postData->AddText("auth", MD5(buff).hexdigest().c_str());
 
 	CustomData customData = score.GetCustomData();
 	sprintf_s(buff,299,"%d", customData.size());
-	postData.AddText("numfields", buff);
+	postData->AddText("numfields", buff);
 
 	int fieldNumber = 0;
 	CustomData::iterator it = customData.begin();
@@ -408,22 +410,22 @@ void CLeaderboard::SaveAndListTableAsync( const std::string& tableName,
 		std::string value = it->second;
 		fieldNumber++;
 
-		postData.AddText(ckey.c_str(), it->first.c_str() );
-		postData.AddText(cdata.c_str(), it->second.c_str());
+		postData->AddText(ckey.c_str(), it->first.c_str() );
+		postData->AddText(cdata.c_str(), it->second.c_str());
 	}
 
 	//list fields
-	postData.AddText("mode", mode.c_str());
+	postData->AddText("mode", mode.c_str());
 	sprintf_s(buff, 299,"%d", perPage);
-	postData.AddText("perpage", buff);
+	postData->AddText("perpage", buff);
 	sprintf_s(buff, 299,"%d", customFilter.size());
-	postData.AddText("numfilters", buff);
+	postData->AddText("numfilters", buff);
 
 
 	if(customFilter.size() > 0)
 	{
 		int fieldNumber = 0;
-		CustomData::iterator it = customFilter.begin();
+		CustomData::const_iterator it = customFilter.begin();
 		for(;it != customFilter.end(); it++)
 		{
 			sprintf_s(buff,299,"%d", fieldNumber);
@@ -434,12 +436,12 @@ void CLeaderboard::SaveAndListTableAsync( const std::string& tableName,
 			std::string value = it->second;
 			fieldNumber++;
 
-			postData.AddText(ckey.c_str(), it->first.c_str() );
-			postData.AddText(cdata.c_str(), it->second.c_str());
+			postData->AddText(ckey.c_str(), it->first.c_str() );
+			postData->AddText(cdata.c_str(), it->second.c_str());
 		}		
 	}
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::SaveAndListComple),&postData);
+	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::SaveAndListComple),postData);
 
 	
 }

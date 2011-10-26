@@ -57,6 +57,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>BOOST_ALL_NO_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -70,6 +73,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions> BOOST_ALL_NO_LIB_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -83,9 +87,12 @@
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\DllDebug; $(lib_pathDebug)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Playtomic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <ClCompile>
-      <PreprocessorDefinitions>LINK_DLL; BOOST_ALL_NO_LIB</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LINK_DLL; BOOST_ALL_NO_LIB; JSON_DLL</PreprocessorDefinitions>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLLRelease|Win32'">
@@ -94,7 +101,7 @@
       <AdditionalDependencies>Playtomic.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
-      <PreprocessorDefinitions>LINK_DLL; BOOST_ALL_NO_LIB</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LINK_DLL; BOOST_ALL_NO_LIB; JSON_DLL</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>

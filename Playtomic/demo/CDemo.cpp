@@ -1,5 +1,7 @@
 #include "CDemo.h"
 #include "modules/MainMenu.h"
+#include "Playtomic/CLog.h"
+#include <iostream>
 
 void CDemo::Init()
 {
@@ -24,4 +26,8 @@ void CDemo::ChangeModule(CBase* nextModule)
 {
 	delete mCurrentModule;
 	mCurrentModule = nextModule;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 }

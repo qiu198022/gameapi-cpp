@@ -275,7 +275,7 @@ void CPlaytomicPlayerLevels::ListAsync( const std::string& mode,
 	url += kPlayerLevelListUrl10;
 	url += IdString;
 
-	CPost postData;
+	CPostPtr postData(new CPost);
 
 	if(!customFilter.empty())
 	{
@@ -290,12 +290,12 @@ void CPlaytomicPlayerLevels::ListAsync( const std::string& mode,
 			ckey += buff;
 			cdata += buff;
 
-			postData.AddText(ckey.c_str(), it->first.c_str());
-			postData.AddText(cdata.c_str(), it->second.c_str());
+			postData->AddText(ckey.c_str(), it->first.c_str());
+			postData->AddText(cdata.c_str(), it->second.c_str());
 		}
 	}
 	gConnectionInterface->PerformAsyncRequest(url.c_str(), 
-		fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::ListAsyncComplete), &postData);
+		fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::ListAsyncComplete), postData);
 	
 }
 
@@ -305,17 +305,17 @@ void CPlaytomicPlayerLevels::SaveLevelAsync( CLevel& level )
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
 	std::string url = kPlayerLevelSaveUrl1 + gPlaytomic->GetGameGuid() +kPlayerLevelSaveUrl2 +
 		IdString + kPlayerLevelSaveUrl3 + gPlaytomic->GetSourceUrl();
-	CPost postData;
+	CPostPtr postData(new CPost);
 
-	postData.AddText("data", level.GetData().c_str());
-	postData.AddText("playerid", level.GetPlayerId().c_str());
-	postData.AddText("playername", level.GetPlayerName().c_str());
-	postData.AddText("playersource", level.GetPlayerSource().c_str());
-	postData.AddText("name",level.GetName().c_str());
-	postData.AddText("nothumb", "y");
+	postData->AddText("data", level.GetData().c_str());
+	postData->AddText("playerid", level.GetPlayerId().c_str());
+	postData->AddText("playername", level.GetPlayerName().c_str());
+	postData->AddText("playersource", level.GetPlayerSource().c_str());
+	postData->AddText("name",level.GetName().c_str());
+	postData->AddText("nothumb", "y");
 
 	sprintf_s(IdString, 49, "%d", level.GetCustomData().size());
-	postData.AddText("customfields", IdString);
+	postData->AddText("customfields", IdString);
 
 	const CustomData& customData = level.GetCustomData();
 	CustomData::const_iterator it = customData.begin();
@@ -329,11 +329,11 @@ void CPlaytomicPlayerLevels::SaveLevelAsync( CLevel& level )
 		ckey += buff;
 		cdata += buff;
 
-		postData.AddText(ckey.c_str(), it->first.c_str());
-		postData.AddText(cdata.c_str(), it->second.c_str());
+		postData->AddText(ckey.c_str(), it->first.c_str());
+		postData->AddText(cdata.c_str(), it->second.c_str());
 	}
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::SaveLevelComplete), &postData);
+	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::SaveLevelComplete), postData);
 	
 }
 

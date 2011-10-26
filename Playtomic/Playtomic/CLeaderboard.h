@@ -11,15 +11,16 @@ namespace Playtomic
 
 
 
-struct SSCoreTable 
+struct DllExport SSCoreTable 
 {
-	std::list<CScore>  sScoreList;
-	int							sErrorCode;
-	int							sScoreCount;
-	bool						sSucceded;
+	std::list<CScore>	sScoreList;
+	int					sErrorCode;
+	int					sScoreCount;
+	bool				sSucceded;
 };
+typedef boost::shared_ptr<SSCoreTable> SSCoreTablePtr;
 
-class DllExport CLeaderboardDelegate
+class DllExport ILeaderboardDelegate
 {
 public:
 	virtual void SaveComplete(CPlaytomicResponsePtr& result)=0;
@@ -32,27 +33,27 @@ class DllExport CLeaderboard
 public:
 	CLeaderboard();
 
-	void SetDelegate(CLeaderboardDelegate* targetDelegate);
+	void SetDelegate(ILeaderboardDelegate* targetDelegate);
 	//synchronous calls
 	CPlaytomicResponsePtr SaveTable(const std::string& tableName,
 								 const CScore& score,
 								 bool highest,
 								 bool allowDuplicates);
 
-	SSCoreTable	ListTable(const std::string& tableName,
+	SSCoreTablePtr	ListTable(const std::string& tableName,
 								  bool highest,
 								  const std::string& mode,
 								  int	page,
 								  int	perPage,
-								  CustomData	customFilter);
+								  const CustomData	&customFilter);
 
-	SSCoreTable	SaveAndListTable(const std::string& tableName,
+	SSCoreTablePtr	SaveAndListTable(const std::string& tableName,
 									const CScore& score,
 									bool highest,
 									bool allowDuplicates,
 									const std::string& mode,
 									int	perPage,
-									CustomData	customFilter);
+									const CustomData	&customFilter);
 
 	//async calls
 	void	SaveTableAsync(const std::string& tableName,
@@ -65,7 +66,7 @@ public:
 		const std::string& mode,
 		int	page,
 		int	perPage,
-		CustomData	customFilter);
+		const CustomData&	customFilter);
 
 	void	SaveAndListTableAsync(const std::string& tableName,
 		const CScore& score,
@@ -73,13 +74,13 @@ public:
 		bool allowDuplicates,
 		const std::string& mode,
 		int	perPage,
-		CustomData	customFilter);
+		const CustomData&	customFilter);
 
 	void SaveComple(CPlaytomicResponsePtr& response);
 	void ListComple(CPlaytomicResponsePtr& response);
 	void SaveAndListComple(CPlaytomicResponsePtr& response);
 private:
-	CLeaderboardDelegate* mDelegate;
+	ILeaderboardDelegate* mDelegate;
 };
 
 }
