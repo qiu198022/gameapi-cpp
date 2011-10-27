@@ -15,20 +15,32 @@ class CLog;
 class CGameVars;
 class CGeoIP;
 class CLeaderboard;
-class CPlaytomicPlayerLevels;
+class CPlayerLevels;
 class CLink;
 class CData;
 
+/**
+ *  Main class to access Playtomic API
+ *	Configure the game data and initialize all the system that Playtomic need to 
+ *	communicate with the server
+ */
 
 class DllExport CPlaytomic
 {
 public:
 	static CPlaytomic* Get();
 public:
+	/**
+	*  Playtomic constructor
+	*	@param gameId get it from they Playtomic dashboard
+	*	@param gameGuid	get it from they Playtomic dashboard
+	*	@param autoUpdate if set to false you will need to call update by your program
+	*	if you set to true it will start a new thread to auto update the timers
+	*/
 	CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate = false);
 	~CPlaytomic();
 
-	friend int GetGameId();
+	int GetGameId();
 	
 	int GameId() const;
 	void GameId(int val);
@@ -39,6 +51,11 @@ public:
 	const std::string& GetBaseUrl() const;
 	void SetBaseUrl(const std::string& source);
 
+	/** 
+       * Update the internal timers
+       * Call this if you set autoUpdate to false
+	   * @param deltaTime time since last update call
+     */
 	void Update(float deltaTime);
 
 	CLog* Log() const;
@@ -46,7 +63,7 @@ public:
 	CTimerManager* TimerManager() const;
 	CGameVars* GameVars() const;
 	CLeaderboard* Leaderboards() const;
-	CPlaytomicPlayerLevels* PlayerLevels() const;
+	CPlayerLevels* PlayerLevels() const;
 	CData* Data() const;
 
 private:
@@ -62,10 +79,11 @@ private:
 	
 	CGeoIP*			mPlaytomicGeoIP;
 	CLeaderboard*		mPlaytomicLeaderboards;
-	CPlaytomicPlayerLevels*		mPlaytomicPlayerLevels;
+	CPlayerLevels*		mPlaytomicPlayerLevels;
 	CLink*				mPlaytomicLink;
 	CData*				mPlaytomicData;
 
+	//hold the auto update thread
 	boost::thread*		mThread;
 	
 };

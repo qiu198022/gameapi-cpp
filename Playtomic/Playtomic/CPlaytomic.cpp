@@ -57,7 +57,7 @@ CPlaytomic::CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate)
 	mPlaytomicGeoIP = new CGeoIP;
 	mPlaytomicGameVars = new CGameVars;
 	mPlaytomicLeaderboards = new CLeaderboard;
-	mPlaytomicPlayerLevels = new CPlaytomicPlayerLevels;
+	mPlaytomicPlayerLevels = new CPlayerLevels;
 	mPlaytomicData		= new CData;
 
 	if(autoUpdate)
@@ -157,7 +157,7 @@ CLeaderboard* CPlaytomic::Leaderboards() const
 }
 
 
-CPlaytomicPlayerLevels* CPlaytomic::PlayerLevels() const
+CPlayerLevels* CPlaytomic::PlayerLevels() const
 { 
 	return mPlaytomicPlayerLevels;
 }

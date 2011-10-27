@@ -5,17 +5,17 @@
 
 namespace Playtomic
 {
-CPlaytomicPlayerLevels::CPlaytomicPlayerLevels()
+CPlayerLevels::CPlayerLevels()
 {
 	mDelegate = 0;
 }
 
-void CPlaytomicPlayerLevels::SetDelegate(IPlayerLevelDelegate* targetDelegate)
+void CPlayerLevels::SetDelegate(IPlayerLevelDelegate* targetDelegate)
 {
 	mDelegate = targetDelegate;
 }
 
-SLevelListPtr CPlaytomicPlayerLevels::LoadLevel( const std::string& levelId )
+SLevelListPtr CPlayerLevels::LoadLevel( const std::string& levelId )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -35,7 +35,7 @@ SLevelListPtr CPlaytomicPlayerLevels::LoadLevel( const std::string& levelId )
 	return returnList;
 }
 
-CPlaytomicResponsePtr CPlaytomicPlayerLevels::RateLevelId( const std::string& levelId, int rating )
+CPlaytomicResponsePtr CPlayerLevels::RateLevelId( const std::string& levelId, int rating )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -48,7 +48,7 @@ CPlaytomicResponsePtr CPlaytomicPlayerLevels::RateLevelId( const std::string& le
 	return response;
 }
 
-SLevelListPtr CPlaytomicPlayerLevels::List( const std::string& mode, 
+SLevelListPtr CPlayerLevels::List( const std::string& mode, 
 	int page, int perPage,
 	bool includeData, bool includeThumbs,
 	const CustomData& customFilter )
@@ -124,7 +124,7 @@ SLevelListPtr CPlaytomicPlayerLevels::List( const std::string& mode,
 	return returnList;
 }
 
-SLevelListPtr CPlaytomicPlayerLevels::SaveLevel( CLevel& level )
+SLevelListPtr CPlayerLevels::SaveLevel( CLevel& level )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -175,7 +175,7 @@ SLevelListPtr CPlaytomicPlayerLevels::SaveLevel( CLevel& level )
 	return returnList;
 }
 
-void CPlaytomicPlayerLevels::AddLevel( const FData& level, const std::string& levelId, std::list<CLevel>& levelList )
+void CPlayerLevels::AddLevel( const FData& level, const std::string& levelId, std::list<CLevel>& levelList )
 {
 	FData value;
 	value = level.get("PlayerId",value);
@@ -224,7 +224,7 @@ void CPlaytomicPlayerLevels::AddLevel( const FData& level, const std::string& le
 //ASYNC
 
 
-void CPlaytomicPlayerLevels::LoadLevelAsync( const std::string& levelId )
+void CPlayerLevels::LoadLevelAsync( const std::string& levelId )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -233,10 +233,10 @@ void CPlaytomicPlayerLevels::LoadLevelAsync( const std::string& levelId )
 
 	mLevelId = levelId;
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(),fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::LoadLevelComplete));
+	gConnectionInterface->PerformAsyncRequest(url.c_str(),fastdelegate::MakeDelegate(this, &CPlayerLevels::LoadLevelComplete));
 }
 
-void CPlaytomicPlayerLevels::RateLevelIdAsync( const std::string& levelId, int rating )
+void CPlayerLevels::RateLevelIdAsync( const std::string& levelId, int rating )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -245,10 +245,10 @@ void CPlaytomicPlayerLevels::RateLevelIdAsync( const std::string& levelId, int r
 	sprintf_s(IdString,49,"%d", rating);
 	url += IdString;
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::RateLevelIdComplete));
+	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlayerLevels::RateLevelIdComplete));
 }
 
-void CPlaytomicPlayerLevels::ListAsync( const std::string& mode, 
+void CPlayerLevels::ListAsync( const std::string& mode, 
 	int page, int perPage,
 	bool includeData, bool includeThumbs,
 	const CustomData& customFilter )
@@ -295,11 +295,11 @@ void CPlaytomicPlayerLevels::ListAsync( const std::string& mode,
 		}
 	}
 	gConnectionInterface->PerformAsyncRequest(url.c_str(), 
-		fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::ListAsyncComplete), postData);
+		fastdelegate::MakeDelegate(this, &CPlayerLevels::ListAsyncComplete), postData);
 	
 }
 
-void CPlaytomicPlayerLevels::SaveLevelAsync( CLevel& level )
+void CPlayerLevels::SaveLevelAsync( CLevel& level )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -333,12 +333,12 @@ void CPlaytomicPlayerLevels::SaveLevelAsync( CLevel& level )
 		postData->AddText(cdata.c_str(), it->second.c_str());
 	}
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlaytomicPlayerLevels::SaveLevelComplete), postData);
+	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlayerLevels::SaveLevelComplete), postData);
 	
 }
 
 
-void CPlaytomicPlayerLevels::LoadLevelComplete( CPlaytomicResponsePtr& response )
+void CPlayerLevels::LoadLevelComplete( CPlaytomicResponsePtr& response )
 {
 	if(mDelegate == NULL)
 	{
@@ -356,7 +356,7 @@ void CPlaytomicPlayerLevels::LoadLevelComplete( CPlaytomicResponsePtr& response 
 	mDelegate->LoadLevelComplete(returnList);
 }
 
-void CPlaytomicPlayerLevels::RateLevelIdComplete( CPlaytomicResponsePtr& response )
+void CPlayerLevels::RateLevelIdComplete( CPlaytomicResponsePtr& response )
 {
 	if(mDelegate == NULL)
 	{
@@ -365,7 +365,7 @@ void CPlaytomicPlayerLevels::RateLevelIdComplete( CPlaytomicResponsePtr& respons
 	mDelegate->RateLevelComplete(response);
 }
 
-void CPlaytomicPlayerLevels::ListAsyncComplete( CPlaytomicResponsePtr& response )
+void CPlayerLevels::ListAsyncComplete( CPlaytomicResponsePtr& response )
 {
 	if(mDelegate == NULL)
 	{
@@ -400,7 +400,7 @@ void CPlaytomicPlayerLevels::ListAsyncComplete( CPlaytomicResponsePtr& response 
 	mDelegate->LevelListComple(returnList);
 }
 
-void CPlaytomicPlayerLevels::SaveLevelComplete( CPlaytomicResponsePtr& response )
+void CPlayerLevels::SaveLevelComplete( CPlaytomicResponsePtr& response )
 {
 	if(mDelegate == NULL)
 	{

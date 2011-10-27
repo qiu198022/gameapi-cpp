@@ -8,15 +8,35 @@
 namespace Playtomic
 {
 
+	/**
+	*	used by the leaderboards to represent the player score
+	*/
 class DllExport CScore
 {
 public:
-	CScore() {}
-	CScore(const std::string& name, int points,
-					std::string& relativeDate, const CustomData& customData, long rank );
+	
+	
 
+	/**
+	*	Use this constructor to create new scores and upload them to the Playtomic servers
+	*/
+	// empty constructor should call SetDefaultValues before commit the score
+	CScore() {}
+	/**
+	*	@param name		player name
+	*	@param points	player score
+	*	@param customData	Any additional data you want to (or have) attached to
+	*		a score, like the level the player reached or what character they used
+	*/
 	CScore(const std::string& name, int points, const CustomData& customData);
 	CScore(const std::string& name, int points);
+
+	/**
+	*	Constructor used by CLeaderboard to initialize the score with the Playtomic generated
+	*	information (relative date, rank)
+	*/
+	CScore(const std::string& name, int points,
+		std::string& relativeDate, const CustomData& customData, long rank );
 
 	void				SetDefaultValues(const std::string& name, int points);
 

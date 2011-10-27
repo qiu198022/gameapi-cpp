@@ -9,6 +9,15 @@
 namespace Playtomic
 {
 
+/*
+*	The Data class in the API allows you to retrieve any of your game data to display in your game.
+
+*	Each function for retrieving data takes an optional parameters object for day, month and year, with default values of 0.
+
+*	When day, month and year are specified you will receive data for that specific day.
+*	When month and year are specified you will receive data for that specific month.
+*	When day, month and year are unspecified or 0 then you will receive data for all time.
+*/
 class DllExport CData
 {
 public:
