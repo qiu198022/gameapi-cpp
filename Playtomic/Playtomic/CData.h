@@ -17,12 +17,35 @@ namespace Playtomic
 *	When day, month and year are specified you will receive data for that specific day.
 *	When month and year are specified you will receive data for that specific month.
 *	When day, month and year are unspecified or 0 then you will receive data for all time.
+
+*	When the request succeeds the returned data is available via:
+*	CPlaytomicResponsePtr response;
+*	FData value;
+*	value = response->ResponseData().get("key",value);
+*/
+
+/*	Asynchronous and synchronous methods
+*	For some methods there are two versions: one synchronous and one asynchronous.
+*	We recomend you to use the asynchronous one because it is not going to freeze
+*	your game while the call is executed. Calling the synchronous version is more 
+*	easy to code and is there for games which are not resource-intensive.
+
+*	The Asynchronous methods take a delegate as parameter, you should generate 
+*	one using fastdelegate::MakeDelegate(classPtr,&classType::method);
+*	the delegate method should take a CPlaytomicResponsePtr& as parameter.
+*
+*	e.g.
+*	
+*	CAnyClass::delegate(CPlaytomicResponsePtr& response);
+*	ViewsAsync(fastdelegate::MakeDelegate(this,&CAnyClass::delegate));
+*
+*	be careful to don't destroy the given instance before the delegate get called
 */
 class DllExport CData
 {
 public:
 	
-
+	//synchronous calls
 	CPlaytomicResponsePtr	Views(int day, int month, int year);
 	CPlaytomicResponsePtr	Views(int month = 0, int year= 0);
 
@@ -34,8 +57,25 @@ public:
 
 	CPlaytomicResponsePtr	General(const std::string& mode,int day,int month, int year);
 
+	/*
+	*	The CustomMetric function returns data about a custom metric to your 
+	*	function, which receives the same parameters as views/plays/play time above.
+	*	@param	name	the custom metric name
+	*	@return	CPlaytomicResponse	the only key for the data is "Value"
+	*	e.x 
+	*	response = Playtomic::gPlaytomic->Data()->CustomMetric("hi");
+	*	FData value;
+	*	value = response->ResponseData().get("Value",value);
+	*/
 	CPlaytomicResponsePtr	CustomMetric(const std::string& name, int day=0, int month=0, int year=0);
 
+	/*
+	*	Retrieving level metrics is the same as retrieving custom metrics with
+	*	an additional property for the level name or number.
+	*	@param	name	metric name
+	*	@param	level	level name
+	*	return	valid key for responseData: "Value"
+	*/
 	CPlaytomicResponsePtr	LevelCounterMetric(const std::string& name, const std::string& level,
 											int month=0, int year=0);
 	CPlaytomicResponsePtr	LevelCounterMetric(const std::string& name, const std::string& level,
@@ -45,6 +85,11 @@ public:
 	CPlaytomicResponsePtr	LevelCounterMetric(const std::string& name, int levelNumber,
 											int day,int month, int year);
 
+	/*
+	*	@param	name	metric name
+	*	@param	level	level name
+	*	return	valid key for responseData: "Min", "Max", "Average" and "Total"
+	*/
 	CPlaytomicResponsePtr	LevelAverageMetric(const std::string& name, const std::string& level,
 											int month=0, int year=0);
 	CPlaytomicResponsePtr	LevelAverageMetric(const std::string& name, const std::string& level,
@@ -54,6 +99,12 @@ public:
 	CPlaytomicResponsePtr	LevelAverageMetric(const std::string& name, int levelNumber,
 											int day,int month, int year);
 
+	/*
+	*	@param	name	metric name
+	*	@param	level	level name
+	*	return	valid key for responseData: "Values" is an array of objects 
+	*	with the keys: "Tracking" and "Occurances"
+	*/
 	CPlaytomicResponsePtr	LevelRangedMetric(const std::string& name, const std::string& level,
 											int month=0, int year=0);
 	CPlaytomicResponsePtr	LevelRangedMetric(const std::string& name, const std::string& level,
@@ -69,7 +120,22 @@ public:
 
 	CPlaytomicResponsePtr	GetData(const std::string& url);
 
-	//async calls
+	//asynchronous calls
+	/*
+	*	The Asynchronous methods take a delegate as parameter, you should generate 
+	*	one using fastdelegate::MakeDelegate(classPtr,&classType::method);
+	*	the delegate method should take a CPlaytomicResponsePtr& as parameter.
+	*
+	*	e.g.
+	*	
+	*	CAnyClass::delegate(CPlaytomicResponsePtr& response);
+	*	ViewsAsync(fastdelegate::MakeDelegate(this,&CAnyClass::delegate));
+	*
+	*	be careful to don't destroy the given instance before the delegate get called
+	*
+	*	the data returned by the synchronous version is the same that the data 
+	*	send to the delegates so you can process it in the same way
+	*/
 	void	ViewsAsync(RequestDelegate targetDelegate);
 	void	ViewsAsync(int day, int month, int year, RequestDelegate targetDelegate);
 	void	ViewsAsync(int month, int year, RequestDelegate targetDelegate);
@@ -84,6 +150,7 @@ public:
 
 	void	GeneralAsync(const std::string& mode,int day,int month, int year, RequestDelegate targetDelegate);
 
+
 	void	CustomMetricAsync(const std::string& name, RequestDelegate targetDelegate);
 	void	CustomMetricAsync(const std::string& name, int day, int month, int year, RequestDelegate targetDelegate);
 
@@ -91,60 +158,72 @@ public:
 								   RequestDelegate targetDelegate);
 
 	void	LevelCounterMetricAsync(const std::string& name, const std::string& level,
-		int month, int year, RequestDelegate targetDelegate);
+										int month, int year,
+										RequestDelegate targetDelegate);
 
 	void	LevelCounterMetricAsync(const std::string& name, const std::string& level,
-		int day,int month, int year, RequestDelegate targetDelegate);
+									int day,int month, int year,
+									RequestDelegate targetDelegate);
 
 	void	LevelCounterMetricAsync(const std::string& name, int levelNumber,
 									 RequestDelegate targetDelegate);
 
 	void	LevelCounterMetricAsync(const std::string& name, int levelNumber,
-		int month, int year, RequestDelegate targetDelegate);
+									int month, int year,
+									RequestDelegate targetDelegate);
 
 	void	LevelCounterMetricAsync(const std::string& name, int levelNumber,
-		int day,int month, int year, RequestDelegate targetDelegate);
+										int day,int month, int year,
+										RequestDelegate targetDelegate);
 
 	void	LevelAverageMetricAsync(const std::string& name, const std::string& level,
 									RequestDelegate targetDelegate);
 
 	void	LevelAverageMetricAsync(const std::string& name, const std::string& level,
-		int month, int year, RequestDelegate targetDelegate);
+										int month, int year,
+										RequestDelegate targetDelegate);
 
 	void	LevelAverageMetricAsync(const std::string& name, const std::string& level,
-		int day, int month, int year, RequestDelegate targetDelegate);
+										int day, int month, int year,
+										RequestDelegate targetDelegate);
 
 	void	LevelAverageMetricAsync(const std::string& name, int levelNumber,
-		RequestDelegate targetDelegate);
+									RequestDelegate targetDelegate);
 
 	void	LevelAverageMetricAsync(const std::string& name, int levelNumber,
-		int month, int year, RequestDelegate targetDelegate);
+										int month, int year,
+										RequestDelegate targetDelegate);
 
 	void	LevelAverageMetricAsync(const std::string& name, int levelNumber,
-		int day,int month, int year, RequestDelegate targetDelegate);
+									int day,int month, int year,
+									RequestDelegate targetDelegate);
 
 
 	void	LevelRangedMetricAsync(const std::string& name, const std::string& level,
-		RequestDelegate targetDelegate);
+									RequestDelegate targetDelegate);
 
 	void	LevelRangedMetricAsync(const std::string& name, const std::string& level,
-		int month, int year, RequestDelegate targetDelegate);
+									int month, int year, RequestDelegate targetDelegate);
 
 	void	LevelRangedMetricAsync(const std::string& name, const std::string& level,
-		int day, int month, int year, RequestDelegate targetDelegate);
+									int day, int month, int year,
+									RequestDelegate targetDelegate);
 
 	void	LevelRangedMetricAsync(const std::string& name, int levelNumber,
-		RequestDelegate targetDelegate);
+										RequestDelegate targetDelegate);
 
 	void	LevelRangedMetricAsync(const std::string& name, int levelNumber,
-		int month, int year, RequestDelegate targetDelegate);
+									int month, int year,
+									RequestDelegate targetDelegate);
 
 	void	LevelRangedMetricAsync(const std::string& name, int levelNumber,
-		int day,int month, int year, RequestDelegate targetDelegate);
+									int day,int month, int year,
+									RequestDelegate targetDelegate);
 
 
 	void	LevelMetricTypeAsync(const std::string& type, const std::string name,
-		const std::string& level, int day, int month, int year, RequestDelegate targetDelegate);
+									const std::string& level, int day, int month,
+									int year, RequestDelegate targetDelegate);
 
 	void	GetDataAsync(const std::string& url, RequestDelegate targetDelegate);
 	
