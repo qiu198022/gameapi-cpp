@@ -42,7 +42,7 @@ public:
 	*					send and empty string
 	*	@param unique	set it to true if you want the custom metric to be unique-per-view
 	*/
-	void CustomMetric(const std::string& name, const std::string& group, bool unique);
+	void CustomMetric(const std::string& name, const std::string& group, bool unique = false);
 	
 	/**
 	*	These metrics track how many times something occurs in your levels, for instance deaths and restarts.
@@ -50,8 +50,8 @@ public:
 	*	@param	level	the level where the event occurs
 	*	@param	unique	set it to true if you want the custom metric to be unique-per-view
 	*/
-	void LevelCounterMetric(const std::string& name, const std::string level, bool unique);
-	void LevelCounterMetric(const std::string& name, int levelNumber, bool unique);
+	void LevelCounterMetric(const std::string& name, const std::string level, bool unique= false);
+	void LevelCounterMetric(const std::string& name, int levelNumber, bool unique= false);
 
 	/**
 	*	These metrics track the average of something in your levels, for instance 
@@ -63,9 +63,9 @@ public:
 	*	@param	unique	set it to true if you want the custom metric to be unique-per-view
 	*/
 	void LevelRangedMetric(const std::string& name, const std::string& level,
-							int trackValue,bool unique);
+							int trackValue,bool unique= false);
 	void LevelRangedMetric(const std::string& name, int levelNumber,
-							int trackValue,bool unique);
+							int trackValue,bool unique = false);
 
 	/**
 	*	These metrics track metrics with values, for instance in a golf game you
@@ -77,9 +77,9 @@ public:
 	*	@param	unique	set it to true if you want the custom metric to be unique-per-view
 	*/
 	void LevelAverageMetric(const std::string& name, const std::string& level,
-							int trackValue,bool unique);
+							int trackValue,bool unique = false);
 	void LevelAverageMetric(const std::string& name, int levelNumber,
-							int trackValue,bool unique);
+							int trackValue,bool unique= false);
 
 	void LinkUrl(const std::string& url, const std::string& name, const std::string& group,
 				 int unique, int total, int fail);

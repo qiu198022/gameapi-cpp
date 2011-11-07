@@ -81,7 +81,7 @@ public:
 								  const std::string& mode,
 								  int	page,
 								  int	perPage,
-								  const CustomData	&customFilter);
+								  const CustomData& customFilter);
 
 	/**
 	*	You can now submit scores and at the same time return the leaderboard page that that score is on.
@@ -109,7 +109,7 @@ public:
 									bool allowDuplicates,
 									const std::string& mode,
 									int	perPage,
-									const CustomData	&customFilter);
+									const CustomData& customFilter);
 
 	//asynchronous calls
 	// take care to set the delegate to null if you need to delete it after doing a request

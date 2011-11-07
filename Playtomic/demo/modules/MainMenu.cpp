@@ -5,6 +5,7 @@
 #include <string>
 #include "Playtomic/CPlaytomic.h"
 #include "Playtomic/CGameVars.h"
+#include "Playtomic/CGeoIp.h"
 #include "CLevelMenu.h"
 #include "CDataMenu.h"
 
@@ -18,6 +19,7 @@ void CMainMenu::ShowOptionMenu()
 	std::cout << "3:Test GameVars" << std::endl;
 	std::cout << "4:Get Data" << std::endl;
 	std::cout << "5:Test Player Levels" << std::endl;
+	std::cout << "6:Test GEo Ip" << std::endl;
 	std::cout << "0:Quit" << std::endl;
 }
 
@@ -45,6 +47,10 @@ int CMainMenu::GetOption()
 	else if( input.compare("5") == 0)
 	{
 		return 5;
+	}
+	else if( input.compare("6") == 0)
+	{
+		return 6;
 	}
 	else if( input.compare("0") == 0)
 	{
@@ -109,6 +115,24 @@ void CMainMenu::ProcessOption(int optionId)
 		break;
 	case 5:
 		mOwner->ChangeModule(new CLevelMenu(mOwner));
+		break;
+	case 6:
+		response = Playtomic::gPlaytomic->GeoIP()->Load();
+
+		if (response->ResponseSucceded())
+		{
+			FData geoIpInfo;
+
+			geoIpInfo = response->ResponseData();
+
+			FData code,name;
+
+			code = geoIpInfo.get("Code",code);
+			name = geoIpInfo.get("Name", name);
+
+			std::cout << "Code: " << code.asString() << std::endl;
+			std::cout << "Name: " << name.asString() << std::endl;
+		}
 		break;
 	case 0:
 		mOwner->ChangeModule(NULL);

@@ -2,11 +2,11 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <include_dir>$(SolutionDir)/currlib/include;$(SolutionDir)/Boost;$(SolutionDir)</include_dir>
+    <include_dir>$(SolutionDir)/Dependencies/currlib/include;$(SolutionDir)/Dependencies/Boost;$(SolutionDir)</include_dir>
     <lib_debug>libcurld.lib;winmm.lib;ws2_32.lib;wldap32.lib</lib_debug>
     <lib_release>libcurl.lib;winmm.lib;ws2_32.lib;wldap32.lib</lib_release>
-    <lib_pathDebug>$(SolutionDir)\currlib\lib\debug;$(SolutionDir)\Boost\lib\debug</lib_pathDebug>
-    <lib_pathRelease>$(SolutionDir)\currlib\lib\release;$(SolutionDir)\Boost\lib\release</lib_pathRelease>
+    <lib_pathDebug>$(SolutionDir)\Dependencies\currlib\lib\debug;$(SolutionDir)\Dependencies\Boost\lib\debug</lib_pathDebug>
+    <lib_pathRelease>$(SolutionDir)\Dependencies\currlib\lib\release;$(SolutionDir)\Dependencies\Boost\lib\release</lib_pathRelease>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup>

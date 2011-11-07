@@ -79,6 +79,8 @@ void CSCoreMenu::ProcessOption(int optionId)
 
 		scoreData.SetDefaultValues(name, score);
 
+		filter.insert(std::make_pair("test1","test2"));
+
 		response = Playtomic::gPlaytomic->Leaderboards()->SaveTable("Demo Table", scoreData,true,true);
 		if(response->ResponseSucceded())
 		{

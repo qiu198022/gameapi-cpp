@@ -1,5 +1,9 @@
-﻿Build started 10/26/2011 10:18:32 AM.
+﻿Build started 11/4/2011 4:53:24 PM.
+     1>Project "Z:\Documents\gameapi-cpp\Playtomic\demo\demo.vcxproj" on node 2 (clean target(s)).
+     1>_PrepareForClean:
+         Deleting file "DLLRelease\demo.lastbuildstate".
+     1>Done Building Project "Z:\Documents\gameapi-cpp\Playtomic\demo\demo.vcxproj" (clean target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:00.06

@@ -29,7 +29,7 @@ const char kBaseTrackUrlPart4[] = "&q=";
 //geo ip
 const char kGeoIpUrl1[] = "http://g";
 const char kGeoIpUrl2[] = ".api.playtomic.com/geoip/lookup.aspx?swfid=";
-const char kGeoIpUrl3[] = "d&js=y";
+const char kGeoIpUrl3[] = "&js=y";
 
 //game vars
 const char kGameVarsUrl1[] = "http://g";
