@@ -5,7 +5,12 @@
 
 void CDemo::Init()
 {
-	mInstance = new Playtomic::CPlaytomic(4603, std::string("9f3f3b43cb234025"),true);
+	std::string key("9f3f3b43cb234025");
+	//std::string key("f0be5f15ecd64072");
+
+	//mInstance = new Playtomic::CPlaytomic(4603, std::string("9f3f3b43cb234025"),true);
+	mInstance = new Playtomic::CPlaytomic(4603, key, true);
+	//mInstance = new Playtomic::CPlaytomic(4874, key, true);
 	mCurrentModule = new CMainMenu(this);
 }
 

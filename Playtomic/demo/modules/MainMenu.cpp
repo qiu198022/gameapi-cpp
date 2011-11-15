@@ -94,7 +94,7 @@ void CMainMenu::ProcessOption(int optionId)
 				FData value;
 				for (size_t i = 0; i < array.size(); i++)
 				{
-					value = array[i];
+					value = array[(int)i];
 
 					FData name;
 					name = value.get("Name", name);

@@ -1,5 +1,5 @@
 #include "timer.h"
-
+#include <cstring>
 
 void CTimer::Init(CTimerDelegate* delegate, int hour, char minutes, float seconds, bool autoreset)
 {

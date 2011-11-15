@@ -1,0 +1,8 @@
+all:
+	@cd Playtomic && ${MAKE} -f Makefile.linux
+	@cd demo && ${MAKE} -f Makefile.linux
+
+clean:
+	@cd Playtomic && ${MAKE} -f Makefile.linux clean
+	@cd demo && ${MAKE} -f Makefile.linux clean
+

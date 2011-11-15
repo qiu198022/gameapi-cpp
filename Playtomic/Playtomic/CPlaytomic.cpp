@@ -2,7 +2,7 @@
 #include "../CurlWrap/CConnectionInterface.h"
 #include "CLog.h"
 #include "../Tools/timer.h"
-#include "CGeoIP.h"
+#include "CGeoIp.h"
 #include "CGameVars.h"
 #include "CLeaderboard.h"
 #include "CPlayerLevels.h"

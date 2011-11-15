@@ -1,0 +1,19 @@
+include ../config/config.openbsd.Mk
+include objects.Mk
+
+BIN=demo
+
+.SUFFIXES: .cpp .o
+
+all: ${BIN}
+
+${BIN}: ${OBJ}
+	${CXX} -o ${BIN} ${OBJ} ${LDFLAGS} -L../lib -lplaytomic -lboost_thread-mt -lcurl -lpthread
+
+.cpp.o:
+	${CXX} -c -I../ -Imodules -o $@ ${CXXFLAGS} $<
+
+clean:
+	rm -f ${OBJ}
+	rm -f ${BIN}
+

@@ -1,4 +1,5 @@
 #include "CConnectionInterface.h"
+#include "CPlaytomicResponse.h"
 #include "CRequest.h"
 #include "../json/include/json.h"
 #include "boost/shared_ptr.hpp"
@@ -29,14 +30,16 @@ void SThreadedRequest::operator()()
 	{
 		//send error message
 		//return ( CPlaytomicResponsePtr(new CPlaytomicResponse(1)));
-		sTargetDelegate(CPlaytomicResponsePtr(new CPlaytomicResponse(1)));
+		CPlaytomicResponsePtr rtn(new CPlaytomicResponse(1));
+		sTargetDelegate(rtn);
 		return;
 	}
 
 	if(data.data == NULL)
 	{
 		//send error message
-		sTargetDelegate(CPlaytomicResponsePtr(new CPlaytomicResponse(true, 0)));
+		CPlaytomicResponsePtr rtn(new CPlaytomicResponse(true, 0));
+		sTargetDelegate(rtn);
 		return;
 	}
 	Json::Reader parser;
@@ -53,7 +56,8 @@ void SThreadedRequest::operator()()
 		FData returnData;
 		returnData = root.get("Data",returnData);
 		//send message
-		sTargetDelegate(CPlaytomicResponsePtr(CPlaytomicResponsePtr( new CPlaytomicResponse(true,errorCode.asInt(),returnData, returnData.size()))));
+		CPlaytomicResponsePtr rtn(CPlaytomicResponsePtr( new CPlaytomicResponse(true,errorCode.asInt(),returnData, returnData.size())));
+		sTargetDelegate(rtn);
 		return;
 	}
 	else
@@ -62,12 +66,14 @@ void SThreadedRequest::operator()()
 		{
 			
 			//send Message
-			sTargetDelegate(CPlaytomicResponsePtr( CPlaytomicResponsePtr(new CPlaytomicResponse(1))));
+			CPlaytomicResponsePtr rtn( CPlaytomicResponsePtr(new CPlaytomicResponse(1)));
+			sTargetDelegate(rtn);
 			return;
 		}
 		//return;
 		//send message
-		sTargetDelegate(CPlaytomicResponsePtr(CPlaytomicResponsePtr(new CPlaytomicResponse(false, errorCode.asInt()))));
+		CPlaytomicResponsePtr rtn(CPlaytomicResponsePtr(new CPlaytomicResponse(false, errorCode.asInt())));
+		sTargetDelegate(rtn);
 	}
 }
 

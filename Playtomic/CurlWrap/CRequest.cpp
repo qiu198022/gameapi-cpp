@@ -1,5 +1,6 @@
 #include "CRequest.h"
 #include "CPost.h"
+#include <cstring>
 
 size_t WriteMemory(void *contents, size_t size, size_t nmemb, void* userp)
 {

@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47536C6E147195C500494B85 /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
+		47536C6F147195C500494B85 /* CConnectionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C20147195C500494B85 /* CConnectionInterface.h */; };
+		47536C70147195C500494B85 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C21147195C500494B85 /* Common.h */; };
+		47536C71147195C500494B85 /* CPlaytomicResponse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C22147195C500494B85 /* CPlaytomicResponse.cpp */; };
+		47536C72147195C500494B85 /* CPlaytomicResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C23147195C500494B85 /* CPlaytomicResponse.h */; };
+		47536C73147195C500494B85 /* CPost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C24147195C500494B85 /* CPost.cpp */; };
+		47536C74147195C500494B85 /* CPost.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C25147195C500494B85 /* CPost.h */; };
+		47536C75147195C500494B85 /* CRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C26147195C500494B85 /* CRequest.cpp */; };
+		47536C76147195C500494B85 /* CRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C27147195C500494B85 /* CRequest.h */; };
+		47536C77147195C500494B85 /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2A147195C500494B85 /* autolink.h */; };
+		47536C78147195C500494B85 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2B147195C500494B85 /* config.h */; };
+		47536C79147195C500494B85 /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2C147195C500494B85 /* features.h */; };
+		47536C7A147195C500494B85 /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2D147195C500494B85 /* forwards.h */; };
+		47536C7B147195C500494B85 /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2E147195C500494B85 /* json.h */; };
+		47536C7C147195C500494B85 /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2F147195C500494B85 /* reader.h */; };
+		47536C7D147195C500494B85 /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C30147195C500494B85 /* value.h */; };
+		47536C7E147195C500494B85 /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C31147195C500494B85 /* writer.h */; };
+		47536C7F147195C500494B85 /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C33147195C500494B85 /* json_batchallocator.h */; };
+		47536C80147195C500494B85 /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C36147195C500494B85 /* json_reader.cpp */; };
+		47536C81147195C500494B85 /* json_tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C37147195C500494B85 /* json_tool.h */; };
+		47536C82147195C500494B85 /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C38147195C500494B85 /* json_value.cpp */; };
+		47536C83147195C500494B85 /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C3A147195C500494B85 /* json_writer.cpp */; };
+		47536C84147195C500494B85 /* CData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C3D147195C500494B85 /* CData.cpp */; };
+		47536C85147195C500494B85 /* CData.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C3E147195C500494B85 /* CData.h */; };
+		47536C86147195C500494B85 /* CGameVars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C3F147195C500494B85 /* CGameVars.cpp */; };
+		47536C87147195C500494B85 /* CGameVars.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C40147195C500494B85 /* CGameVars.h */; };
+		47536C88147195C500494B85 /* CGeoIp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C41147195C500494B85 /* CGeoIp.cpp */; };
+		47536C89147195C500494B85 /* CGeoIp.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C42147195C500494B85 /* CGeoIp.h */; };
+		47536C8A147195C500494B85 /* CLeaderboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C43147195C500494B85 /* CLeaderboard.cpp */; };
+		47536C8B147195C500494B85 /* CLeaderboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C44147195C500494B85 /* CLeaderboard.h */; };
+		47536C8C147195C500494B85 /* CLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C45147195C500494B85 /* CLevel.cpp */; };
+		47536C8D147195C500494B85 /* CLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C46147195C500494B85 /* CLevel.h */; };
+		47536C8E147195C500494B85 /* CLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C47147195C500494B85 /* CLink.cpp */; };
+		47536C8F147195C500494B85 /* CLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C48147195C500494B85 /* CLink.h */; };
+		47536C90147195C500494B85 /* CLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C49147195C500494B85 /* CLog.cpp */; };
+		47536C91147195C500494B85 /* CLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C4A147195C500494B85 /* CLog.h */; };
+		47536C92147195C500494B85 /* CLogRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C4B147195C500494B85 /* CLogRequest.cpp */; };
+		47536C93147195C500494B85 /* CLogRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C4C147195C500494B85 /* CLogRequest.h */; };
+		47536C94147195C500494B85 /* CPlayerLevels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C4D147195C500494B85 /* CPlayerLevels.cpp */; };
+		47536C95147195C500494B85 /* CPlayerLevels.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C4E147195C500494B85 /* CPlayerLevels.h */; };
+		47536C96147195C500494B85 /* CPlaytomic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C4F147195C500494B85 /* CPlaytomic.cpp */; };
+		47536C97147195C500494B85 /* CPlaytomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C50147195C500494B85 /* CPlaytomic.h */; };
+		47536C98147195C500494B85 /* CPlaytomicDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C51147195C500494B85 /* CPlaytomicDelegate.h */; };
+		47536C99147195C500494B85 /* CScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C52147195C500494B85 /* CScore.cpp */; };
+		47536C9A147195C500494B85 /* CScore.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C53147195C500494B85 /* CScore.h */; };
+		47536C9B147195C500494B85 /* PlaytomicDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C60147195C500494B85 /* PlaytomicDefines.h */; };
+		47536C9C147195C500494B85 /* FastDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C66147195C500494B85 /* FastDelegate.h */; };
+		47536C9D147195C500494B85 /* FastDelegateBind.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C67147195C500494B85 /* FastDelegateBind.h */; };
+		47536C9E147195C500494B85 /* MD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C68147195C500494B85 /* MD5.cpp */; };
+		47536C9F147195C500494B85 /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C69147195C500494B85 /* MD5.h */; };
+		47536CA0147195C500494B85 /* StringHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6A147195C500494B85 /* StringHelper.cpp */; };
+		47536CA1147195C500494B85 /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6B147195C500494B85 /* StringHelper.h */; };
+		47536CA2147195C500494B85 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6C147195C500494B85 /* timer.cpp */; };
+		47536CA3147195C500494B85 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		47536C171471954600494B85 /* libPlaytomic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPlaytomic.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		47536C1F147195C500494B85 /* CConnectionInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CConnectionInterface.cpp; sourceTree = "<group>"; };
+		47536C20147195C500494B85 /* CConnectionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CConnectionInterface.h; sourceTree = "<group>"; };
+		47536C21147195C500494B85 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		47536C22147195C500494B85 /* CPlaytomicResponse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPlaytomicResponse.cpp; sourceTree = "<group>"; };
+		47536C23147195C500494B85 /* CPlaytomicResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlaytomicResponse.h; sourceTree = "<group>"; };
+		47536C24147195C500494B85 /* CPost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPost.cpp; sourceTree = "<group>"; };
+		47536C25147195C500494B85 /* CPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPost.h; sourceTree = "<group>"; };
+		47536C26147195C500494B85 /* CRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CRequest.cpp; sourceTree = "<group>"; };
+		47536C27147195C500494B85 /* CRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRequest.h; sourceTree = "<group>"; };
+		47536C2A147195C500494B85 /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
+		47536C2B147195C500494B85 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		47536C2C147195C500494B85 /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = features.h; sourceTree = "<group>"; };
+		47536C2D147195C500494B85 /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forwards.h; sourceTree = "<group>"; };
+		47536C2E147195C500494B85 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		47536C2F147195C500494B85 /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		47536C30147195C500494B85 /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = value.h; sourceTree = "<group>"; };
+		47536C31147195C500494B85 /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
+		47536C33147195C500494B85 /* json_batchallocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_batchallocator.h; sourceTree = "<group>"; };
+		47536C34147195C500494B85 /* json_internalarray.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalarray.inl; sourceTree = "<group>"; };
+		47536C35147195C500494B85 /* json_internalmap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalmap.inl; sourceTree = "<group>"; };
+		47536C36147195C500494B85 /* json_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_reader.cpp; sourceTree = "<group>"; };
+		47536C37147195C500494B85 /* json_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_tool.h; sourceTree = "<group>"; };
+		47536C38147195C500494B85 /* json_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_value.cpp; sourceTree = "<group>"; };
+		47536C39147195C500494B85 /* json_valueiterator.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_valueiterator.inl; sourceTree = "<group>"; };
+		47536C3A147195C500494B85 /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_writer.cpp; sourceTree = "<group>"; };
+		47536C3B147195C500494B85 /* sconscript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sconscript; sourceTree = "<group>"; };
+		47536C3D147195C500494B85 /* CData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CData.cpp; sourceTree = "<group>"; };
+		47536C3E147195C500494B85 /* CData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CData.h; sourceTree = "<group>"; };
+		47536C3F147195C500494B85 /* CGameVars.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CGameVars.cpp; sourceTree = "<group>"; };
+		47536C40147195C500494B85 /* CGameVars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGameVars.h; sourceTree = "<group>"; };
+		47536C41147195C500494B85 /* CGeoIp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CGeoIp.cpp; sourceTree = "<group>"; };
+		47536C42147195C500494B85 /* CGeoIp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGeoIp.h; sourceTree = "<group>"; };
+		47536C43147195C500494B85 /* CLeaderboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLeaderboard.cpp; sourceTree = "<group>"; };
+		47536C44147195C500494B85 /* CLeaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLeaderboard.h; sourceTree = "<group>"; };
+		47536C45147195C500494B85 /* CLevel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLevel.cpp; sourceTree = "<group>"; };
+		47536C46147195C500494B85 /* CLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLevel.h; sourceTree = "<group>"; };
+		47536C47147195C500494B85 /* CLink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLink.cpp; sourceTree = "<group>"; };
+		47536C48147195C500494B85 /* CLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLink.h; sourceTree = "<group>"; };
+		47536C49147195C500494B85 /* CLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLog.cpp; sourceTree = "<group>"; };
+		47536C4A147195C500494B85 /* CLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLog.h; sourceTree = "<group>"; };
+		47536C4B147195C500494B85 /* CLogRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLogRequest.cpp; sourceTree = "<group>"; };
+		47536C4C147195C500494B85 /* CLogRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLogRequest.h; sourceTree = "<group>"; };
+		47536C4D147195C500494B85 /* CPlayerLevels.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPlayerLevels.cpp; sourceTree = "<group>"; };
+		47536C4E147195C500494B85 /* CPlayerLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlayerLevels.h; sourceTree = "<group>"; };
+		47536C4F147195C500494B85 /* CPlaytomic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPlaytomic.cpp; sourceTree = "<group>"; };
+		47536C50147195C500494B85 /* CPlaytomic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlaytomic.h; sourceTree = "<group>"; };
+		47536C51147195C500494B85 /* CPlaytomicDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlaytomicDelegate.h; sourceTree = "<group>"; };
+		47536C52147195C500494B85 /* CScore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CScore.cpp; sourceTree = "<group>"; };
+		47536C53147195C500494B85 /* CScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CScore.h; sourceTree = "<group>"; };
+		47536C55147195C500494B85 /* Playtomic.Build.CppClean.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.Build.CppClean.log; sourceTree = "<group>"; };
+		47536C56147195C500494B85 /* Playtomic.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.log; sourceTree = "<group>"; };
+		47536C58147195C500494B85 /* Playtomic.Build.CppClean.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.Build.CppClean.log; sourceTree = "<group>"; };
+		47536C59147195C500494B85 /* Playtomic.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.log; sourceTree = "<group>"; };
+		47536C5B147195C500494B85 /* Playtomic.Build.CppClean.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.Build.CppClean.log; sourceTree = "<group>"; };
+		47536C5C147195C500494B85 /* Playtomic.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.log; sourceTree = "<group>"; };
+		47536C5D147195C500494B85 /* Playtomic.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Playtomic.vcxproj; sourceTree = "<group>"; };
+		47536C5E147195C500494B85 /* Playtomic.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Playtomic.vcxproj.filters; sourceTree = "<group>"; };
+		47536C5F147195C500494B85 /* Playtomic.vcxproj.user */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Playtomic.vcxproj.user; sourceTree = "<group>"; };
+		47536C60147195C500494B85 /* PlaytomicDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaytomicDefines.h; sourceTree = "<group>"; };
+		47536C61147195C500494B85 /* playtomicvs.props */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = playtomicvs.props; sourceTree = "<group>"; };
+		47536C63147195C500494B85 /* Playtomic.Build.CppClean.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.Build.CppClean.log; sourceTree = "<group>"; };
+		47536C64147195C500494B85 /* Playtomic.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Playtomic.log; sourceTree = "<group>"; };
+		47536C66147195C500494B85 /* FastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastDelegate.h; sourceTree = "<group>"; };
+		47536C67147195C500494B85 /* FastDelegateBind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FastDelegateBind.h; sourceTree = "<group>"; };
+		47536C68147195C500494B85 /* MD5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MD5.cpp; sourceTree = "<group>"; };
+		47536C69147195C500494B85 /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
+		47536C6A147195C500494B85 /* StringHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringHelper.cpp; sourceTree = "<group>"; };
+		47536C6B147195C500494B85 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
+		47536C6C147195C500494B85 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
+		47536C6D147195C500494B85 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47536C141471954600494B85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47536C0C1471954600494B85 = {
+			isa = PBXGroup;
+			children = (
+				47536C1E147195C500494B85 /* CurlWrap */,
+				47536C28147195C500494B85 /* json */,
+				47536C3C147195C500494B85 /* Playtomic */,
+				47536C65147195C500494B85 /* Tools */,
+				47536C181471954600494B85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47536C181471954600494B85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47536C171471954600494B85 /* libPlaytomic.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47536C1E147195C500494B85 /* CurlWrap */ = {
+			isa = PBXGroup;
+			children = (
+				47536C1F147195C500494B85 /* CConnectionInterface.cpp */,
+				47536C20147195C500494B85 /* CConnectionInterface.h */,
+				47536C21147195C500494B85 /* Common.h */,
+				47536C22147195C500494B85 /* CPlaytomicResponse.cpp */,
+				47536C23147195C500494B85 /* CPlaytomicResponse.h */,
+				47536C24147195C500494B85 /* CPost.cpp */,
+				47536C25147195C500494B85 /* CPost.h */,
+				47536C26147195C500494B85 /* CRequest.cpp */,
+				47536C27147195C500494B85 /* CRequest.h */,
+			);
+			path = CurlWrap;
+			sourceTree = "<group>";
+		};
+		47536C28147195C500494B85 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				47536C29147195C500494B85 /* include */,
+				47536C32147195C500494B85 /* src */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		47536C29147195C500494B85 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				47536C2A147195C500494B85 /* autolink.h */,
+				47536C2B147195C500494B85 /* config.h */,
+				47536C2C147195C500494B85 /* features.h */,
+				47536C2D147195C500494B85 /* forwards.h */,
+				47536C2E147195C500494B85 /* json.h */,
+				47536C2F147195C500494B85 /* reader.h */,
+				47536C30147195C500494B85 /* value.h */,
+				47536C31147195C500494B85 /* writer.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		47536C32147195C500494B85 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				47536C33147195C500494B85 /* json_batchallocator.h */,
+				47536C34147195C500494B85 /* json_internalarray.inl */,
+				47536C35147195C500494B85 /* json_internalmap.inl */,
+				47536C36147195C500494B85 /* json_reader.cpp */,
+				47536C37147195C500494B85 /* json_tool.h */,
+				47536C38147195C500494B85 /* json_value.cpp */,
+				47536C39147195C500494B85 /* json_valueiterator.inl */,
+				47536C3A147195C500494B85 /* json_writer.cpp */,
+				47536C3B147195C500494B85 /* sconscript */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		47536C3C147195C500494B85 /* Playtomic */ = {
+			isa = PBXGroup;
+			children = (
+				47536C60147195C500494B85 /* PlaytomicDefines.h */,
+				47536C3D147195C500494B85 /* CData.cpp */,
+				47536C3E147195C500494B85 /* CData.h */,
+				47536C3F147195C500494B85 /* CGameVars.cpp */,
+				47536C40147195C500494B85 /* CGameVars.h */,
+				47536C41147195C500494B85 /* CGeoIp.cpp */,
+				47536C42147195C500494B85 /* CGeoIp.h */,
+				47536C43147195C500494B85 /* CLeaderboard.cpp */,
+				47536C44147195C500494B85 /* CLeaderboard.h */,
+				47536C45147195C500494B85 /* CLevel.cpp */,
+				47536C46147195C500494B85 /* CLevel.h */,
+				47536C47147195C500494B85 /* CLink.cpp */,
+				47536C48147195C500494B85 /* CLink.h */,
+				47536C49147195C500494B85 /* CLog.cpp */,
+				47536C4A147195C500494B85 /* CLog.h */,
+				47536C4B147195C500494B85 /* CLogRequest.cpp */,
+				47536C4C147195C500494B85 /* CLogRequest.h */,
+				47536C4D147195C500494B85 /* CPlayerLevels.cpp */,
+				47536C4E147195C500494B85 /* CPlayerLevels.h */,
+				47536C4F147195C500494B85 /* CPlaytomic.cpp */,
+				47536C50147195C500494B85 /* CPlaytomic.h */,
+				47536C51147195C500494B85 /* CPlaytomicDelegate.h */,
+				47536C52147195C500494B85 /* CScore.cpp */,
+				47536C53147195C500494B85 /* CScore.h */,
+				47536C54147195C500494B85 /* Debug */,
+				47536C57147195C500494B85 /* DllDebug */,
+				47536C5A147195C500494B85 /* DLLRelease */,
+				47536C5D147195C500494B85 /* Playtomic.vcxproj */,
+				47536C5E147195C500494B85 /* Playtomic.vcxproj.filters */,
+				47536C5F147195C500494B85 /* Playtomic.vcxproj.user */,
+				47536C61147195C500494B85 /* playtomicvs.props */,
+				47536C62147195C500494B85 /* Release */,
+			);
+			path = Playtomic;
+			sourceTree = "<group>";
+		};
+		47536C54147195C500494B85 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				47536C55147195C500494B85 /* Playtomic.Build.CppClean.log */,
+				47536C56147195C500494B85 /* Playtomic.log */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		47536C57147195C500494B85 /* DllDebug */ = {
+			isa = PBXGroup;
+			children = (
+				47536C58147195C500494B85 /* Playtomic.Build.CppClean.log */,
+				47536C59147195C500494B85 /* Playtomic.log */,
+			);
+			path = DllDebug;
+			sourceTree = "<group>";
+		};
+		47536C5A147195C500494B85 /* DLLRelease */ = {
+			isa = PBXGroup;
+			children = (
+				47536C5B147195C500494B85 /* Playtomic.Build.CppClean.log */,
+				47536C5C147195C500494B85 /* Playtomic.log */,
+			);
+			path = DLLRelease;
+			sourceTree = "<group>";
+		};
+		47536C62147195C500494B85 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				47536C63147195C500494B85 /* Playtomic.Build.CppClean.log */,
+				47536C64147195C500494B85 /* Playtomic.log */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		47536C65147195C500494B85 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				47536C66147195C500494B85 /* FastDelegate.h */,
+				47536C67147195C500494B85 /* FastDelegateBind.h */,
+				47536C68147195C500494B85 /* MD5.cpp */,
+				47536C69147195C500494B85 /* MD5.h */,
+				47536C6A147195C500494B85 /* StringHelper.cpp */,
+				47536C6B147195C500494B85 /* StringHelper.h */,
+				47536C6C147195C500494B85 /* timer.cpp */,
+				47536C6D147195C500494B85 /* timer.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		47536C151471954600494B85 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47536C6F147195C500494B85 /* CConnectionInterface.h in Headers */,
+				47536C70147195C500494B85 /* Common.h in Headers */,
+				47536C72147195C500494B85 /* CPlaytomicResponse.h in Headers */,
+				47536C74147195C500494B85 /* CPost.h in Headers */,
+				47536C76147195C500494B85 /* CRequest.h in Headers */,
+				47536C77147195C500494B85 /* autolink.h in Headers */,
+				47536C78147195C500494B85 /* config.h in Headers */,
+				47536C79147195C500494B85 /* features.h in Headers */,
+				47536C7A147195C500494B85 /* forwards.h in Headers */,
+				47536C7B147195C500494B85 /* json.h in Headers */,
+				47536C7C147195C500494B85 /* reader.h in Headers */,
+				47536C7D147195C500494B85 /* value.h in Headers */,
+				47536C7E147195C500494B85 /* writer.h in Headers */,
+				47536C7F147195C500494B85 /* json_batchallocator.h in Headers */,
+				47536C81147195C500494B85 /* json_tool.h in Headers */,
+				47536C85147195C500494B85 /* CData.h in Headers */,
+				47536C87147195C500494B85 /* CGameVars.h in Headers */,
+				47536C89147195C500494B85 /* CGeoIp.h in Headers */,
+				47536C8B147195C500494B85 /* CLeaderboard.h in Headers */,
+				47536C8D147195C500494B85 /* CLevel.h in Headers */,
+				47536C8F147195C500494B85 /* CLink.h in Headers */,
+				47536C91147195C500494B85 /* CLog.h in Headers */,
+				47536C93147195C500494B85 /* CLogRequest.h in Headers */,
+				47536C95147195C500494B85 /* CPlayerLevels.h in Headers */,
+				47536C97147195C500494B85 /* CPlaytomic.h in Headers */,
+				47536C98147195C500494B85 /* CPlaytomicDelegate.h in Headers */,
+				47536C9A147195C500494B85 /* CScore.h in Headers */,
+				47536C9B147195C500494B85 /* PlaytomicDefines.h in Headers */,
+				47536C9C147195C500494B85 /* FastDelegate.h in Headers */,
+				47536C9D147195C500494B85 /* FastDelegateBind.h in Headers */,
+				47536C9F147195C500494B85 /* MD5.h in Headers */,
+				47536CA1147195C500494B85 /* StringHelper.h in Headers */,
+				47536CA3147195C500494B85 /* timer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		47536C161471954600494B85 /* Playtomic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47536C1B1471954600494B85 /* Build configuration list for PBXNativeTarget "Playtomic" */;
+			buildPhases = (
+				47536C131471954600494B85 /* Sources */,
+				47536C141471954600494B85 /* Frameworks */,
+				47536C151471954600494B85 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Playtomic;
+			productName = Playtomic;
+			productReference = 47536C171471954600494B85 /* libPlaytomic.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47536C0E1471954600494B85 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 47536C111471954600494B85 /* Build configuration list for PBXProject "Playtomic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 47536C0C1471954600494B85;
+			productRefGroup = 47536C181471954600494B85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47536C161471954600494B85 /* Playtomic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47536C131471954600494B85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47536C6E147195C500494B85 /* CConnectionInterface.cpp in Sources */,
+				47536C71147195C500494B85 /* CPlaytomicResponse.cpp in Sources */,
+				47536C73147195C500494B85 /* CPost.cpp in Sources */,
+				47536C75147195C500494B85 /* CRequest.cpp in Sources */,
+				47536C80147195C500494B85 /* json_reader.cpp in Sources */,
+				47536C82147195C500494B85 /* json_value.cpp in Sources */,
+				47536C83147195C500494B85 /* json_writer.cpp in Sources */,
+				47536C84147195C500494B85 /* CData.cpp in Sources */,
+				47536C86147195C500494B85 /* CGameVars.cpp in Sources */,
+				47536C88147195C500494B85 /* CGeoIp.cpp in Sources */,
+				47536C8A147195C500494B85 /* CLeaderboard.cpp in Sources */,
+				47536C8C147195C500494B85 /* CLevel.cpp in Sources */,
+				47536C8E147195C500494B85 /* CLink.cpp in Sources */,
+				47536C90147195C500494B85 /* CLog.cpp in Sources */,
+				47536C92147195C500494B85 /* CLogRequest.cpp in Sources */,
+				47536C94147195C500494B85 /* CPlayerLevels.cpp in Sources */,
+				47536C96147195C500494B85 /* CPlaytomic.cpp in Sources */,
+				47536C99147195C500494B85 /* CScore.cpp in Sources */,
+				47536C9E147195C500494B85 /* MD5.cpp in Sources */,
+				47536CA0147195C500494B85 /* StringHelper.cpp in Sources */,
+				47536CA2147195C500494B85 /* timer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		47536C191471954600494B85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		47536C1A1471954600494B85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		47536C1C1471954600494B85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				HEADER_SEARCH_PATHS = (
+					"./Dependencies/macos/currlib/**",
+					"./Dependencies/macos/Boost/**",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = ./Playtomic;
+				WARNING_CFLAGS = "";
+			};
+			name = Debug;
+		};
+		47536C1D1471954600494B85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				HEADER_SEARCH_PATHS = (
+					"./Dependencies/macos/currlib/**",
+					"./Dependencies/macos/Boost/**",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = ./Playtomic;
+				WARNING_CFLAGS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47536C111471954600494B85 /* Build configuration list for PBXProject "Playtomic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47536C191471954600494B85 /* Debug */,
+				47536C1A1471954600494B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47536C1B1471954600494B85 /* Build configuration list for PBXNativeTarget "Playtomic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47536C1C1471954600494B85 /* Debug */,
+				47536C1D1471954600494B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47536C0E1471954600494B85 /* Project object */;
+}

@@ -127,7 +127,7 @@ SSCoreTablePtr CLeaderboard::ListTable( const std::string& tableName, bool highe
 	{
 		FData currentScore;
 
-		currentScore = ScoreList[i];
+		currentScore = ScoreList[(int)i];
 
 		value = currentScore.get("Name", value);
 		std::string userName = value.asString();
@@ -253,7 +253,7 @@ SSCoreTablePtr CLeaderboard::SaveAndListTable( const std::string& tableName,
 	{
 		FData currentScore;
 
-		currentScore = ScoreList[i];
+		currentScore = ScoreList[(int)i];
 
 		value = currentScore.get("Name", value);
 		std::string userName = value.asString();
@@ -486,7 +486,7 @@ void CLeaderboard::ListComple( CPlaytomicResponsePtr& response )
 	{
 		FData currentScore;
 
-		currentScore = ScoreList[i];
+		currentScore = ScoreList[(int)i];
 
 		value = currentScore.get("Name", value);
 		std::string userName = value.asString();
@@ -548,7 +548,7 @@ void CLeaderboard::SaveAndListComple( CPlaytomicResponsePtr& response )
 	{
 		FData currentScore;
 
-		currentScore = ScoreList[i];
+		currentScore = ScoreList[(int)i];
 
 		value = currentScore.get("Name", value);
 		std::string userName = value.asString();

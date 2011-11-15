@@ -4,6 +4,11 @@
 #include <map>
 #include "../CurlWrap/CPlaytomicResponse.h"
 
+#if defined (_LINUX_) || defined (_OPENBSD_)
+#include <cstdio>
+#define	sprintf_s(buffer, buffer_size, stringbuffer, ...) (sprintf(buffer, stringbuffer, __VA_ARGS__))
+#endif
+
 #ifdef CREATE_DLL
 #define DllExport __declspec(dllexport)
 #pragma warning (disable: 4251)

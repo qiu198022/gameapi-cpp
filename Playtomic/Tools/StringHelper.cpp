@@ -65,6 +65,16 @@ void CleanString(std::string& str)
 	posInString = -1;
 	do 
 	{
+		posInString = str.find(":", posInString + 1);
+        if(posInString != -1)
+        {
+            str.replace(posInString, 1, "%3A", 3);
+        }
+    } while ( posInString != -1);
+
+    posInString = -1;
+    do 
+    {
 		posInString = str.find("#", posInString + 1);
 		if(posInString != -1)
 		{

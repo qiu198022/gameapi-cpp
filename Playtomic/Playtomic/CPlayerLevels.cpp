@@ -37,6 +37,10 @@ SLevelListPtr CPlayerLevels::LoadLevel( const std::string& levelId )
 
 CPlaytomicResponsePtr CPlayerLevels::RateLevelId( const std::string& levelId, int rating )
 {
+	if(rating > 10 || rating < 1)
+    {
+        return CPlaytomicResponsePtr(new CPlaytomicResponse(false, 401));
+    }
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
 	std::string url = kPlayerLevelRateUrl1 + gPlaytomic->GetGameGuid() +kPlayerLevelRateUrl2 +
@@ -116,10 +120,10 @@ SLevelListPtr CPlayerLevels::List( const std::string& mode,
 	value = queryData.get("NumLevels", value);
 	for (size_t i = 0; i < levelArray.size(); i++)
 	{
-		value = levelArray[i].get("LevelId", value);
+		value = levelArray[(int)i].get("LevelId", value);
 
 	
-		AddLevel(levelArray[i], value.asString(), returnList->sLevelList);
+		AddLevel(levelArray[(int)i], value.asString(), returnList->sLevelList);
 	}
 	return returnList;
 }
@@ -392,10 +396,10 @@ void CPlayerLevels::ListAsyncComplete( CPlaytomicResponsePtr& response )
 	value = queryData.get("NumLevels", value);
 	for (size_t i = 0; i < levelArray.size(); i++)
 	{
-		value = levelArray[i].get("LevelId", value);
+		value = levelArray[(int)i].get("LevelId", value);
 
 
-		AddLevel(levelArray[i], value.asString(), returnList.sLevelList);
+		AddLevel(levelArray[(int)i], value.asString(), returnList.sLevelList);
 	}
 	mDelegate->LevelListComple(returnList);
 }

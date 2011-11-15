@@ -1,0 +1,19 @@
+include ../config/config.openbsd.Mk
+include objects.Mk
+
+LIB=../lib/libplaytomic.so
+
+.SUFFIXES: .cpp .o
+
+all: ${LIB}
+
+${LIB}: ${OBJ}
+	${CXX} -shared -o ${LIB} ${OBJ} ${LDFLAGS}
+
+.cpp.o:
+	${CXX} -c ${CXXFLAGS} -o $@ -I../Tools -I../CurlWrap $<
+
+clean:
+	rm -f ${OBJ}
+	rm -f ${LIB}
+

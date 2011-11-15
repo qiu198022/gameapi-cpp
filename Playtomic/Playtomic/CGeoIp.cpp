@@ -1,4 +1,4 @@
-#include "CGeoIP.h"
+#include "CGeoIp.h"
 #include "CPlaytomic.h"
 #include "../CurlWrap/CConnectionInterface.h"
 #include <string>
