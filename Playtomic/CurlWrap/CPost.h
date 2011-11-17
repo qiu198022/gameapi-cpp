@@ -1,7 +1,7 @@
 #ifndef _CPOST_H_
 #define _CPOST_H_
 
-#include "curl.h"
+#include "Curl/curl.h"
 #include "Common.h"
 
  class CPost

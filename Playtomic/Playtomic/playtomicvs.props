@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <include_dir>$(SolutionDir)/Dependencies/currlib/include;$(SolutionDir)/Dependencies/Boost;$(SolutionDir)</include_dir>
+    <include_dir>$(SolutionDir)/Dependencies/currlib/include;$(SolutionDir)/Dependencies/Boost;$(SolutionDir)  ;$(SolutionDir)\json\include ;$(SolutionDir)\CurlWrap; $(SolutionDir)\Tools</include_dir>
     <lib_debug>libcurld.lib;winmm.lib;ws2_32.lib;wldap32.lib</lib_debug>
     <lib_release>libcurl.lib;winmm.lib;ws2_32.lib;wldap32.lib</lib_release>
     <lib_pathDebug>$(SolutionDir)\Dependencies\currlib\lib\debug;$(SolutionDir)\Dependencies\Boost\lib\debug</lib_pathDebug>

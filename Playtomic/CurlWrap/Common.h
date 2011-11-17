@@ -19,7 +19,7 @@ enum ERequestResult
 	e_unknown
 };
 
-#include "../json/include/value.h"
+#include "value.h"
 
 //FData = Flexible Data
 typedef Json::Value	FData;

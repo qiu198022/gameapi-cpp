@@ -1,7 +1,7 @@
 #include "timer.h"
 #include <cstring>
 
-void CTimer::Init(CTimerDelegate* delegate, int hour, char minutes, float seconds, bool autoreset)
+void CTimer::Init(TimerDelegate delegate, int hour, char minutes, float seconds, bool autoreset)
 {
 	mAutoReset = autoreset;
 	mRequiredSeconds = seconds;
@@ -40,13 +40,13 @@ void CTimer::Update(float deltaSeconds)
 			mMinutes -= (extraHour * 60);
 		}
 	}
-	if(mDelegate && !mMessageSent)
+	if(!mMessageSent)
 	{
 		if( mHour >= mRequiredHour &&
 			mMinutes >= mRequiredMinutes&&
 			mSeconds >= mRequiredSeconds)
 		{
-			mDelegate->TimerAlert(this);
+			mDelegate(this);
 			mMessageSent = true;
 			if (mAutoReset)
 			{

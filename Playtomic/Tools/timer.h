@@ -4,6 +4,9 @@
 class CTimer;
 #include <vector>
 #include <list>
+#include "FastDelegate.h"
+
+typedef fastdelegate::FastDelegate1<CTimer*> TimerDelegate;
 
 class CTimerDelegate
 {
@@ -14,7 +17,7 @@ public:
 class CTimer
 {
 public:
-	void Init(CTimerDelegate* targetDelegate, int hour, char minutes, float seconds, bool autoreset = true);
+	void Init(TimerDelegate targetDelegate, int hour, char minutes, float seconds, bool autoreset = true);
 	void Reset();
 	void Update(float deltaSeconds);
 
@@ -28,7 +31,7 @@ public:
 	void Pause();
 	void UnPause();
 private:
-	CTimerDelegate *mDelegate;
+    TimerDelegate mDelegate;
 	//required time to call the delegate
 	float mRequiredSeconds;
 	char mRequiredMinutes;

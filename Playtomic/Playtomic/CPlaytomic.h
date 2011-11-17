@@ -3,7 +3,10 @@
 
 #include <string>
 #include "PlaytomicDefines.h"
-#include "boost/thread.hpp"
+
+namespace boost {
+    class thread;
+}
 
 
 class CTimerManager;

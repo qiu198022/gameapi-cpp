@@ -2,7 +2,7 @@
 #define __PLAYTOMIC_DEFINES_H__
 
 #include <map>
-#include "../CurlWrap/CPlaytomicResponse.h"
+#include "CPlaytomicResponse.h"
 
 #if defined (_LINUX_) || defined (_OPENBSD_)
 #include <cstdio>

@@ -3,6 +3,7 @@
 
 #include "CBase.h"
 #include "../CDemo.h"
+#include "Playtomic/CData.h"
 
 class CDataMenu : public CBase
 {

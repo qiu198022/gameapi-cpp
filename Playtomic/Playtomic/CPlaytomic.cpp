@@ -8,6 +8,7 @@
 #include "CPlayerLevels.h"
 #include "CData.h"
 #include "boost/timer.hpp"
+#include "boost/thread.hpp"
 
 
 namespace Playtomic

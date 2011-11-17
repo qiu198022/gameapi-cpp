@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47BA30A514754B4F00812D23 /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BA30A414754B4F00812D23 /* boost.framework */; };
+		47BA30E214758BA400812D23 /* Playtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BA30E114758BA400812D23 /* Playtomic.framework */; };
+		47BA328F14759CA100812D23 /* Curl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BA328E14759CA100812D23 /* Curl.framework */; };
+		47C9829E14744892004BBEAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C9829D14744892004BBEAF /* UIKit.framework */; };
+		47C982A014744892004BBEAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C9829F14744892004BBEAF /* Foundation.framework */; };
+		47C982A214744892004BBEAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C982A114744892004BBEAF /* CoreGraphics.framework */; };
+		47C982A814744892004BBEAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47C982A614744892004BBEAF /* InfoPlist.strings */; };
+		47C982AA14744892004BBEAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C982A914744892004BBEAF /* main.m */; };
+		47C982AE14744892004BBEAF /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 47C982AD14744892004BBEAF /* AppDelegate.mm */; };
+		47C982B614744893004BBEAF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C982B514744893004BBEAF /* SenTestingKit.framework */; };
+		47C982B714744893004BBEAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C9829D14744892004BBEAF /* UIKit.framework */; };
+		47C982B814744893004BBEAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C9829F14744892004BBEAF /* Foundation.framework */; };
+		47C982C014744893004BBEAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47C982BE14744893004BBEAF /* InfoPlist.strings */; };
+		47C982C314744893004BBEAF /* PlaytomicDemoIosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47C982C214744893004BBEAF /* PlaytomicDemoIosTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47C982B914744893004BBEAF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47C9829014744892004BBEAF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47C9829814744892004BBEAF;
+			remoteInfo = PlaytomicDemoIos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		47BA30A414754B4F00812D23 /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../Dependencies/macos/boost.framework; sourceTree = "<group>"; };
+		47BA30E114758BA400812D23 /* Playtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Playtomic.framework; path = ../build/Framework/Playtomic.framework; sourceTree = "<group>"; };
+		47BA328E14759CA100812D23 /* Curl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curl.framework; path = ../Dependencies/macos/Curl.framework; sourceTree = "<group>"; };
+		47C9829914744892004BBEAF /* PlaytomicDemoIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaytomicDemoIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47C9829D14744892004BBEAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		47C9829F14744892004BBEAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		47C982A114744892004BBEAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		47C982A514744892004BBEAF /* PlaytomicDemoIos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlaytomicDemoIos-Info.plist"; sourceTree = "<group>"; };
+		47C982A714744892004BBEAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		47C982A914744892004BBEAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47C982AB14744892004BBEAF /* PlaytomicDemoIos-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlaytomicDemoIos-Prefix.pch"; sourceTree = "<group>"; };
+		47C982AC14744892004BBEAF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		47C982AD14744892004BBEAF /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		47C982B414744893004BBEAF /* PlaytomicDemoIosTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaytomicDemoIosTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47C982B514744893004BBEAF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		47C982BD14744893004BBEAF /* PlaytomicDemoIosTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlaytomicDemoIosTests-Info.plist"; sourceTree = "<group>"; };
+		47C982BF14744893004BBEAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		47C982C114744893004BBEAF /* PlaytomicDemoIosTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaytomicDemoIosTests.h; sourceTree = "<group>"; };
+		47C982C214744893004BBEAF /* PlaytomicDemoIosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaytomicDemoIosTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47C9829614744892004BBEAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47BA328F14759CA100812D23 /* Curl.framework in Frameworks */,
+				47BA30E214758BA400812D23 /* Playtomic.framework in Frameworks */,
+				47BA30A514754B4F00812D23 /* boost.framework in Frameworks */,
+				47C9829E14744892004BBEAF /* UIKit.framework in Frameworks */,
+				47C982A014744892004BBEAF /* Foundation.framework in Frameworks */,
+				47C982A214744892004BBEAF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47C982B014744893004BBEAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C982B614744893004BBEAF /* SenTestingKit.framework in Frameworks */,
+				47C982B714744893004BBEAF /* UIKit.framework in Frameworks */,
+				47C982B814744893004BBEAF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47C9828E14744892004BBEAF = {
+			isa = PBXGroup;
+			children = (
+				47C982A314744892004BBEAF /* PlaytomicDemoIos */,
+				47C982BB14744893004BBEAF /* PlaytomicDemoIosTests */,
+				47C9829C14744892004BBEAF /* Frameworks */,
+				47C9829A14744892004BBEAF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47C9829A14744892004BBEAF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47C9829914744892004BBEAF /* PlaytomicDemoIos.app */,
+				47C982B414744893004BBEAF /* PlaytomicDemoIosTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47C9829C14744892004BBEAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47BA328E14759CA100812D23 /* Curl.framework */,
+				47BA30E114758BA400812D23 /* Playtomic.framework */,
+				47BA30A414754B4F00812D23 /* boost.framework */,
+				47C9829D14744892004BBEAF /* UIKit.framework */,
+				47C9829F14744892004BBEAF /* Foundation.framework */,
+				47C982A114744892004BBEAF /* CoreGraphics.framework */,
+				47C982B514744893004BBEAF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47C982A314744892004BBEAF /* PlaytomicDemoIos */ = {
+			isa = PBXGroup;
+			children = (
+				47C982AC14744892004BBEAF /* AppDelegate.h */,
+				47C982AD14744892004BBEAF /* AppDelegate.mm */,
+				47C982A414744892004BBEAF /* Supporting Files */,
+			);
+			path = PlaytomicDemoIos;
+			sourceTree = "<group>";
+		};
+		47C982A414744892004BBEAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47C982A514744892004BBEAF /* PlaytomicDemoIos-Info.plist */,
+				47C982A614744892004BBEAF /* InfoPlist.strings */,
+				47C982A914744892004BBEAF /* main.m */,
+				47C982AB14744892004BBEAF /* PlaytomicDemoIos-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47C982BB14744893004BBEAF /* PlaytomicDemoIosTests */ = {
+			isa = PBXGroup;
+			children = (
+				47C982C114744893004BBEAF /* PlaytomicDemoIosTests.h */,
+				47C982C214744893004BBEAF /* PlaytomicDemoIosTests.m */,
+				47C982BC14744893004BBEAF /* Supporting Files */,
+			);
+			path = PlaytomicDemoIosTests;
+			sourceTree = "<group>";
+		};
+		47C982BC14744893004BBEAF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47C982BD14744893004BBEAF /* PlaytomicDemoIosTests-Info.plist */,
+				47C982BE14744893004BBEAF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47C9829814744892004BBEAF /* PlaytomicDemoIos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47C982C614744893004BBEAF /* Build configuration list for PBXNativeTarget "PlaytomicDemoIos" */;
+			buildPhases = (
+				47C9829514744892004BBEAF /* Sources */,
+				47C9829614744892004BBEAF /* Frameworks */,
+				47C9829714744892004BBEAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlaytomicDemoIos;
+			productName = PlaytomicDemoIos;
+			productReference = 47C9829914744892004BBEAF /* PlaytomicDemoIos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47C982B314744893004BBEAF /* PlaytomicDemoIosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47C982C914744893004BBEAF /* Build configuration list for PBXNativeTarget "PlaytomicDemoIosTests" */;
+			buildPhases = (
+				47C982AF14744893004BBEAF /* Sources */,
+				47C982B014744893004BBEAF /* Frameworks */,
+				47C982B114744893004BBEAF /* Resources */,
+				47C982B214744893004BBEAF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47C982BA14744893004BBEAF /* PBXTargetDependency */,
+			);
+			name = PlaytomicDemoIosTests;
+			productName = PlaytomicDemoIosTests;
+			productReference = 47C982B414744893004BBEAF /* PlaytomicDemoIosTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47C9829014744892004BBEAF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 47C9829314744892004BBEAF /* Build configuration list for PBXProject "PlaytomicDemoIos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 47C9828E14744892004BBEAF;
+			productRefGroup = 47C9829A14744892004BBEAF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47C9829814744892004BBEAF /* PlaytomicDemoIos */,
+				47C982B314744893004BBEAF /* PlaytomicDemoIosTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47C9829714744892004BBEAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C982A814744892004BBEAF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47C982B114744893004BBEAF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C982C014744893004BBEAF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47C982B214744893004BBEAF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47C9829514744892004BBEAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C982AA14744892004BBEAF /* main.m in Sources */,
+				47C982AE14744892004BBEAF /* AppDelegate.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47C982AF14744893004BBEAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C982C314744893004BBEAF /* PlaytomicDemoIosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47C982BA14744893004BBEAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47C9829814744892004BBEAF /* PlaytomicDemoIos */;
+			targetProxy = 47C982B914744893004BBEAF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47C982A614744892004BBEAF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47C982A714744892004BBEAF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		47C982BE14744893004BBEAF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47C982BF14744893004BBEAF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		47C982C414744893004BBEAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47C982C514744893004BBEAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47C982C714744893004BBEAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Dependencies/macos\"",
+					"\"$(SRCROOT)/../build/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaytomicDemoIos/PlaytomicDemoIos-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "PlaytomicDemoIos/PlaytomicDemoIos-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		47C982C814744893004BBEAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Dependencies/macos\"",
+					"\"$(SRCROOT)/../build/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaytomicDemoIos/PlaytomicDemoIos-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "PlaytomicDemoIos/PlaytomicDemoIos-Info.plist";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		47C982CA14744893004BBEAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PlaytomicDemoIos.app/PlaytomicDemoIos";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaytomicDemoIos/PlaytomicDemoIos-Prefix.pch";
+				INFOPLIST_FILE = "PlaytomicDemoIosTests/PlaytomicDemoIosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		47C982CB14744893004BBEAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PlaytomicDemoIos.app/PlaytomicDemoIos";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlaytomicDemoIos/PlaytomicDemoIos-Prefix.pch";
+				INFOPLIST_FILE = "PlaytomicDemoIosTests/PlaytomicDemoIosTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47C9829314744892004BBEAF /* Build configuration list for PBXProject "PlaytomicDemoIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47C982C414744893004BBEAF /* Debug */,
+				47C982C514744893004BBEAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47C982C614744893004BBEAF /* Build configuration list for PBXNativeTarget "PlaytomicDemoIos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47C982C714744893004BBEAF /* Debug */,
+				47C982C814744893004BBEAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47C982C914744893004BBEAF /* Build configuration list for PBXNativeTarget "PlaytomicDemoIosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47C982CA14744893004BBEAF /* Debug */,
+				47C982CB14744893004BBEAF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47C9829014744892004BBEAF /* Project object */;
+}

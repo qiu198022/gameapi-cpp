@@ -61,6 +61,60 @@
 		47536CA1147195C500494B85 /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6B147195C500494B85 /* StringHelper.h */; };
 		47536CA2147195C500494B85 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6C147195C500494B85 /* timer.cpp */; };
 		47536CA3147195C500494B85 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
+		47C9824E14744635004BBEAF /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
+		47C9824F14744635004BBEAF /* CPlaytomicResponse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C22147195C500494B85 /* CPlaytomicResponse.cpp */; };
+		47C9825014744635004BBEAF /* CPost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C24147195C500494B85 /* CPost.cpp */; };
+		47C9825114744635004BBEAF /* CRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C26147195C500494B85 /* CRequest.cpp */; };
+		47C9825214744635004BBEAF /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C36147195C500494B85 /* json_reader.cpp */; };
+		47C9825314744635004BBEAF /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C38147195C500494B85 /* json_value.cpp */; };
+		47C9825414744635004BBEAF /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C3A147195C500494B85 /* json_writer.cpp */; };
+		47C9825514744635004BBEAF /* CData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C3D147195C500494B85 /* CData.cpp */; };
+		47C9825614744635004BBEAF /* CGameVars.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C3F147195C500494B85 /* CGameVars.cpp */; };
+		47C9825714744635004BBEAF /* CGeoIp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C41147195C500494B85 /* CGeoIp.cpp */; };
+		47C9825814744635004BBEAF /* CLeaderboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C43147195C500494B85 /* CLeaderboard.cpp */; };
+		47C9825914744635004BBEAF /* CLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C45147195C500494B85 /* CLevel.cpp */; };
+		47C9825A14744635004BBEAF /* CLink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C47147195C500494B85 /* CLink.cpp */; };
+		47C9825B14744635004BBEAF /* CLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C49147195C500494B85 /* CLog.cpp */; };
+		47C9825C14744635004BBEAF /* CLogRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C4B147195C500494B85 /* CLogRequest.cpp */; };
+		47C9825D14744635004BBEAF /* CPlayerLevels.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C4D147195C500494B85 /* CPlayerLevels.cpp */; };
+		47C9825E14744635004BBEAF /* CPlaytomic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C4F147195C500494B85 /* CPlaytomic.cpp */; };
+		47C9825F14744635004BBEAF /* CScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C52147195C500494B85 /* CScore.cpp */; };
+		47C9826014744635004BBEAF /* MD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C68147195C500494B85 /* MD5.cpp */; };
+		47C9826114744635004BBEAF /* StringHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6A147195C500494B85 /* StringHelper.cpp */; };
+		47C9826214744635004BBEAF /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6C147195C500494B85 /* timer.cpp */; };
+		47C9826514744635004BBEAF /* CConnectionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C20147195C500494B85 /* CConnectionInterface.h */; };
+		47C9826614744635004BBEAF /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C21147195C500494B85 /* Common.h */; };
+		47C9826714744635004BBEAF /* CPlaytomicResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C23147195C500494B85 /* CPlaytomicResponse.h */; };
+		47C9826814744635004BBEAF /* CPost.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C25147195C500494B85 /* CPost.h */; };
+		47C9826914744635004BBEAF /* CRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C27147195C500494B85 /* CRequest.h */; };
+		47C9826A14744635004BBEAF /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2A147195C500494B85 /* autolink.h */; };
+		47C9826B14744635004BBEAF /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2B147195C500494B85 /* config.h */; };
+		47C9826C14744635004BBEAF /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2C147195C500494B85 /* features.h */; };
+		47C9826D14744635004BBEAF /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2D147195C500494B85 /* forwards.h */; };
+		47C9826E14744635004BBEAF /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2E147195C500494B85 /* json.h */; };
+		47C9826F14744635004BBEAF /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2F147195C500494B85 /* reader.h */; };
+		47C9827014744635004BBEAF /* value.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C30147195C500494B85 /* value.h */; };
+		47C9827114744635004BBEAF /* writer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C31147195C500494B85 /* writer.h */; };
+		47C9827214744635004BBEAF /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C33147195C500494B85 /* json_batchallocator.h */; };
+		47C9827314744635004BBEAF /* json_tool.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C37147195C500494B85 /* json_tool.h */; };
+		47C9827414744635004BBEAF /* CData.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C3E147195C500494B85 /* CData.h */; };
+		47C9827514744635004BBEAF /* CGameVars.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C40147195C500494B85 /* CGameVars.h */; };
+		47C9827614744635004BBEAF /* CGeoIp.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C42147195C500494B85 /* CGeoIp.h */; };
+		47C9827714744635004BBEAF /* CLeaderboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C44147195C500494B85 /* CLeaderboard.h */; };
+		47C9827814744635004BBEAF /* CLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C46147195C500494B85 /* CLevel.h */; };
+		47C9827914744635004BBEAF /* CLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C48147195C500494B85 /* CLink.h */; };
+		47C9827A14744635004BBEAF /* CLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C4A147195C500494B85 /* CLog.h */; };
+		47C9827B14744635004BBEAF /* CLogRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C4C147195C500494B85 /* CLogRequest.h */; };
+		47C9827C14744635004BBEAF /* CPlayerLevels.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C4E147195C500494B85 /* CPlayerLevels.h */; };
+		47C9827D14744635004BBEAF /* CPlaytomic.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C50147195C500494B85 /* CPlaytomic.h */; };
+		47C9827E14744635004BBEAF /* CPlaytomicDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C51147195C500494B85 /* CPlaytomicDelegate.h */; };
+		47C9827F14744635004BBEAF /* CScore.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C53147195C500494B85 /* CScore.h */; };
+		47C9828014744635004BBEAF /* PlaytomicDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C60147195C500494B85 /* PlaytomicDefines.h */; };
+		47C9828114744635004BBEAF /* FastDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C66147195C500494B85 /* FastDelegate.h */; };
+		47C9828214744635004BBEAF /* FastDelegateBind.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C67147195C500494B85 /* FastDelegateBind.h */; };
+		47C9828314744635004BBEAF /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C69147195C500494B85 /* MD5.h */; };
+		47C9828414744635004BBEAF /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6B147195C500494B85 /* StringHelper.h */; };
+		47C9828514744635004BBEAF /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,10 +189,18 @@
 		47536C6B147195C500494B85 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		47536C6C147195C500494B85 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
 		47536C6D147195C500494B85 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
+		47C9828914744635004BBEAF /* PlaytomicIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = PlaytomicIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		47536C141471954600494B85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47C9826314744635004BBEAF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -163,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				47536C171471954600494B85 /* libPlaytomic.a */,
+				47C9828914744635004BBEAF /* PlaytomicIOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -356,6 +419,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47C9826414744635004BBEAF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C9826514744635004BBEAF /* CConnectionInterface.h in Headers */,
+				47C9826614744635004BBEAF /* Common.h in Headers */,
+				47C9826714744635004BBEAF /* CPlaytomicResponse.h in Headers */,
+				47C9826814744635004BBEAF /* CPost.h in Headers */,
+				47C9826914744635004BBEAF /* CRequest.h in Headers */,
+				47C9826A14744635004BBEAF /* autolink.h in Headers */,
+				47C9826B14744635004BBEAF /* config.h in Headers */,
+				47C9826C14744635004BBEAF /* features.h in Headers */,
+				47C9826D14744635004BBEAF /* forwards.h in Headers */,
+				47C9826E14744635004BBEAF /* json.h in Headers */,
+				47C9826F14744635004BBEAF /* reader.h in Headers */,
+				47C9827014744635004BBEAF /* value.h in Headers */,
+				47C9827114744635004BBEAF /* writer.h in Headers */,
+				47C9827214744635004BBEAF /* json_batchallocator.h in Headers */,
+				47C9827314744635004BBEAF /* json_tool.h in Headers */,
+				47C9827414744635004BBEAF /* CData.h in Headers */,
+				47C9827514744635004BBEAF /* CGameVars.h in Headers */,
+				47C9827614744635004BBEAF /* CGeoIp.h in Headers */,
+				47C9827714744635004BBEAF /* CLeaderboard.h in Headers */,
+				47C9827814744635004BBEAF /* CLevel.h in Headers */,
+				47C9827914744635004BBEAF /* CLink.h in Headers */,
+				47C9827A14744635004BBEAF /* CLog.h in Headers */,
+				47C9827B14744635004BBEAF /* CLogRequest.h in Headers */,
+				47C9827C14744635004BBEAF /* CPlayerLevels.h in Headers */,
+				47C9827D14744635004BBEAF /* CPlaytomic.h in Headers */,
+				47C9827E14744635004BBEAF /* CPlaytomicDelegate.h in Headers */,
+				47C9827F14744635004BBEAF /* CScore.h in Headers */,
+				47C9828014744635004BBEAF /* PlaytomicDefines.h in Headers */,
+				47C9828114744635004BBEAF /* FastDelegate.h in Headers */,
+				47C9828214744635004BBEAF /* FastDelegateBind.h in Headers */,
+				47C9828314744635004BBEAF /* MD5.h in Headers */,
+				47C9828414744635004BBEAF /* StringHelper.h in Headers */,
+				47C9828514744635004BBEAF /* timer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -376,11 +479,33 @@
 			productReference = 47536C171471954600494B85 /* libPlaytomic.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		47C9824C14744635004BBEAF /* PlaytomicIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47C9828614744635004BBEAF /* Build configuration list for PBXNativeTarget "PlaytomicIOS" */;
+			buildPhases = (
+				47C9824D14744635004BBEAF /* Sources */,
+				47C9826314744635004BBEAF /* Frameworks */,
+				47C9826414744635004BBEAF /* Headers */,
+				47BA30DD1475856300812D23 /* ShellScript */,
+				47BA30DF147588F300812D23 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlaytomicIOS;
+			productName = Playtomic;
+			productReference = 47C9828914744635004BBEAF /* PlaytomicIOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		47536C0E1471954600494B85 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 47536C111471954600494B85 /* Build configuration list for PBXProject "Playtomic" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -394,9 +519,39 @@
 			projectRoot = "";
 			targets = (
 				47536C161471954600494B85 /* Playtomic */,
+				47C9824C14744635004BBEAF /* PlaytomicIOS */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47BA30DD1475856300812D23 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Version 2.0 (updated for Xcode 4, with some fixes)\n# Changes:\n#    - Works with xcode 4, even when running xcode 3 projects (Workarounds for apple bugs)\n#    - Faster / better: only runs lipo once, instead of once per recursion\n#    - Added some debugging statemetns that can be switched on/off by changing the DEBUG_THIS_SCRIPT variable to \"true\"\n#    - Fixed some typos\n# \n# Purpose:\n#   Create a static library for iPhone from within XCode\n#   Because Apple staff DELIBERATELY broke Xcode to make this impossible from the GUI (Xcode 3.2.3 specifically states this in the Release notes!)\n#   ...no, I don't understand why they did this!\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n# More info: see this Stack Overflow question: http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n\n#################[ Tests: helps workaround any future bugs in Xcode ]########\n#\nDEBUG_THIS_SCRIPT=\"false\"\n\nif [ $DEBUG_THIS_SCRIPT = \"true\" ]\nthen\necho \"########### TESTS #############\"\necho \"Use the following variables when debugging this script; note that they may change on recursions\"\necho \"BUILD_DIR = $BUILD_DIR\"\necho \"BUILD_ROOT = $BUILD_ROOT\"\necho \"CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR\"\necho \"BUILT_PRODUCTS_DIR = $BUILT_PRODUCTS_DIR\"\necho \"CONFIGURATION_TEMP_DIR = $CONFIGURATION_TEMP_DIR\"\necho \"TARGET_BUILD_DIR = $TARGET_BUILD_DIR\"\nfi\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\nif [ \"true\" == ${ALREADYINVOKED:-false} ]\nthen\necho \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\nelse\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\nexport ALREADYINVOKED=\"true\"\n\necho \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\necho \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUILD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\"\nxcodebuild -configuration \"${CONFIGURATION}\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\nACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\n# Calculate where the (multiple) built files are coming from:\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\n\necho \"Taking device build from: ${CURRENTCONFIG_DEVICE_DIR}\"\necho \"Taking simulator build from: ${CURRENTCONFIG_SIMULATOR_DIR}\"\n\nCREATING_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\necho \"...I will output a universal build to: ${CREATING_UNIVERSAL_DIR}\"\n\n# ... remove the products of previous runs of this script\n#      NB: this directory is ONLY created by this script - it should be safe to delete!\n\nrm -rf \"${CREATING_UNIVERSAL_DIR}\"\nmkdir \"${CREATING_UNIVERSAL_DIR}\"\n\n#\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nlipo -create -output \"${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\n#########\n#\n# Added: StackOverflow suggestion to also copy \"include\" files\n#    (untested, but should work OK)\n#\nif [ -d \"${CURRENTCONFIG_DEVICE_DIR}/usr/local/include\" ]\nthen\nmkdir -p \"${CREATING_UNIVERSAL_DIR}/usr/local/include\"\n# * needs to be outside the double quotes?\ncp \"${CURRENTCONFIG_DEVICE_DIR}/usr/local/include/\"* \"${CREATING_UNIVERSAL_DIR}/usr/local/include\"\nfi\nfi\n";
+		};
+		47BA30DF147588F300812D23 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# name and build location\nFRAMEWORK_NAME=${PROJECT_NAME}\nFRAMEWORK_BUILD_PATH=\"${PROJECT_DIR}/build/Framework\"\n\n# these never change\nFRAMEWORK_VERSION=A\nFRAMEWORK_CURRENT_VERSION=1\nFRAMEWORK_COMPATIBILITY_VERSION=1\n\n# Clean any existing framework that might be there\nif [ -d \"$FRAMEWORK_BUILD_PATH\" ]\nthen\necho \"Framework: Cleaning framework...\"\nrm -rf \"$FRAMEWORK_BUILD_PATH\"\nfi\n\n# Build the canonical Framework bundle directory structure\necho \"Framework: Setting up directories...\"\nFRAMEWORK_DIR=$FRAMEWORK_BUILD_PATH/$FRAMEWORK_NAME.framework\nmkdir -p $FRAMEWORK_DIR\nmkdir -p $FRAMEWORK_DIR/Versions\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Resources\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Headers\n\necho \"Framework: Creating symlinks...\"\nln -s $FRAMEWORK_VERSION $FRAMEWORK_DIR/Versions/Current\nln -s Versions/Current/Headers $FRAMEWORK_DIR/Headers\nln -s Versions/Current/Resources $FRAMEWORK_DIR/Resources\nln -s Versions/Current/$FRAMEWORK_NAME $FRAMEWORK_DIR/$FRAMEWORK_NAME\n\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\n\n# combine lib files for various platforms into one\necho \"Framework: Creating library...\"\nlipo -create \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\" -o \"$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME\"\n\necho \"Framework: Copying assets into current version...\"\ncp ${SRCROOT}/Playtomic/*.h $FRAMEWORK_DIR/Headers/\ncp ${SRCROOT}/Tools/*.h $FRAMEWORK_DIR/Headers/\ncp ${SRCROOT}/CurlWrap/*.h $FRAMEWORK_DIR/Headers/\ncp ${SRCROOT}/json/include/*.h $FRAMEWORK_DIR/Headers/";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47536C131471954600494B85 /* Sources */ = {
@@ -427,6 +582,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47C9824D14744635004BBEAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C9824E14744635004BBEAF /* CConnectionInterface.cpp in Sources */,
+				47C9824F14744635004BBEAF /* CPlaytomicResponse.cpp in Sources */,
+				47C9825014744635004BBEAF /* CPost.cpp in Sources */,
+				47C9825114744635004BBEAF /* CRequest.cpp in Sources */,
+				47C9825214744635004BBEAF /* json_reader.cpp in Sources */,
+				47C9825314744635004BBEAF /* json_value.cpp in Sources */,
+				47C9825414744635004BBEAF /* json_writer.cpp in Sources */,
+				47C9825514744635004BBEAF /* CData.cpp in Sources */,
+				47C9825614744635004BBEAF /* CGameVars.cpp in Sources */,
+				47C9825714744635004BBEAF /* CGeoIp.cpp in Sources */,
+				47C9825814744635004BBEAF /* CLeaderboard.cpp in Sources */,
+				47C9825914744635004BBEAF /* CLevel.cpp in Sources */,
+				47C9825A14744635004BBEAF /* CLink.cpp in Sources */,
+				47C9825B14744635004BBEAF /* CLog.cpp in Sources */,
+				47C9825C14744635004BBEAF /* CLogRequest.cpp in Sources */,
+				47C9825D14744635004BBEAF /* CPlayerLevels.cpp in Sources */,
+				47C9825E14744635004BBEAF /* CPlaytomic.cpp in Sources */,
+				47C9825F14744635004BBEAF /* CScore.cpp in Sources */,
+				47C9826014744635004BBEAF /* MD5.cpp in Sources */,
+				47C9826114744635004BBEAF /* StringHelper.cpp in Sources */,
+				47C9826214744635004BBEAF /* timer.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -434,7 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -460,7 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -478,13 +661,18 @@
 		47536C1C1471954600494B85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				EXECUTABLE_PREFIX = lib;
-				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					x86_64,
+					"_OPENBSD_=1",
+				);
 				HEADER_SEARCH_PATHS = (
 					"./Dependencies/macos/currlib/**",
 					"./Dependencies/macos/Boost/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SYMROOT = ./Playtomic;
 				WARNING_CFLAGS = "";
 			};
@@ -493,15 +681,61 @@
 		47536C1D1471954600494B85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				EXECUTABLE_PREFIX = lib;
-				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					x86_64,
+					"_OPENBSD_=1",
+				);
 				HEADER_SEARCH_PATHS = (
 					"./Dependencies/macos/currlib/**",
 					"./Dependencies/macos/Boost/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SYMROOT = ./Playtomic;
 				WARNING_CFLAGS = "";
+			};
+			name = Release;
+		};
+		47C9828714744635004BBEAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				EXECUTABLE_PREFIX = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				HEADER_SEARCH_PATHS = (
+					"./Dependencies/macos/currlib/**",
+					"./Dependencies/macos/BoostIos/**",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = PlaytomicIOS;
+				SDKROOT = iphoneos5.0;
+				SYMROOT = ./Playtomic;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 i386";
+				WARNING_CFLAGS = "";
+				WRAPPER_EXTENSION = PlaytomicIOS;
+			};
+			name = Debug;
+		};
+		47C9828814744635004BBEAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				EXECUTABLE_PREFIX = "";
+				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				HEADER_SEARCH_PATHS = (
+					"./Dependencies/macos/currlib/**",
+					"./Dependencies/macos/BoostIos/**",
+				);
+				PRODUCT_NAME = PlaytomicIOS;
+				SDKROOT = iphoneos5.0;
+				SYMROOT = ./Playtomic;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv6 armv7 i386";
+				WARNING_CFLAGS = "";
+				WRAPPER_EXTENSION = PlaytomicIOS;
 			};
 			name = Release;
 		};
@@ -522,6 +756,15 @@
 			buildConfigurations = (
 				47536C1C1471954600494B85 /* Debug */,
 				47536C1D1471954600494B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47C9828614744635004BBEAF /* Build configuration list for PBXNativeTarget "PlaytomicIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47C9828714744635004BBEAF /* Debug */,
+				47C9828814744635004BBEAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

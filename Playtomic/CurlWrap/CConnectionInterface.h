@@ -2,7 +2,7 @@
 #define __CONNECTION_INTERFACE_H__
 
 #include "CPlaytomicResponse.h"
-#include "../Tools/FastDelegate.h"
+#include "FastDelegate.h"
 
 #ifndef _CPOST_H_
 #include "CPost.h"

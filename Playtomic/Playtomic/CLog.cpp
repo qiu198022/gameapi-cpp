@@ -3,6 +3,7 @@
 #include "CPlaytomic.h"
 #include "CLogRequest.h"
 #include "../Tools/StringHelper.h"
+#include "../Tools/timer.h"
 
 namespace Playtomic
 {
@@ -25,13 +26,14 @@ CLog::CLog(int gameId, std::string& gameguid)
 	mPlays = 0;
 	mEnable = true;
 	mFrozen = false;
-	mTimer.Init(this,0,1,0, false);
-	gPlaytomic->TimerManager()->AddTimer(&mTimer);
+    mTimer = new CTimer;
+	mTimer->Init(fastdelegate::MakeDelegate(this,&CLog::TimerAlert),0,1,0, false);
+	gPlaytomic->TimerManager()->AddTimer(mTimer);
 }
 
 CLog::~CLog()
 {
-	gPlaytomic->TimerManager()->RemoveTimer(&mTimer);
+	gPlaytomic->TimerManager()->RemoveTimer(mTimer);
 }
 
 void CLog::View( void )
@@ -50,7 +52,7 @@ void CLog::Play( void )
 
 void CLog::TimerAlert(CTimer* sender)
 {
-	if( sender != &mTimer)
+	if( sender != mTimer)
 	{
 		return;
 	}
@@ -61,7 +63,7 @@ void CLog::TimerAlert(CTimer* sender)
 
 	if ( mPings == 1)
 	{
-		sender->Init(this, 0,0,30.0f);
+		sender->Init(fastdelegate::MakeDelegate(this,&CLog::TimerAlert), 0,0,30.0f);
 	}
 }
 
@@ -242,7 +244,7 @@ void CLog::Freeze( void )
 	if(!mFrozen)
 	{
 		mFrozen = true;
-		mTimer.Pause();
+		mTimer->Pause();
 	}
 }
 
@@ -251,7 +253,7 @@ void CLog::Unfreeze( void )
 	if(mFrozen)
 	{
 		mFrozen = false;
-		mTimer.UnPause();
+		mTimer->UnPause();
 	}
 }
 

@@ -1,7 +1,7 @@
 #ifndef __CREQUEST_H__
 #define __CREQUEST_H__
 
-#include "curl.h"
+#include "Curl/curl.h"
 #include "Common.h"
 
 class CPost;

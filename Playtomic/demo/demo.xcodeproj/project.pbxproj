@@ -15,8 +15,8 @@
 		47536CDA1471A08700494B85 /* LogMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CD11471A08700494B85 /* LogMenu.cpp */; };
 		47536CDB1471A08700494B85 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CD31471A08700494B85 /* MainMenu.cpp */; };
 		47536CEA1471A65B00494B85 /* libboost_thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47536CE91471A65B00494B85 /* libboost_thread.a */; };
-		4767C8C51472E5B8001486D7 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4767C8C41472E5B8001486D7 /* libcurl.dylib */; };
 		4767C96A1472EC91001486D7 /* libPlaytomic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4767C9691472EC91001486D7 /* libPlaytomic.a */; };
+		47C9817F14744337004BBEAF /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C9817E14744337004BBEAF /* libcurl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +50,7 @@
 		47536CE91471A65B00494B85 /* libboost_thread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_thread.a; path = ../Dependencies/macos/Boost/lib/debug/libboost_thread.a; sourceTree = "<group>"; };
 		4767C8C41472E5B8001486D7 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		4767C9691472EC91001486D7 /* libPlaytomic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPlaytomic.a; path = ../Playtomic/Debug/libPlaytomic.a; sourceTree = "<group>"; };
+		47C9817E14744337004BBEAF /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../Dependencies/macos/currlib/lib/debug/libcurl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47C9817F14744337004BBEAF /* libcurl.a in Frameworks */,
 				4767C96A1472EC91001486D7 /* libPlaytomic.a in Frameworks */,
-				4767C8C51472E5B8001486D7 /* libcurl.dylib in Frameworks */,
 				47536CEA1471A65B00494B85 /* libboost_thread.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +70,7 @@
 		47536CA814719EAD00494B85 = {
 			isa = PBXGroup;
 			children = (
+				47C9817E14744337004BBEAF /* libcurl.a */,
 				4767C9691472EC91001486D7 /* libPlaytomic.a */,
 				4767C8C41472E5B8001486D7 /* libcurl.dylib */,
 				47536CE91471A65B00494B85 /* libboost_thread.a */,
@@ -131,6 +133,9 @@
 /* Begin PBXProject section */
 		47536CAA14719EAD00494B85 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 47536CAD14719EAD00494B85 /* Build configuration list for PBXProject "demo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -172,13 +177,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
+					_Debug,
+					x86_64,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -189,6 +194,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRIPFLAGS = "i386 x86_64";
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -199,8 +206,9 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = x86_64;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -208,16 +216,22 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
+				STRIPFLAGS = "i386 x86_64";
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
 		47536CBE14719EAD00494B85 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				HEADER_SEARCH_PATHS = (
+					../Tools,
 					"../Dependencies/macos/Boost/**",
 					"../Dependencies/macos/currlib/**",
-					"../**",
+					../,
+					"../json/**",
+					"../CurlWrap/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"../Dependencies/macos/Boost/lib/debug/**",
@@ -227,18 +241,25 @@
 					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/debug\"",
 					"\"$(SRCROOT)/../Playtomic/Lib/debug\"",
 					"\"$(SRCROOT)/../Playtomic/Debug\"",
+					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
 		47536CBF14719EAD00494B85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				HEADER_SEARCH_PATHS = (
+					../Tools,
 					"../Dependencies/macos/Boost/**",
 					"../Dependencies/macos/currlib/**",
-					"../**",
+					../,
+					"../json/**",
+					"../CurlWrap/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"../Dependencies/macos/Boost/lib/debug/**",
@@ -248,8 +269,11 @@
 					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/debug\"",
 					"\"$(SRCROOT)/../Playtomic/Lib/debug\"",
 					"\"$(SRCROOT)/../Playtomic/Debug\"",
+					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};

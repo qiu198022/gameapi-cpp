@@ -4,8 +4,9 @@
 #include <string>
 #include <list>
 #include <queue>
-#include "../Tools/timer.h"
 #include "PlaytomicDefines.h"
+
+class CTimer;
 
 namespace Playtomic
 {
@@ -14,7 +15,7 @@ namespace Playtomic
 * Basic Analytics logs
 * Events are sent in batches each time the play timer updates (every 30 seconds after the first minute).
 */
-class DllExport CLog : public CTimerDelegate
+class DllExport CLog
 {
 public:
 	friend class CTimer;
@@ -140,7 +141,7 @@ private:
 	std::string		mBaseUrl;
 	bool			mEnable;
 	
-	CTimer						mTimer;
+	CTimer*						mTimer;
 	int							mPings;
 	int							mViews;
 	int							mPlays;
