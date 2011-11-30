@@ -142,6 +142,7 @@
     <ClCompile Include="CPlayerLevels.cpp" />
     <ClCompile Include="CPlaytomic.cpp" />
     <ClCompile Include="CScore.cpp" />
+    <ClCompile Include="DataStructures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CurlWrap\CConnectionInterface.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="CPlaytomic.h" />
     <ClInclude Include="CPlaytomicDelegate.h" />
     <ClInclude Include="CScore.h" />
+    <ClInclude Include="DataStructures.h" />
     <ClInclude Include="PlaytomicDefines.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

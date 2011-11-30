@@ -2,6 +2,7 @@
 
 #include "Playtomic/CPlaytomic.h"
 
+#include "Playtomic/DataStructures.h"
 #include <iostream>
 #include <string>
 #include "MainMenu.h"
@@ -375,7 +376,10 @@ void CDataMenu::LevelRangedFinish( CPlaytomicResponsePtr& response )
 	{
 		FData value;
 		value = response->ResponseData().get("Value",value);
-		std::cout << "level ranged = " << value.asString() << std::endl; 
+
+		Playtomic::CRangedMetric metricData(value);
+		int regCount = metricData.mEntries.size();
+		//std::cout << "level ranged = " << value.asString() << std::endl; 
 	}
 	else
 	{

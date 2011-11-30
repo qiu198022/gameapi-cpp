@@ -78,6 +78,9 @@
     <ClCompile Include="..\json\src\json_writer.cpp">
       <Filter>Json</Filter>
     </ClCompile>
+    <ClCompile Include="DataStructures.cpp">
+      <Filter>Playtomic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CData.h">
@@ -174,6 +177,9 @@
       <Filter>Json</Filter>
     </ClInclude>
     <ClInclude Include="PlaytomicDefines.h">
+      <Filter>Playtomic</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructures.h">
       <Filter>Playtomic</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		472FFEC0147890B400FB5878 /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 472FFEBF147890B400FB5878 /* DataStructures.h */; };
+		472FFEC1147890B400FB5878 /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 472FFEBF147890B400FB5878 /* DataStructures.h */; };
+		472FFEC314789F1A00FB5878 /* DataStructures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 472FFEC214789F1A00FB5878 /* DataStructures.cpp */; };
+		472FFEC414789F1A00FB5878 /* DataStructures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 472FFEC214789F1A00FB5878 /* DataStructures.cpp */; };
 		47536C6E147195C500494B85 /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
 		47536C6F147195C500494B85 /* CConnectionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C20147195C500494B85 /* CConnectionInterface.h */; };
 		47536C70147195C500494B85 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C21147195C500494B85 /* Common.h */; };
@@ -118,6 +122,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		472FFEBF147890B400FB5878 /* DataStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStructures.h; sourceTree = "<group>"; };
+		472FFEC214789F1A00FB5878 /* DataStructures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataStructures.cpp; sourceTree = "<group>"; };
 		47536C171471954600494B85 /* libPlaytomic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPlaytomic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47536C1F147195C500494B85 /* CConnectionInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CConnectionInterface.cpp; sourceTree = "<group>"; };
 		47536C20147195C500494B85 /* CConnectionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CConnectionInterface.h; sourceTree = "<group>"; };
@@ -290,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				47536C60147195C500494B85 /* PlaytomicDefines.h */,
+				472FFEBF147890B400FB5878 /* DataStructures.h */,
+				472FFEC214789F1A00FB5878 /* DataStructures.cpp */,
 				47536C3D147195C500494B85 /* CData.cpp */,
 				47536C3E147195C500494B85 /* CData.h */,
 				47536C3F147195C500494B85 /* CGameVars.cpp */,
@@ -416,6 +424,7 @@
 				47536C9F147195C500494B85 /* MD5.h in Headers */,
 				47536CA1147195C500494B85 /* StringHelper.h in Headers */,
 				47536CA3147195C500494B85 /* timer.h in Headers */,
+				472FFEC0147890B400FB5878 /* DataStructures.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +465,7 @@
 				47C9828314744635004BBEAF /* MD5.h in Headers */,
 				47C9828414744635004BBEAF /* StringHelper.h in Headers */,
 				47C9828514744635004BBEAF /* timer.h in Headers */,
+				472FFEC1147890B400FB5878 /* DataStructures.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +589,7 @@
 				47536C9E147195C500494B85 /* MD5.cpp in Sources */,
 				47536CA0147195C500494B85 /* StringHelper.cpp in Sources */,
 				47536CA2147195C500494B85 /* timer.cpp in Sources */,
+				472FFEC314789F1A00FB5878 /* DataStructures.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +618,7 @@
 				47C9826014744635004BBEAF /* MD5.cpp in Sources */,
 				47C9826114744635004BBEAF /* StringHelper.cpp in Sources */,
 				47C9826214744635004BBEAF /* timer.cpp in Sources */,
+				472FFEC414789F1A00FB5878 /* DataStructures.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,13 +716,15 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				EXECUTABLE_PREFIX = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = (
 					"./Dependencies/macos/currlib/**",
 					"./Dependencies/macos/BoostIos/**",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = PlaytomicIOS;
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos;
 				SYMROOT = ./Playtomic;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -725,12 +739,14 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				EXECUTABLE_PREFIX = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "_OPENBSD_=1";
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_VERSION = 4.2;
 				HEADER_SEARCH_PATHS = (
 					"./Dependencies/macos/currlib/**",
 					"./Dependencies/macos/BoostIos/**",
 				);
 				PRODUCT_NAME = PlaytomicIOS;
-				SDKROOT = iphoneos5.0;
+				SDKROOT = iphoneos;
 				SYMROOT = ./Playtomic;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv6 armv7 i386";
