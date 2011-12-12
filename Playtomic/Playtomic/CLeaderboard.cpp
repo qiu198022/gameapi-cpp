@@ -18,7 +18,7 @@ void CLeaderboard::SetDelegate(ILeaderboardDelegate* targetDelegate)
 	mDelegate = targetDelegate;
 }
 
-CPlaytomicResponsePtr CLeaderboard::SaveTable( const std::string& tableName, const CScore& score, bool highest, bool allowDuplicates )
+CPlaytomicResponsePtr CLeaderboard::Save( const std::string& tableName, const CScore& score, bool highest, bool allowDuplicates )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -60,7 +60,7 @@ CPlaytomicResponsePtr CLeaderboard::SaveTable( const std::string& tableName, con
 	return gConnectionInterface->PerformSyncRequest(url.c_str(), &postData);
 }
 
-SSCoreTablePtr CLeaderboard::ListTable( const std::string& tableName, bool highest, const std::string& mode, int page, int perPage,const CustomData& customFilter )
+SSCoreTablePtr CLeaderboard::List( const std::string& tableName, bool highest, const std::string& mode, int page, int perPage,const CustomData& customFilter )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -157,7 +157,7 @@ SSCoreTablePtr CLeaderboard::ListTable( const std::string& tableName, bool highe
 	return returnScores;
 }
 
-SSCoreTablePtr CLeaderboard::SaveAndListTable( const std::string& tableName,
+SSCoreTablePtr CLeaderboard::SaveAndList( const std::string& tableName,
 											const CScore& score, bool highest, 
 											bool allowDuplicates, const std::string& mode,
 											int perPage,const CustomData &customFilter )
@@ -285,7 +285,7 @@ SSCoreTablePtr CLeaderboard::SaveAndListTable( const std::string& tableName,
 
 //async calls
 
-void CLeaderboard::SaveTableAsync( const std::string& tableName, const CScore& score, bool highest, bool allowDuplicates )
+void CLeaderboard::SaveAsync( const std::string& tableName, const CScore& score, bool highest, bool allowDuplicates )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -327,7 +327,7 @@ void CLeaderboard::SaveTableAsync( const std::string& tableName, const CScore& s
 	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::SaveComple),postData);
 }
 
-void CLeaderboard::ListTableAsync( const std::string& tableName, bool highest,
+void CLeaderboard::ListAsync( const std::string& tableName, bool highest,
 	const std::string& mode, int page,
 	int perPage,const  CustomData& customFilter )
 {
@@ -372,7 +372,7 @@ void CLeaderboard::ListTableAsync( const std::string& tableName, bool highest,
 	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CLeaderboard::ListComple),postData);
 }
 
-void CLeaderboard::SaveAndListTableAsync( const std::string& tableName,
+void CLeaderboard::SaveAndListAsync( const std::string& tableName,
 	const CScore& score, bool highest, 
 	bool allowDuplicates, const std::string& mode,
 	int perPage,const CustomData& customFilter )

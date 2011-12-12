@@ -2,6 +2,9 @@
 #define __CPLAYTOMIC_RESPONSE_H__
 
 #include "Common.h"
+#ifdef __ANDROID__
+#include "boostFix.h"
+#endif
 #include "boost/shared_ptr.hpp"
 
 

@@ -4,7 +4,16 @@ namespace Playtomic
 {
 
 
-CLevel::CLevel( const std::string& name, const std::string& playerName, const std::string& playerId, const std::string& data )
+    CLevel::CLevel( const std::string& name, const std::string& playerName, 
+                   const std::string& playerId, const std::string& data ) : 
+    mLevelId(" "),
+    mPlayerId(" "),
+    mPlayerName(" "),
+    mPlayerSource(" "),
+    mName(" "),
+    mData(" "),
+    mThum(" "),
+    mRelativeDate(" ")
 {
 	mName = name;
 	mPlayerName = playerName;
@@ -15,7 +24,16 @@ CLevel::CLevel( const std::string& name, const std::string& playerName, const st
 CLevel::CLevel( const std::string& name, const std::string& playerName, const std::string& playerId,
 	const std::string& playerSource, const std::string& data,
 	const std::string& thum, int votes, int plays, float rating,
-	int score, const std::string& relativeDate, const CustomData& customData, const std::string& levelID )
+	int score, const std::string& relativeDate, const CustomData& customData,
+               const std::string& levelID )  : 
+    mLevelId(" "),
+    mPlayerId(" "),
+    mPlayerName(" "),
+    mPlayerSource(" "),
+    mName(" "),
+    mData(" "),
+    mThum(" "),
+    mRelativeDate(" ")
 {
 	mName = name;
 	mPlayerName = playerName;

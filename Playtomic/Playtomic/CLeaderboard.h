@@ -58,7 +58,7 @@ public:
 
 	*	@return					Playtomic response with the error code if something went wrong
 	*/
-	CPlaytomicResponsePtr SaveTable(const std::string& tableName,
+	CPlaytomicResponsePtr Save(const std::string& tableName,
 								 const CScore& score,
 								 bool highest,
 								 bool allowDuplicates);
@@ -76,7 +76,7 @@ public:
 	*	
 	*	@return		SScoreTable struct with the list of scores or the error code if it fails
 	*/
-	SSCoreTablePtr	ListTable(const std::string& tableName,
+	SSCoreTablePtr	List(const std::string& tableName,
 								  bool highest,
 								  const std::string& mode,
 								  int	page,
@@ -103,7 +103,7 @@ public:
 	*
 	*	@return		SScoreTable struct with the list of scores or the error code if it fails
 	*/
-	SSCoreTablePtr	SaveAndListTable(const std::string& tableName,
+	SSCoreTablePtr	SaveAndList(const std::string& tableName,
 									const CScore& score,
 									bool highest,
 									bool allowDuplicates,
@@ -121,7 +121,7 @@ public:
 								your game so you specify the mode.
 	*	@param allowDuplicate	If you don't allow duplicates new, worse scores will not be saved by a player.
 	*/
-	void	SaveTableAsync(const std::string& tableName,
+	void	SaveAsync(const std::string& tableName,
 		const CScore& score,
 		bool highest,
 		bool allowDuplicates);
@@ -137,7 +137,7 @@ public:
 	*	@param perPage		The number of scores to return
 	*	@param customFilter Filter by scores with specific CustomData
 	*/
-	void	ListTableAsync(const std::string& tableName,
+	void	ListAsync(const std::string& tableName,
 		bool highest,
 		const std::string& mode,
 		int	page,
@@ -162,7 +162,7 @@ public:
 	*	@param perPage		The number of scores to return
 	*	@param customFilter Filter by scores with specific CustomData
 	*/
-	void	SaveAndListTableAsync(const std::string& tableName,
+	void	SaveAndListAsync(const std::string& tableName,
 		const CScore& score,
 		bool highest,
 		bool allowDuplicates,

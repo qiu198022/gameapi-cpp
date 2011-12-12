@@ -64,7 +64,7 @@ public:
 	*	@param rating		the new level rating from 1 to 10
 	*	@return	a CPlaytomicResponse check the documentation about error codes
 	*/
-	CPlaytomicResponsePtr	RateLevelId(const std::string& levelId, int rating);
+	CPlaytomicResponsePtr	RateLevel(const std::string& levelId, int rating);
 
 	/**
 	*	Listing levels can be done by popular or newest, with optional filtering
@@ -92,7 +92,7 @@ public:
 	// response to the callback instead of the return value
 	// take care to set the delegate to null if you need to delete it after doing a request
 	void	LoadLevelAsync(const std::string& levelId);
-	void	RateLevelIdAsync(const std::string& levelId, int rating);
+	void	RateLevelAsync(const std::string& levelId, int rating);
 	void	ListAsync(const std::string& mode, int page, int perPage,
 					bool includeDAta, bool includeThumbs,
 					const CustomData& customFilter);
@@ -101,7 +101,7 @@ public:
 	//internal delegates for the connection interface 
 	// the process the request response and calls the current delegate
 	void	LoadLevelComplete(CPlaytomicResponsePtr& response);
-	void	RateLevelIdComplete(CPlaytomicResponsePtr& response);
+	void	RateLevelComplete(CPlaytomicResponsePtr& response);
 	void	ListAsyncComplete(CPlaytomicResponsePtr& response);
 	void	SaveLevelComplete(CPlaytomicResponsePtr& response);
 private:

@@ -22,6 +22,7 @@ public:
 	*/
 	// empty constructor should call SetDefaultValues before commit the score
 	CScore() {}
+    ~CScore() {}
 	/**
 	*	@param name		player name
 	*	@param points	player score
@@ -51,7 +52,7 @@ private:
 	int				mPoints;
 	//TODO add date
 	std::string		mRelativeDate;
-	CustomData			mCustomData;
+	CustomData		mCustomData;
 	long			mRank;
 };
 

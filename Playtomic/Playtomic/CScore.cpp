@@ -16,14 +16,14 @@ CScore::CScore(const std::string& name,
 	mName = name;
 }
 
-CScore::CScore(const std::string& name, int points, const CustomData& customData)
+CScore::CScore(const std::string& name, int points, const CustomData& customData) : mRelativeDate(" ")
 {	
 	mCustomData = customData;
 	mPoints = points;
 	mName = name;
 }
 
-CScore::CScore(const std::string& name, int points)
+    CScore::CScore(const std::string& name, int points) : mRelativeDate(" ")
 {
 	mName = name;
 	mPoints = points;

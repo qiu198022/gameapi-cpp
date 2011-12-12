@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlaytomicTest</string>
+    <string name="log_play">Log Play</string>
+    <string name="log_custom_metric">Log Custom Metric</string>
+    <string name="log_custom_metric_u">Log Custom Metric (U)</string>
+    <string name="log_custom_metric_ng">Log Custom Metric (NG)</string>
+    <string name="log_level_counter_metric">Log Level Counter Metric</string>
+    <string name="log_level_average_metric">Log Level Average Metric</string>
+    <string name="log_level_ranged_metric">Log Level Ranged Metric</string>
+    <string name="log_level_ranged_metric_u">Log Level Ranged Metric (U)</string>
+    <string name="log_level_average_metric_u">Log Level Average Metric (U)</string>
+    <string name="log_level_counter_metric_u">Log Level Counter Metric (U)</string>
+    <string name="load_game_vars">Load Game Vars</string>
+    <string name="geoip">GeoIP</string>
+	<string name="leaderboard_save">Leaderboard Save</string>
+    <string name="leaderboard_list">Leaderboard List</string>
+    <string name="leaderboard_save_and_list">Leaderboard Save and List</string> 
+    <string name="private_leaderboard_save">Private Leaderboard Save</string>
+    <string name="private_leaderboard_load">Private Leaderboard Load</string>
+    <string name="level_save">Level Save</string>
+    <string name="level_list">Level List</string>
+    <string name="level_load">Level Load</string>
+    <string name="level_rate">Level Rate</string>
+	<string name="load_custom_data">Load Custom Data</string>
+    <string name="load_views">Load Views</string>
+    <string name="load_plays">Load Plays</string>
+    <string name="load_playtime">Load Playtime</string>
+    <string name="load_counters">Load Counters</string>
+    <string name="freeze">Freeze</string>
+    <string name="unfreeze">Unfreeze</string>
+</resources>

@@ -4,6 +4,7 @@
 class CTimer;
 #include <vector>
 #include <list>
+#include <cstring>
 #include "FastDelegate.h"
 
 typedef fastdelegate::FastDelegate1<CTimer*> TimerDelegate;

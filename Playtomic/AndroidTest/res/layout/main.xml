@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+    <ScrollView android:id="@+id/ScrollView01"
+android:layout_width="fill_parent"
+android:layout_height="210px">
+        <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout1" android:layout_height="match_parent" android:orientation="vertical">
+            <Button android:id="@+id/cmdLogPlay" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/log_play"></Button>
+            <Button android:id="@+id/cmdLogCustomMetric" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/log_custom_metric"></Button>
+            <Button android:id="@+id/cmdLogLevelCounterMetric" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/log_level_counter_metric"></Button>
+            <Button android:id="@+id/cmdLogLevelAverageMetric" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/log_level_average_metric"></Button>
+            <Button android:id="@+id/cmdLogLevelRangedMetric" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/log_level_ranged_metric"></Button>
+            <Button android:id="@+id/cmdLoadGameVars" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/load_game_vars"></Button>
+            <Button android:id="@+id/cmdGeoIP" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/geoip"></Button>
+            <Button android:id="@+id/cmdLeaderboardSave" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/leaderboard_save"></Button>
+            <Button android:id="@+id/cmdLeaderboardList" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/leaderboard_list"></Button>
+            <Button android:id="@+id/cmdLeaderboardSaveAndList" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/leaderboard_save_and_list"></Button> 
+            <Button android:id="@+id/cmdLevelSave" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/level_save"></Button>
+            <Button android:id="@+id/cmdLevelList" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/level_list"></Button>
+            <Button android:id="@+id/cmdLevelLoad" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/level_load"></Button>
+            <Button android:id="@+id/cmdLevelRate" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/level_rate"></Button>
+            <Button android:id="@+id/cmdLoadViews" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/load_views"></Button>
+            <Button android:id="@+id/cmdLoadPlays" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/load_plays"></Button>
+            <Button android:id="@+id/cmdLoadPlaytime" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/load_playtime"></Button>
+        </LinearLayout>
+    
+    </ScrollView>
+    <EditText android:layout_width="match_parent" android:id="@+id/txLog" android:layout_height="match_parent" android:inputType="textMultiLine"></EditText>
+</LinearLayout>

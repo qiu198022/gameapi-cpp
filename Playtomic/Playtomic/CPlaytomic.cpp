@@ -7,6 +7,9 @@
 #include "CLeaderboard.h"
 #include "CPlayerLevels.h"
 #include "CData.h"
+#ifdef __ANDROID__
+#include "boostFix.h"
+#endif
 #include "boost/timer.hpp"
 #include "boost/thread.hpp"
 

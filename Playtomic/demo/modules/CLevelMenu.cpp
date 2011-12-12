@@ -151,7 +151,7 @@ void CLevelMenu::ProcessOption(int optionId)
 		std::cout << "rating:" << std::endl;
 		std::cin >> rating;
 
-		response = Playtomic::gPlaytomic->PlayerLevels()->RateLevelId(name,rating);
+		response = Playtomic::gPlaytomic->PlayerLevels()->RateLevel(name,rating);
 
 		if(response->ResponseSucceded())
 		{
@@ -196,7 +196,7 @@ void CLevelMenu::ProcessOption(int optionId)
 		std::cout << "rating:" << std::endl;
 		std::cin >> rating;
 
-		Playtomic::gPlaytomic->PlayerLevels()->RateLevelIdAsync(name,rating);
+		Playtomic::gPlaytomic->PlayerLevels()->RateLevelAsync(name,rating);
 		mWaitingForAsync = true;
 		break;
 	case 0:

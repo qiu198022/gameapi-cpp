@@ -81,7 +81,7 @@ void CSCoreMenu::ProcessOption(int optionId)
 
 		filter.insert(std::make_pair("test1","test2"));
 
-		response = Playtomic::gPlaytomic->Leaderboards()->SaveTable("Demo Table", scoreData,true,true);
+		response = Playtomic::gPlaytomic->Leaderboards()->Save("Demo Table", scoreData,true,true);
 		if(response->ResponseSucceded())
 		{
 			std::cout << "new score entry success!" << std::endl;
@@ -100,7 +100,7 @@ void CSCoreMenu::ProcessOption(int optionId)
 
 		scoreData.SetDefaultValues(name, score);
 
-		table = Playtomic::gPlaytomic->Leaderboards()->SaveAndListTable
+		table = Playtomic::gPlaytomic->Leaderboards()->SaveAndList
 			("Demo Table", scoreData,true,true,"last7days",10 , filter);
 		if (table->sSucceded)
 		{
@@ -121,7 +121,7 @@ void CSCoreMenu::ProcessOption(int optionId)
 				{
 					std::cout << std::endl << std::endl << "scoretable" 
 						<< " page: "<< i << std::endl << std::endl;
-					table = Playtomic::gPlaytomic->Leaderboards()->ListTable("Test Table2", false, "last7days",i + 1  , 10, filter);
+					table = Playtomic::gPlaytomic->Leaderboards()->List("Test Table2", false, "last7days",i + 1  , 10, filter);
 					it = table->sScoreList.begin();
 					for (; it != table->sScoreList.end(); it++)
 					{
@@ -139,7 +139,7 @@ void CSCoreMenu::ProcessOption(int optionId)
 		}
 		break;
 	case 3:
-		table = Playtomic::gPlaytomic->Leaderboards()->ListTable
+		table = Playtomic::gPlaytomic->Leaderboards()->List
 			("Demo Table",true,"last7days", 1,10 , filter);
 		if (table->sSucceded)
 		{
@@ -160,7 +160,7 @@ void CSCoreMenu::ProcessOption(int optionId)
 				{
 					std::cout << std::endl << std::endl << "scoretable" 
 						<< " page: "<< i << std::endl << std::endl;
-					table = Playtomic::gPlaytomic->Leaderboards()->ListTable("Test Table2", true, "last7days",i + 1  , 10, filter);
+					table = Playtomic::gPlaytomic->Leaderboards()->List("Test Table2", true, "last7days",i + 1  , 10, filter);
 					it = table->sScoreList.begin();
 					for (; it != table->sScoreList.end(); it++)
 					{
@@ -181,7 +181,7 @@ void CSCoreMenu::ProcessOption(int optionId)
 		scoreData.SetDefaultValues(name, score);
 
 		Playtomic::gPlaytomic->Leaderboards()->SetDelegate(this);
-		Playtomic::gPlaytomic->Leaderboards()->SaveTableAsync("Demo Table", scoreData,true,true);
+		Playtomic::gPlaytomic->Leaderboards()->SaveAsync("Demo Table", scoreData,true,true);
 		mWaitingForAsync = true;
 		break;
 	case 5:
@@ -193,13 +193,13 @@ void CSCoreMenu::ProcessOption(int optionId)
 
 		scoreData.SetDefaultValues(name, score);
 
-		Playtomic::gPlaytomic->Leaderboards()->SaveAndListTableAsync
+		Playtomic::gPlaytomic->Leaderboards()->SaveAndListAsync
 			("Demo Table", scoreData,true,true,"last7days",10 , filter);
 		mWaitingForAsync = true;
 		break;
 	case 6:
 		Playtomic::gPlaytomic->Leaderboards()->SetDelegate(this);
-		Playtomic::gPlaytomic->Leaderboards()->ListTableAsync
+		Playtomic::gPlaytomic->Leaderboards()->ListAsync
 			("Demo Table",true,"last7days", 1,10 , filter);
 		mWaitingForAsync = true;
 		break;

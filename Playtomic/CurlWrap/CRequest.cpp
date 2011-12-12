@@ -2,9 +2,23 @@
 #include "CPost.h"
 #include <cstring>
 
+#if defined(__ANDROID__) && defined(_DEBUG_ANDROID_CONNECTION_)
+#include <android/log.h>
+#define  LOG_TAG    "playtomicTest"
+
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+#endif
+
 size_t WriteMemory(void *contents, size_t size, size_t nmemb, void* userp)
 {
 	size_t realsize = size * nmemb;
+#if defined(__ANDROID__) && defined(_DEBUG_ANDROID_CONNECTION_)
+    LOGI("copy data Size= %d nmemb = %d", size, nmemb);
+    if(realsize > 0)
+    {
+        LOGI("text = %s", (char*)contents);
+    }
+#endif
 	SRequestResult *mem =(SRequestResult*)userp;
 
 	SRequestResult newBuffer;

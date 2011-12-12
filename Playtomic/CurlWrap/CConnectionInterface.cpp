@@ -2,9 +2,11 @@
 #include "CPlaytomicResponse.h"
 #include "CRequest.h"
 #include "../json/include/json.h"
+#ifdef __ANDROID__
+#include "boostFix.h"
+#endif
 #include "boost/shared_ptr.hpp"
 #include "boost/thread.hpp"
-
 
 struct SThreadedRequest
 {
@@ -18,13 +20,15 @@ void SThreadedRequest::operator()()
 {
 	CRequest request;
 	SRequestResult data;
+
 	request.CreateQuery(sUrl.c_str());
+
 	if(sPost.get() != NULL)
 	{
+
 		request.SetPostData(sPost.get());
 	}
 	ERequestResult res = request.Perform(&data);
-
 
 	if(res != e_Ok)
 	{
@@ -42,6 +46,7 @@ void SThreadedRequest::operator()()
 		sTargetDelegate(rtn);
 		return;
 	}
+
 	Json::Reader parser;
 	FData root;
 	bool parserResult = parser.parse(data.data,root,false);
@@ -129,8 +134,6 @@ CPlaytomicResponsePtr CConnectionInterface::PerformSyncRequest(const char* url, 
 		request.SetPostData(postData);
 	}
 	ERequestResult res = request.Perform(&data);
-
-
 	if(res != e_Ok)
 	{
 		return ( CPlaytomicResponsePtr(new CPlaytomicResponse(1)));
@@ -140,6 +143,7 @@ CPlaytomicResponsePtr CConnectionInterface::PerformSyncRequest(const char* url, 
 	{
 		return CPlaytomicResponsePtr(new CPlaytomicResponse(true, 0));
 	}
+
 	Json::Reader parser;
 	FData root;
 	bool parserResult = parser.parse(data.data,root,false);

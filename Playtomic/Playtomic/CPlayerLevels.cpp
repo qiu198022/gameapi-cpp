@@ -35,7 +35,7 @@ SLevelListPtr CPlayerLevels::LoadLevel( const std::string& levelId )
 	return returnList;
 }
 
-CPlaytomicResponsePtr CPlayerLevels::RateLevelId( const std::string& levelId, int rating )
+CPlaytomicResponsePtr CPlayerLevels::RateLevel( const std::string& levelId, int rating )
 {
 	if(rating > 10 || rating < 1)
     {
@@ -240,7 +240,7 @@ void CPlayerLevels::LoadLevelAsync( const std::string& levelId )
 	gConnectionInterface->PerformAsyncRequest(url.c_str(),fastdelegate::MakeDelegate(this, &CPlayerLevels::LoadLevelComplete));
 }
 
-void CPlayerLevels::RateLevelIdAsync( const std::string& levelId, int rating )
+void CPlayerLevels::RateLevelAsync( const std::string& levelId, int rating )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"%d",gPlaytomic->GameId());
@@ -249,7 +249,7 @@ void CPlayerLevels::RateLevelIdAsync( const std::string& levelId, int rating )
 	sprintf_s(IdString,49,"%d", rating);
 	url += IdString;
 
-	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlayerLevels::RateLevelIdComplete));
+	gConnectionInterface->PerformAsyncRequest(url.c_str(), fastdelegate::MakeDelegate(this, &CPlayerLevels::RateLevelComplete));
 }
 
 void CPlayerLevels::ListAsync( const std::string& mode, 
@@ -360,7 +360,7 @@ void CPlayerLevels::LoadLevelComplete( CPlaytomicResponsePtr& response )
 	mDelegate->LoadLevelComplete(returnList);
 }
 
-void CPlayerLevels::RateLevelIdComplete( CPlaytomicResponsePtr& response )
+void CPlayerLevels::RateLevelComplete( CPlaytomicResponsePtr& response )
 {
 	if(mDelegate == NULL)
 	{

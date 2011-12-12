@@ -4,7 +4,7 @@
 #include <map>
 #include "CPlaytomicResponse.h"
 
-#if defined (_LINUX_) || defined (_OPENBSD_)
+#if defined (_LINUX_) || defined (_OPENBSD_) || (__ANDROID__)
 #include <cstdio>
 #define	sprintf_s(buffer, buffer_size, stringbuffer, ...) (sprintf(buffer, stringbuffer, __VA_ARGS__))
 #endif
