@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		47E397091497CC1F0099DF5E /* createPrebuild */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 47E3970A1497CC1F0099DF5E /* Build configuration list for PBXAggregateTarget "createPrebuild" */;
+			buildPhases = (
+				47E3970D1497CC250099DF5E /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = createPrebuild;
+			productName = createPrebuild;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		47536C6E147195C500494B85 /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
 		47536C6F147195C500494B85 /* CConnectionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C20147195C500494B85 /* CConnectionInterface.h */; };
@@ -527,6 +541,7 @@
 			targets = (
 				47536C161471954600494B85 /* Playtomic */,
 				47C9824C14744635004BBEAF /* PlaytomicIOS */,
+				47E397091497CC1F0099DF5E /* createPrebuild */,
 			);
 		};
 /* End PBXProject section */
@@ -557,6 +572,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# name and build location\nFRAMEWORK_NAME=${PROJECT_NAME}\nFRAMEWORK_BUILD_PATH=\"${PROJECT_DIR}/build/Framework\"\n\n# these never change\nFRAMEWORK_VERSION=A\nFRAMEWORK_CURRENT_VERSION=1\nFRAMEWORK_COMPATIBILITY_VERSION=1\n\n# Clean any existing framework that might be there\nif [ -d \"$FRAMEWORK_BUILD_PATH\" ]\nthen\necho \"Framework: Cleaning framework...\"\nrm -rf \"$FRAMEWORK_BUILD_PATH\"\nfi\n\n# Build the canonical Framework bundle directory structure\necho \"Framework: Setting up directories...\"\nFRAMEWORK_DIR=$FRAMEWORK_BUILD_PATH/$FRAMEWORK_NAME.framework\nmkdir -p $FRAMEWORK_DIR\nmkdir -p $FRAMEWORK_DIR/Versions\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Resources\nmkdir -p $FRAMEWORK_DIR/Versions/$FRAMEWORK_VERSION/Headers\n\necho \"Framework: Creating symlinks...\"\nln -s $FRAMEWORK_VERSION $FRAMEWORK_DIR/Versions/Current\nln -s Versions/Current/Headers $FRAMEWORK_DIR/Headers\nln -s Versions/Current/Resources $FRAMEWORK_DIR/Resources\nln -s Versions/Current/$FRAMEWORK_NAME $FRAMEWORK_DIR/$FRAMEWORK_NAME\n\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\n\n# combine lib files for various platforms into one\necho \"Framework: Creating library...\"\nlipo -create \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\" -o \"$FRAMEWORK_DIR/Versions/Current/$FRAMEWORK_NAME\"\n\necho \"Framework: Copying assets into current version...\"\ncp ${SRCROOT}/Playtomic/*.h $FRAMEWORK_DIR/Headers/\ncp ${SRCROOT}/Tools/*.h $FRAMEWORK_DIR/Headers/\ncp ${SRCROOT}/CurlWrap/*.h $FRAMEWORK_DIR/Headers/\ncp ${SRCROOT}/json/include/*.h $FRAMEWORK_DIR/Headers/";
+		};
+		47E3970D1497CC250099DF5E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "XCODEBUILD_PATH=/Developer/usr/bin\nXCODEBUILD=$XCODEBUILD_PATH/xcodebuild\n\necho \"set out dir ${SRCROOT}\" \nOUT_DIR=${SRCROOT}/prebuilt\necho \"OUT_DIR = $OUT_DIR\"\n\n# Clean any existing framework that might be there\nif [ -d \"$OUT_DIR\" ]\nthen\necho \"Framework: Cleaning framework...\"\nrm -rf \"$OUT_DIR\"\nfi\n\n# Build the canonical Framework bundle directory structure\necho \"Framework: Setting up directories...\"\n\nmkdir -p $OUT_DIR\nmkdir -p $OUT_DIR/macos\nmkdir -p $OUT_DIR/iosFramework\nmkdir -p $OUT_DIR/macos/lib/${CONFIGURATION}\nmkdir -p $OUT_DIR/macos/\U0010Playtomic\nmkdir -p $OUT_DIR/macos/json\nmkdir -p $OUT_DIR/macos/json/include\nmkdir -p $OUT_DIR/macos/CurlWrap\nmkdir -p $OUT_DIR/macos/Tools\necho \"Start Universal Playtomic Generation\"\n\necho \"Step 1 : build frameworks\"\n$XCODEBUILD -target \"Playtomic\"  -configuration ${CONFIGURATION} clean build \n$XCODEBUILD -target \"PlaytomicIOS\" -configuration ${CONFIGURATION} clean build \n\n\necho \"copy files\"\n\ncp ${SRCROOT}/Playtomic/*.h $OUT_DIR/macos/\U0010Playtomic/\ncp $SRCROOT/json/include/*.h $OUT_DIR/macos/json/include/\ncp $SRCROOT/CurlWrap/*.h $OUT_DIR/macos/CurlWrap/\ncp $SRCROOT/Tools/*.h $OUT_DIR/macos/Tools/\ncp -r $SRCROOT/build/Framework/Playtomic.framework $OUT_DIR/iosFramework/\ncp $SRCROOT/Playtomic/${CONFIGURATION}/libPlaytomic.a $OUT_DIR/macos/lib/${CONFIGURATION}/";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -747,6 +775,20 @@
 			};
 			name = Release;
 		};
+		47E3970B1497CC1F0099DF5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		47E3970C1497CC1F0099DF5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -776,6 +818,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		47E3970A1497CC1F0099DF5E /* Build configuration list for PBXAggregateTarget "createPrebuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47E3970B1497CC1F0099DF5E /* Debug */,
+				47E3970C1497CC1F0099DF5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
