@@ -67,8 +67,8 @@ public:
 	*	Constructor used by CLeaderboard to initialize the score with the Playtomic generated
 	*	information (relative date, rank)
 	*/
-	CScore(const std::string& name, int points,
-		std::string& relativeDate, const CustomData& customData, long rank );
+	CScore(const std::string& name, int points,const std::string& date,
+		const std::string& relativeDate, const CustomData& customData, long rank );
 
 	void				SetDefaultValues(const std::string& name, int points);
 
@@ -76,6 +76,7 @@ public:
 	int					GetPoints() const ;
 	long				GetRank() const ;
 	const std::string&	GetRelativeDate() const ;
+    const std::string&  GetDate() const;
 	const CustomData&	GetCustomData() const;
 	const std::string&	GetCustomValue(const std::string& key) const;
 private:
@@ -83,6 +84,7 @@ private:
 	int				mPoints;
 	//TODO add date
 	std::string		mRelativeDate;
+    std::string     mDate;
 	CustomData		mCustomData;
 	long			mRank;
 };

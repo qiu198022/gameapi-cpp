@@ -17,5 +17,47 @@
          landmarkName = "SAutoUpdate::operator()()"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "modules/CLevelMenu.cpp"
+         timestampString = "345580001.782275"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "261"
+         endingLineNumber = "261"
+         landmarkName = "CLevelMenu::LevelListComple( Playtomic::SLevelList&amp; result )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CLevel.cpp"
+         timestampString = "345580187.307019"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
+         landmarkName = "CLevel::CLevel( const std::string&amp; name, const std::string&amp; playerName, const std::string&amp; playerId, const std::string&amp; playerSource, const std::string&amp; data, const std::string&amp; thum, int votes, int plays, float rating, int score, const std::string date, const std::string&amp; relativeDate, const CustomData&amp; customData, const std::string&amp; levelID )"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "modules/CScoreMenu.cpp"
+         timestampString = "345580455.225581"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "255"
+         endingLineNumber = "255"
+         landmarkName = "CSCoreMenu::ListTableComple( Playtomic::SSCoreTable&amp; result )"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

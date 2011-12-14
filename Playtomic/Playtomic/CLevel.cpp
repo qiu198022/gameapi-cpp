@@ -44,6 +44,7 @@ namespace Playtomic
     mName(" "),
     mData(" "),
     mThum(" "),
+    mDate(" "),
     mRelativeDate(" ")
 {
 	mName = name;
@@ -54,9 +55,9 @@ namespace Playtomic
 
 CLevel::CLevel( const std::string& name, const std::string& playerName, const std::string& playerId,
 	const std::string& playerSource, const std::string& data,
-	const std::string& thum, int votes, int plays, float rating,
-	int score, const std::string& relativeDate, const CustomData& customData,
-               const std::string& levelID )  : 
+	const std::string& thum, int votes, int plays, float rating, int score,
+               const std::string date, const std::string& relativeDate,
+               const CustomData& customData, const std::string& levelID )  : 
     mLevelId(" "),
     mPlayerId(" "),
     mPlayerName(" "),
@@ -64,6 +65,7 @@ CLevel::CLevel( const std::string& name, const std::string& playerName, const st
     mName(" "),
     mData(" "),
     mThum(" "),
+    mDate(" "),
     mRelativeDate(" ")
 {
 	mName = name;
@@ -76,6 +78,7 @@ CLevel::CLevel( const std::string& name, const std::string& playerName, const st
 	mRating = rating;
 	mScore = score;
 	mRelativeDate = relativeDate;
+    mDate = date;
 	mCustomData = customData;
 	mLevelId = levelID;
 }
@@ -133,6 +136,11 @@ const std::string& CLevel::GetThumbnailUrl() const
 const std::string& CLevel::GetRelativeDate() const
 {
 	return mRelativeDate;
+}
+    
+const std::string& CLevel::GetDate() const
+{
+    return mDate;
 }
 
 std::string CLevel::GetCustomValue( const std::string& key )

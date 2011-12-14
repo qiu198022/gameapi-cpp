@@ -168,6 +168,9 @@ SSCoreTablePtr CLeaderboard::List( const std::string& tableName, bool highest, c
 
 		value = currentScore.get("RDate",value);
 		std::string relativeDate = value.asString();
+        
+        value = currentScore.get("SDate",value);
+        std::string date(value.asString());
 
 		value = currentScore.get("Rank", value);
 		int rank = value.asInt();
@@ -182,7 +185,7 @@ SSCoreTablePtr CLeaderboard::List( const std::string& tableName, bool highest, c
 			customData.insert(std::make_pair((*it).asString(), (*it).asString()));
 		}
 
-		returnScores->sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
+		returnScores->sScoreList.push_back(CScore(userName, points, date, relativeDate, customData, rank));
 	}
 	
 	return returnScores;
@@ -294,6 +297,9 @@ SSCoreTablePtr CLeaderboard::SaveAndList( const std::string& tableName,
 
 		value = currentScore.get("RDate",value);
 		std::string relativeDate = value.asString();
+        
+        value = currentScore.get("SDate",value);
+        std::string date(value.asString());
 
 		value = currentScore.get("Rank", value);
 		int rank = value.asInt();
@@ -308,7 +314,7 @@ SSCoreTablePtr CLeaderboard::SaveAndList( const std::string& tableName,
 			customData.insert(std::make_pair(it.key().asString(), (*it).asString()));
 		}
 
-		returnScores->sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
+		returnScores->sScoreList.push_back(CScore(userName, points, date, relativeDate, customData, rank));
 	}
 
 	return returnScores;
@@ -528,6 +534,9 @@ void CLeaderboard::ListComple( CPlaytomicResponsePtr& response )
 		value = currentScore.get("RDate",value);
 		std::string relativeDate = value.asString();
 
+        value = currentScore.get("SDate",value);
+        std::string date(value.asString());
+        
 		value = currentScore.get("Rank", value);
 		int rank = value.asInt();
 
@@ -541,7 +550,7 @@ void CLeaderboard::ListComple( CPlaytomicResponsePtr& response )
 			customData.insert(std::make_pair((*it).asString(), (*it).asString()));
 		}
 
-		returnScores.sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
+		returnScores.sScoreList.push_back(CScore(userName, points, date, relativeDate, customData, rank));
 	}
 
 	mDelegate->ListTableComple(returnScores);;
@@ -589,6 +598,9 @@ void CLeaderboard::SaveAndListComple( CPlaytomicResponsePtr& response )
 
 		value = currentScore.get("RDate",value);
 		std::string relativeDate = value.asString();
+        
+        value = currentScore.get("SDate",value);
+        std::string date(value.asString());
 
 		value = currentScore.get("Rank", value);
 		int rank = value.asInt();
@@ -603,7 +615,7 @@ void CLeaderboard::SaveAndListComple( CPlaytomicResponsePtr& response )
 			customData.insert(std::make_pair(it.key().asString(), (*it).asString()));
 		}
 
-		returnScores.sScoreList.push_back(CScore(userName, points, relativeDate, customData, rank));
+		returnScores.sScoreList.push_back(CScore(userName, points, date, relativeDate, customData, rank));
 	}
 
 	mDelegate->SaveAndListComple(returnScores);

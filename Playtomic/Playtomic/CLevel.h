@@ -81,7 +81,7 @@ public:
 	CLevel(const std::string& name, const std::string& playerName,
 					const std::string& playerId,const std::string& playerSource,
 					const std::string& data, const std::string& thum,
-					int votes, int plays, float rating, int score,
+                    int votes, int plays, float rating, int score,const std::string date,
 					const std::string& relativeDate, const CustomData& customData,
 					const std::string& levelID);
 
@@ -99,6 +99,7 @@ public:
 	const std::string&	GetData()const;
 	const std::string&	GetThumbnailUrl()const;
 	const std::string&	GetRelativeDate()const;
+    const std::string&  GetDate() const;
 	std::string			GetCustomValue(const std::string& key);
 	const CustomData&	GetCustomData();
 private:
@@ -114,6 +115,7 @@ private:
 	float		mRating;
 	int			mScore;
 	//TODO add date
+    std::string mDate;
 	std::string	mRelativeDate;
 	CustomData	mCustomData;
 };

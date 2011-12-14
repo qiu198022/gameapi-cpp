@@ -36,25 +36,27 @@ namespace Playtomic
 
 CScore::CScore(const std::string& name,
 	int points,
-	std::string& relativeDate,
+    const std::string& date,
+	const std::string& relativeDate,
 	const CustomData& customData,
 	long rank )
 {
 	mRank = rank;
 	mCustomData = customData;
+    mDate = date;
 	mRelativeDate = relativeDate;
 	mPoints = points;
 	mName = name;
 }
 
-CScore::CScore(const std::string& name, int points, const CustomData& customData) : mRelativeDate(" ")
+CScore::CScore(const std::string& name, int points, const CustomData& customData) : mRelativeDate(" "), mDate(" ")
 {	
 	mCustomData = customData;
 	mPoints = points;
 	mName = name;
 }
 
-    CScore::CScore(const std::string& name, int points) : mRelativeDate(" ")
+    CScore::CScore(const std::string& name, int points) : mRelativeDate(" "), mDate(" ")
 {
 	mName = name;
 	mPoints = points;
@@ -84,6 +86,11 @@ long CScore::GetRank() const
 const std::string& CScore::GetRelativeDate() const
 {
 	return mRelativeDate;
+}
+    
+const std::string& CScore::GetDate() const
+{
+    return mDate;
 }
 
 const CustomData& CScore::GetCustomData() const

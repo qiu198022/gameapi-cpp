@@ -252,7 +252,7 @@ void CPlayerLevels::AddLevel( const FData& level, const std::string& levelId, st
 	
 	levelList.push_back( CLevel(name, playerName, playerId,
 						playerSource, ldata, lthumb, votes, plays,
-						rating, score, relativeDate, customData, levelId));
+						rating, score, date, relativeDate, customData, levelId));
 }
 
 

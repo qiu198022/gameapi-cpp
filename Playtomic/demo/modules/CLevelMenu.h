@@ -25,8 +25,8 @@ public:
 	virtual void SaveLevelComple(Playtomic::SLevelList& result);
 	virtual void LoadLevelComplete(Playtomic::SLevelList& result);
 private:
-	bool mWaitingForAsync;
-	bool mWriting;
-	bool mWaitToWrite;
+	volatile bool mWaitingForAsync;
+	volatile bool mWriting;
+	volatile bool mWaitToWrite;
 };
 #endif
