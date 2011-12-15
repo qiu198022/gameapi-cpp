@@ -39,9 +39,13 @@
 
 namespace Playtomic
 {
-
+const char sLogBackupFileName[] = "pFailedLogs";
+    
 class DllExport CLogRequest
 {
+    enum {
+        e_triesLimit = 3
+    };
 public:
 	CLogRequest(const std::string& url);
 
@@ -54,6 +58,7 @@ private:
 	std::string mData;
 	std::string mTrackUrl;
 	bool		mMustReleaseOnFinished;
+    int         mSendTries;
 };
 
 }

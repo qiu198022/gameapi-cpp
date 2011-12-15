@@ -31,6 +31,7 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "CLogRequest.h"
 #include "../CurlWrap/CConnectionInterface.h"
+#include "../Tools/File.h"
 
 namespace Playtomic
 {
@@ -38,7 +39,8 @@ namespace Playtomic
 CLogRequest::CLogRequest(const std::string& url)
 {
 	mTrackUrl = url;
-	mMustReleaseOnFinished = false;
+	mMustReleaseOnFinished = true;
+    mSendTries = 0;
 }
 
 void CLogRequest::Send( void )
@@ -46,7 +48,7 @@ void CLogRequest::Send( void )
 	std::string fullUrl(mTrackUrl);
 	fullUrl += mData;
 
-	//TODO make it async when implented
+    mSendTries++;
 	gConnectionInterface->PerformAsyncRequest(fullUrl.c_str(), fastdelegate::MakeDelegate(this, &CLogRequest::RequestComplete));
 
 }
@@ -90,9 +92,24 @@ void CLogRequest::MassQueue(std::list<std::string>& queue )
 
 void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
 {
+    if(!response->ResponseSucceded())
+    {
+        if(mSendTries < e_triesLimit)
+        {
+            Send();
+            return;
+        }
+        else
+        {
+            CFile backupData(sLogBackupFileName);
+            backupData.Write(mData);
+        }
+            
+        
+    }
 	if(mMustReleaseOnFinished)
 	{
-		//TODO please change this to a object delete list
+		//TODO please change this to an object delete list
 		delete this;
 	}
 }

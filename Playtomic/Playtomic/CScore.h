@@ -82,7 +82,6 @@ public:
 private:
 	std::string		mName;
 	int				mPoints;
-	//TODO add date
 	std::string		mRelativeDate;
     std::string     mDate;
 	CustomData		mCustomData;

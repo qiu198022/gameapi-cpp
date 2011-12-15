@@ -75,6 +75,10 @@
 		47536CA1147195C500494B85 /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6B147195C500494B85 /* StringHelper.h */; };
 		47536CA2147195C500494B85 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6C147195C500494B85 /* timer.cpp */; };
 		47536CA3147195C500494B85 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
+		477D3E3D149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
+		477D3E3E149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
+		477D3E41149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
+		477D3E42149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
 		47A808C514880A5B00DE454A /* DataStructures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A808C314880A5B00DE454A /* DataStructures.cpp */; };
 		47A808C614880A5B00DE454A /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A808C414880A5B00DE454A /* DataStructures.h */; };
 		47C9824E14744635004BBEAF /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
@@ -205,6 +209,8 @@
 		47536C6B147195C500494B85 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		47536C6C147195C500494B85 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
 		47536C6D147195C500494B85 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
+		477D3E3C149A31F000A69F5D /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		477D3E40149A34AC00A69F5D /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
 		47A808C314880A5B00DE454A /* DataStructures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataStructures.cpp; sourceTree = "<group>"; };
 		47A808C414880A5B00DE454A /* DataStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStructures.h; sourceTree = "<group>"; };
 		47C9828914744635004BBEAF /* PlaytomicIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = PlaytomicIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,6 +398,8 @@
 				47536C6B147195C500494B85 /* StringHelper.h */,
 				47536C6C147195C500494B85 /* timer.cpp */,
 				47536C6D147195C500494B85 /* timer.h */,
+				477D3E3C149A31F000A69F5D /* File.h */,
+				477D3E40149A34AC00A69F5D /* File.cpp */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -437,6 +445,7 @@
 				47536CA1147195C500494B85 /* StringHelper.h in Headers */,
 				47536CA3147195C500494B85 /* timer.h in Headers */,
 				47A808C614880A5B00DE454A /* DataStructures.h in Headers */,
+				477D3E3D149A31F000A69F5D /* File.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +486,7 @@
 				47C9828314744635004BBEAF /* MD5.h in Headers */,
 				47C9828414744635004BBEAF /* StringHelper.h in Headers */,
 				47C9828514744635004BBEAF /* timer.h in Headers */,
+				477D3E3E149A31F000A69F5D /* File.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +625,7 @@
 				47536CA0147195C500494B85 /* StringHelper.cpp in Sources */,
 				47536CA2147195C500494B85 /* timer.cpp in Sources */,
 				47A808C514880A5B00DE454A /* DataStructures.cpp in Sources */,
+				477D3E41149A34AC00A69F5D /* File.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +654,7 @@
 				47C9826014744635004BBEAF /* MD5.cpp in Sources */,
 				47C9826114744635004BBEAF /* StringHelper.cpp in Sources */,
 				47C9826214744635004BBEAF /* timer.cpp in Sources */,
+				477D3E42149A34AC00A69F5D /* File.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,6 +838,7 @@
 				47E3970C1497CC1F0099DF5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
