@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47536CD51471A08700494B85 /* CDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CC61471A08700494B85 /* CDemo.cpp */; };
+		47536CD61471A08700494B85 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CC81471A08700494B85 /* main.cpp */; };
+		47536CD71471A08700494B85 /* CDataMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CCB1471A08700494B85 /* CDataMenu.cpp */; };
+		47536CD81471A08700494B85 /* CLevelMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CCD1471A08700494B85 /* CLevelMenu.cpp */; };
+		47536CD91471A08700494B85 /* CScoreMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CCF1471A08700494B85 /* CScoreMenu.cpp */; };
+		47536CDA1471A08700494B85 /* LogMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CD11471A08700494B85 /* LogMenu.cpp */; };
+		47536CDB1471A08700494B85 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CD31471A08700494B85 /* MainMenu.cpp */; };
+		47536CEA1471A65B00494B85 /* libboost_thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47536CE91471A65B00494B85 /* libboost_thread.a */; };
+		4767C96A1472EC91001486D7 /* libPlaytomic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4767C9691472EC91001486D7 /* libPlaytomic.a */; };
+		47C9817F14744337004BBEAF /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C9817E14744337004BBEAF /* libcurl.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		47536CB114719EAD00494B85 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		47536CB314719EAD00494B85 /* demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = demo; sourceTree = BUILT_PRODUCTS_DIR; };
+		47536CC61471A08700494B85 /* CDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CDemo.cpp; sourceTree = "<group>"; };
+		47536CC71471A08700494B85 /* CDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDemo.h; sourceTree = "<group>"; };
+		47536CC81471A08700494B85 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		47536CCA1471A08700494B85 /* CBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBase.h; sourceTree = "<group>"; };
+		47536CCB1471A08700494B85 /* CDataMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CDataMenu.cpp; sourceTree = "<group>"; };
+		47536CCC1471A08700494B85 /* CDataMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataMenu.h; sourceTree = "<group>"; };
+		47536CCD1471A08700494B85 /* CLevelMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CLevelMenu.cpp; sourceTree = "<group>"; };
+		47536CCE1471A08700494B85 /* CLevelMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLevelMenu.h; sourceTree = "<group>"; };
+		47536CCF1471A08700494B85 /* CScoreMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CScoreMenu.cpp; sourceTree = "<group>"; };
+		47536CD01471A08700494B85 /* CScoreMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CScoreMenu.h; sourceTree = "<group>"; };
+		47536CD11471A08700494B85 /* LogMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogMenu.cpp; sourceTree = "<group>"; };
+		47536CD21471A08700494B85 /* LogMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogMenu.h; sourceTree = "<group>"; };
+		47536CD31471A08700494B85 /* MainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenu.cpp; sourceTree = "<group>"; };
+		47536CD41471A08700494B85 /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
+		47536CE91471A65B00494B85 /* libboost_thread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_thread.a; path = ../Dependencies/macos/Boost/lib/debug/libboost_thread.a; sourceTree = "<group>"; };
+		4767C8C41472E5B8001486D7 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
+		4767C9691472EC91001486D7 /* libPlaytomic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPlaytomic.a; path = ../Playtomic/Debug/libPlaytomic.a; sourceTree = "<group>"; };
+		47C9817E14744337004BBEAF /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../Dependencies/macos/currlib/lib/debug/libcurl.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47536CB014719EAD00494B85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47C9817F14744337004BBEAF /* libcurl.a in Frameworks */,
+				4767C96A1472EC91001486D7 /* libPlaytomic.a in Frameworks */,
+				47536CEA1471A65B00494B85 /* libboost_thread.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47536CA814719EAD00494B85 = {
+			isa = PBXGroup;
+			children = (
+				47C9817E14744337004BBEAF /* libcurl.a */,
+				4767C9691472EC91001486D7 /* libPlaytomic.a */,
+				4767C8C41472E5B8001486D7 /* libcurl.dylib */,
+				47536CE91471A65B00494B85 /* libboost_thread.a */,
+				47536CC61471A08700494B85 /* CDemo.cpp */,
+				47536CC71471A08700494B85 /* CDemo.h */,
+				47536CC81471A08700494B85 /* main.cpp */,
+				47536CC91471A08700494B85 /* modules */,
+				47536CB414719EAD00494B85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47536CB414719EAD00494B85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47536CB314719EAD00494B85 /* demo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47536CC91471A08700494B85 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				47536CCA1471A08700494B85 /* CBase.h */,
+				47536CCB1471A08700494B85 /* CDataMenu.cpp */,
+				47536CCC1471A08700494B85 /* CDataMenu.h */,
+				47536CCD1471A08700494B85 /* CLevelMenu.cpp */,
+				47536CCE1471A08700494B85 /* CLevelMenu.h */,
+				47536CCF1471A08700494B85 /* CScoreMenu.cpp */,
+				47536CD01471A08700494B85 /* CScoreMenu.h */,
+				47536CD11471A08700494B85 /* LogMenu.cpp */,
+				47536CD21471A08700494B85 /* LogMenu.h */,
+				47536CD31471A08700494B85 /* MainMenu.cpp */,
+				47536CD41471A08700494B85 /* MainMenu.h */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47536CB214719EAD00494B85 /* demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47536CBD14719EAD00494B85 /* Build configuration list for PBXNativeTarget "demo" */;
+			buildPhases = (
+				47536CAF14719EAD00494B85 /* Sources */,
+				47536CB014719EAD00494B85 /* Frameworks */,
+				47536CB114719EAD00494B85 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = demo;
+			productName = demo;
+			productReference = 47536CB314719EAD00494B85 /* demo */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47536CAA14719EAD00494B85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 47536CAD14719EAD00494B85 /* Build configuration list for PBXProject "demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 47536CA814719EAD00494B85;
+			productRefGroup = 47536CB414719EAD00494B85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47536CB214719EAD00494B85 /* demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47536CAF14719EAD00494B85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47536CD51471A08700494B85 /* CDemo.cpp in Sources */,
+				47536CD61471A08700494B85 /* main.cpp in Sources */,
+				47536CD71471A08700494B85 /* CDataMenu.cpp in Sources */,
+				47536CD81471A08700494B85 /* CLevelMenu.cpp in Sources */,
+				47536CD91471A08700494B85 /* CScoreMenu.cpp in Sources */,
+				47536CDA1471A08700494B85 /* LogMenu.cpp in Sources */,
+				47536CDB1471A08700494B85 /* MainMenu.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		47536CBB14719EAD00494B85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					_Debug,
+					x86_64,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRIPFLAGS = "i386 x86_64";
+				VALID_ARCHS = x86_64;
+			};
+			name = Debug;
+		};
+		47536CBC14719EAD00494B85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = x86_64;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+				STRIPFLAGS = "i386 x86_64";
+				VALID_ARCHS = x86_64;
+			};
+			name = Release;
+		};
+		47536CBE14719EAD00494B85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				HEADER_SEARCH_PATHS = (
+					../Tools,
+					"../Dependencies/macos/Boost/**",
+					"../Dependencies/macos/currlib/**",
+					../,
+					"../json/**",
+					"../CurlWrap/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../Dependencies/macos/Boost/lib/debug/**",
+					../Dependencies/macos/currlib/lib/debug,
+					../Playtomic/Lib/debug,
+					"\"$(SRCROOT)/../Dependencies/macos/Boost/lib/debug\"",
+					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/debug\"",
+					"\"$(SRCROOT)/../Playtomic/Lib/debug\"",
+					"\"$(SRCROOT)/../Playtomic/Debug\"",
+					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		47536CBF14719EAD00494B85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				HEADER_SEARCH_PATHS = (
+					../Tools,
+					"../Dependencies/macos/Boost/**",
+					"../Dependencies/macos/currlib/**",
+					../,
+					"../json/**",
+					"../CurlWrap/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"../Dependencies/macos/Boost/lib/debug/**",
+					../Dependencies/macos/currlib/lib/debug,
+					../Playtomic/Lib/debug,
+					"\"$(SRCROOT)/../Dependencies/macos/Boost/lib/debug\"",
+					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/debug\"",
+					"\"$(SRCROOT)/../Playtomic/Lib/debug\"",
+					"\"$(SRCROOT)/../Playtomic/Debug\"",
+					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47536CAD14719EAD00494B85 /* Build configuration list for PBXProject "demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47536CBB14719EAD00494B85 /* Debug */,
+				47536CBC14719EAD00494B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47536CBD14719EAD00494B85 /* Build configuration list for PBXNativeTarget "demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47536CBE14719EAD00494B85 /* Debug */,
+				47536CBF14719EAD00494B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47536CAA14719EAD00494B85 /* Project object */;
+}
