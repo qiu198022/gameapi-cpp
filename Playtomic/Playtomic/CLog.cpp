@@ -34,6 +34,7 @@
 #include "CLogRequest.h"
 #include "../Tools/StringHelper.h"
 #include "../Tools/timer.h"
+#include "../Tools/File.h"
 
 namespace Playtomic
 {
@@ -70,6 +71,15 @@ void CLog::View( void )
 {
 	char IdString[50];
 	sprintf_s(IdString,49,"v/%d", mViews + 1);
+    if( CFile::Exist(sLogBackupFileName))
+    {
+        CFile backup(sLogBackupFileName);
+        std::string fileData;
+        backup.Read(fileData);
+        SendEvent(fileData,false);
+        CFile::Remove(sLogBackupFileName);
+    }
+    
 	SendEvent(IdString,true);
 }
 

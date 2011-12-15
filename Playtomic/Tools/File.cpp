@@ -30,6 +30,27 @@
 
 #include "File.h"
 
+bool CFile::Exist(const std::string& fileName)
+{
+    return   Exist(fileName.c_str());
+}
+
+bool CFile::Exist(const char *pFileName)
+{
+    FILE* file = fopen(pFileName, "r");
+    return (file != NULL);
+}
+
+bool CFile::Remove(const std::string& fileName)
+{
+    return   Exist(fileName.c_str());
+}
+
+bool CFile::Remove(const char *pFileName)
+{
+    return ( remove(pFileName) );
+}
+
 CFile::CFile()
 {
     mFile = NULL;
@@ -88,7 +109,24 @@ bool CFile::Write(const std::string &data)
 
 bool CFile::Write(const char* data)
 {
+    if(mFile == NULL)
+    {
+        return false;
+    }
     size_t ret = fwrite(data, strlen(data), sizeof(char), mFile);
     
     return ret==0;
+}
+
+void CFile::Read(std::string &dest)
+{
+    fseek (mFile, 0, SEEK_END);
+    long size = ftell (mFile);
+    
+    char* buff = new char[size];
+    
+    rewind(mFile);
+    fread(buff, size, sizeof(char), mFile);
+    
+    dest = buff;
 }

@@ -42,6 +42,12 @@ public:
     CFile(const std::string& fileName);
     ~CFile();
     
+    static bool Exist(const char* pFileName);
+    static bool Exist(const std::string& fileName);
+    
+    static bool Remove(const char* pFileName);
+    static bool Remove(const std::string& fileName);
+    
     bool Open(const char* pFileName);
     bool Open(const std::string& fileName);
     void Close();
@@ -49,7 +55,7 @@ public:
     bool Write(const char* data);
     bool Write(const std::string& data);
     
-    
+    void Read(std::string& dest);    
 private:
     FILE*   mFile;
 };
