@@ -72,7 +72,7 @@ bool CFile::Open(const char *pFileName)
     {
         fclose(mFile);
     }
-    mFile = fopen(pFileName, "r+");
+    mFile = fopen(pFileName, "a+");
     if(mFile == NULL)
     {
         return false;

@@ -39,7 +39,7 @@
 
 namespace Playtomic
 {
-const char sLogBackupFileName[] = "pFailedLogs";
+const char sLogBackupFileName[] = "pFailedLogs.txt";
     
 class DllExport CLogRequest
 {
