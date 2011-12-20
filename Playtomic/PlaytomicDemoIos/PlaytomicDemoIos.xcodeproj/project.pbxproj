@@ -353,6 +353,7 @@
 		47C982C714744893004BBEAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Dependencies/macos\"",
@@ -360,7 +361,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlaytomicDemoIos/PlaytomicDemoIos-Prefix.pch";
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PlaytomicDemoIos/PlaytomicDemoIos-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -374,6 +375,7 @@
 		47C982C814744893004BBEAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Dependencies/macos\"",
@@ -381,7 +383,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlaytomicDemoIos/PlaytomicDemoIos-Prefix.pch";
-				GCC_VERSION = 4.2;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PlaytomicDemoIos/PlaytomicDemoIos-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;

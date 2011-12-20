@@ -81,6 +81,9 @@
     <ClCompile Include="DataStructures.cpp">
       <Filter>Playtomic</Filter>
     </ClCompile>
+    <ClCompile Include="..\Tools\File.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CData.h">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="DataStructures.h">
       <Filter>Playtomic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Tools\File.h">
+      <Filter>Tools</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -36,6 +36,11 @@
 #include "../Tools/timer.h"
 #include "../Tools/File.h"
 
+#ifdef _IOS_
+#include "FilePaths.h"
+#endif
+
+
 namespace Playtomic
 {
 
@@ -60,6 +65,26 @@ CLog::CLog(int gameId, std::string& gameguid)
     mTimer = new CTimer;
 	mTimer->Init(fastdelegate::MakeDelegate(this,&CLog::TimerAlert),0,1,0, false);
 	gPlaytomic->TimerManager()->AddTimer(mTimer);
+    
+    const char *currentFileName = CLogRequest::GetLogFileName();
+#ifdef _IOS_
+    char fileName[300];
+    GetFilePath(fileName, 300, currentFileName);
+    currentFileName = fileName;
+#endif
+    if( CFile::Exist(currentFileName ))
+    {
+        CFile backup(currentFileName );
+        
+        std::string fileData;
+        backup.Rewind();
+        while(backup.ReadLine(fileData))
+        {
+            SendEvent(fileData,true,true);
+        }
+        backup.Close();
+        CFile::Remove(CLogRequest::GetLogFileName());
+    }
 }
 
 CLog::~CLog()
@@ -70,16 +95,7 @@ CLog::~CLog()
 void CLog::View( void )
 {
 	char IdString[50];
-	sprintf_s(IdString,49,"v/%d", mViews + 1);
-    if( CFile::Exist(sLogBackupFileName))
-    {
-        CFile backup(sLogBackupFileName);
-        std::string fileData;
-        backup.Read(fileData);
-        SendEvent(fileData,false);
-        CFile::Remove(sLogBackupFileName);
-    }
-    
+	sprintf_s(IdString,49,"v/%d", mViews + 1);    
 	SendEvent(IdString,true);
 }
 
@@ -297,19 +313,20 @@ void CLog::Unfreeze( void )
 	}
 }
 
-void CLog::ForceSend( void )
+void CLog::ForceSend( bool hasDate)
 {
 	if (mQueue.size() > 0)
 	{
 		//TODO please fix this! who will take care of this?
 		CLogRequest* request = new CLogRequest(mTrackUrl);
+        request->SetHasDate(hasDate);
 		request->MassQueue(mQueue);
 		mQueue.clear();
 	}
 	
 }
 
-void CLog::SendEvent( const std::string& event, bool commit )
+void CLog::SendEvent( const std::string& event, bool commit, bool hasDate )
 {
 	//TODO timer required to implement this
 
@@ -318,7 +335,7 @@ void CLog::SendEvent( const std::string& event, bool commit )
 	{
 		return;
 	}
-	ForceSend();
+	ForceSend(hasDate);
 }
 
 

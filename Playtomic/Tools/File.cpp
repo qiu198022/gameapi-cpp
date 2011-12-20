@@ -96,6 +96,7 @@ bool CFile::Open(const char *pFileName)
     mFile = fopen(pFileName, "a+");
     if(mFile == NULL)
     {
+        perror(" ");
         return false;
     }
     return true;
@@ -118,6 +119,28 @@ bool CFile::Write(const char* data)
     return ret==0;
 }
 
+bool CFile::WriteLine(const std::string &data)
+{
+    return WriteLine(data.c_str());
+}
+
+bool CFile::WriteLine(const char* data)
+{
+    if(mFile == NULL)
+    {
+        return false;
+    }
+    std::string line(data);
+    line += '\n';
+    size_t ret = fputs(line.c_str(), mFile);
+    
+    return ret==0;
+}
+
+void CFile::Rewind()
+{
+    rewind(mFile);
+}
 void CFile::Read(std::string &dest)
 {
     fseek (mFile, 0, SEEK_END);
@@ -129,4 +152,31 @@ void CFile::Read(std::string &dest)
     fread(buff, size, sizeof(char), mFile);
     
     dest = buff;
+}
+
+bool CFile::ReadLine(std::string &dest)
+{
+    if( mFile == NULL)
+    {
+        return false;
+    }
+    char buff[600];
+    char* ret = fgets(buff,600,mFile);
+    if(ret == NULL)
+    {
+        return false;
+    }
+    dest = buff;
+    dest.erase(dest.length()-1,1);
+    return ret != NULL;
+}
+
+size_t CFile::GetSize()
+{
+    size_t currPos = ftell(mFile);
+    
+    fseek(mFile, 0, SEEK_END);
+    size_t ret = ftell(mFile);
+    fseek(mFile, currPos, SEEK_SET);
+    return ret;
 }

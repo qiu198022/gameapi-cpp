@@ -10,6 +10,7 @@
 #import "Playtomic/CPlaytomic.h"
 #include "Playtomic/CLog.h"
 #include "Playtomic/CData.h"
+//#include "Playtomic/CLogRequest.h"
 #include <string>
 
 @implementation AppDelegate
@@ -20,9 +21,14 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
+    //NSString* path = [NSString stringWithString:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]];
+   // path = [NSString stringWithFormat:@"%@/%@", path, @"pFailedLogs.txt"];
     std::string key("9f3f3b43cb234025");
+    //char buff[256];
+    //[path getCString:buff maxLength:256 encoding:NSUTF8StringEncoding];
+   // Playtomic::CLogRequest::SetLogFileName( buff );
 	Playtomic::CPlaytomic *mInstance = new Playtomic::CPlaytomic(4603, key, true);
+    mInstance->Log()->View();
     mInstance->Log()->Play();
     
     CPlaytomicResponsePtr response = Playtomic::gPlaytomic->Data()->Views();

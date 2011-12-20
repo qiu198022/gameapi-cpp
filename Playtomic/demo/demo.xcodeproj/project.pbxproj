@@ -16,6 +16,7 @@
 		47536CDB1471A08700494B85 /* MainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536CD31471A08700494B85 /* MainMenu.cpp */; };
 		47536CEA1471A65B00494B85 /* libboost_thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47536CE91471A65B00494B85 /* libboost_thread.a */; };
 		4767C96A1472EC91001486D7 /* libPlaytomic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4767C9691472EC91001486D7 /* libPlaytomic.a */; };
+		47890A4B149B9C2500AB0641 /* libboost_date_time.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47890A4A149B9C2500AB0641 /* libboost_date_time.a */; };
 		47C9817F14744337004BBEAF /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C9817E14744337004BBEAF /* libcurl.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		47536CE91471A65B00494B85 /* libboost_thread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_thread.a; path = ../Dependencies/macos/Boost/lib/debug/libboost_thread.a; sourceTree = "<group>"; };
 		4767C8C41472E5B8001486D7 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
 		4767C9691472EC91001486D7 /* libPlaytomic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPlaytomic.a; path = ../Playtomic/Debug/libPlaytomic.a; sourceTree = "<group>"; };
+		47890A4A149B9C2500AB0641 /* libboost_date_time.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_date_time.a; path = ../Dependencies/macos/Boost/lib/release/libboost_date_time.a; sourceTree = "<group>"; };
 		47C9817E14744337004BBEAF /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../Dependencies/macos/currlib/lib/debug/libcurl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47890A4B149B9C2500AB0641 /* libboost_date_time.a in Frameworks */,
 				47C9817F14744337004BBEAF /* libcurl.a in Frameworks */,
 				4767C96A1472EC91001486D7 /* libPlaytomic.a in Frameworks */,
 				47536CEA1471A65B00494B85 /* libboost_thread.a in Frameworks */,
@@ -70,6 +73,7 @@
 		47536CA814719EAD00494B85 = {
 			isa = PBXGroup;
 			children = (
+				47890A4A149B9C2500AB0641 /* libboost_date_time.a */,
 				47C9817E14744337004BBEAF /* libcurl.a */,
 				4767C9691472EC91001486D7 /* libPlaytomic.a */,
 				4767C8C41472E5B8001486D7 /* libcurl.dylib */,
@@ -242,6 +246,7 @@
 					"\"$(SRCROOT)/../Playtomic/Lib/debug\"",
 					"\"$(SRCROOT)/../Playtomic/Debug\"",
 					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../Dependencies/macos/Boost/lib/release\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -270,6 +275,7 @@
 					"\"$(SRCROOT)/../Playtomic/Lib/debug\"",
 					"\"$(SRCROOT)/../Playtomic/Debug\"",
 					"\"$(SRCROOT)/../Dependencies/macos/currlib/lib/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../Dependencies/macos/Boost/lib/release\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

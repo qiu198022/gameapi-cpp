@@ -11,6 +11,7 @@ DLLRelease/
 DllDebug/
 build/
 prebuilt/
+classes/
 libs/
 obj/
 .DS_Store

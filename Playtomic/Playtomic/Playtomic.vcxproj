@@ -128,6 +128,7 @@
     <ClCompile Include="..\json\src\json_reader.cpp" />
     <ClCompile Include="..\json\src\json_value.cpp" />
     <ClCompile Include="..\json\src\json_writer.cpp" />
+    <ClCompile Include="..\Tools\File.cpp" />
     <ClCompile Include="..\Tools\MD5.cpp" />
     <ClCompile Include="..\Tools\StringHelper.cpp" />
     <ClCompile Include="..\Tools\timer.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="..\json\src\json_tool.h" />
     <ClInclude Include="..\Tools\FastDelegate.h" />
     <ClInclude Include="..\Tools\FastDelegateBind.h" />
+    <ClInclude Include="..\Tools\File.h" />
     <ClInclude Include="..\Tools\MD5.h" />
     <ClInclude Include="..\Tools\StringHelper.h" />
     <ClInclude Include="..\Tools\timer.h" />

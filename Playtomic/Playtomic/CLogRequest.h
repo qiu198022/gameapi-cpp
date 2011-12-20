@@ -34,12 +34,11 @@
 
 #include <string>
 #include <list>
-#include "../CurlWrap/CPlaytomicResponse.h"
+#include "CPlaytomicResponse.h"
 #include "PlaytomicDefines.h"
 
 namespace Playtomic
 {
-const char sLogBackupFileName[] = "pFailedLogs.txt";
     
 class DllExport CLogRequest
 {
@@ -52,13 +51,19 @@ public:
 	void Send	(void);
 	void QueueEvent( const std::string& event);
 	void MassQueue(std::list<std::string>& queue);
+    
+    void SetHasDate(bool state);
 
 	void RequestComplete(CPlaytomicResponsePtr& response);
+    
+    static void         SetLogFileName(const char* newName);
+    static const char*  GetLogFileName(void);
 private:
 	std::string mData;
 	std::string mTrackUrl;
 	bool		mMustReleaseOnFinished;
     int         mSendTries;
+    bool        mHasDate;
 };
 
 }

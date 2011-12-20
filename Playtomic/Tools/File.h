@@ -55,7 +55,15 @@ public:
     bool Write(const char* data);
     bool Write(const std::string& data);
     
-    void Read(std::string& dest);    
+    bool WriteLine(const char* data);
+    bool WriteLine(const std::string& data);
+    
+    void Rewind(void);
+    
+    void Read(std::string& dest);
+    bool ReadLine(std::string& dest);
+    
+    size_t GetSize();
 private:
     FILE*   mFile;
 };

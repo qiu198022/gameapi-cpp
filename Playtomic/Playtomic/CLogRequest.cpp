@@ -32,15 +32,39 @@
 #include "CLogRequest.h"
 #include "../CurlWrap/CConnectionInterface.h"
 #include "../Tools/File.h"
+#include "boost/date_time/posix_time/posix_time.hpp"
+#include "../Tools/StringHelper.h"
+#include "boost/thread/locks.hpp"
+#include "boost/thread.hpp"
+
+#ifdef _IOS_
+#include "FilePaths.h"
+#endif
+
+
+const char* sLogBackupFileName = "pFailedLogs.txt";
+const size_t kMaxFileSize = 1024*50;
+static boost::mutex m;
 
 namespace Playtomic
 {
 
+void CLogRequest::SetLogFileName(const char *newName)
+{
+    sLogBackupFileName = newName;
+}
+
+const char* CLogRequest::GetLogFileName()
+{
+    return sLogBackupFileName;
+}
+    
 CLogRequest::CLogRequest(const std::string& url)
 {
 	mTrackUrl = url;
 	mMustReleaseOnFinished = true;
     mSendTries = 0;
+    mHasDate = false;
 }
 
 void CLogRequest::Send( void )
@@ -90,8 +114,14 @@ void CLogRequest::MassQueue(std::list<std::string>& queue )
 	Send();
 }
 
+void CLogRequest::SetHasDate(bool state)
+{
+    mHasDate = state;
+}
+
 void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
 {
+    
     if(!response->ResponseSucceded())
     {
         if(mSendTries < e_triesLimit)
@@ -101,8 +131,32 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
         }
         else
         {
-            CFile backupData(sLogBackupFileName);
-            backupData.Write(mData);
+            
+            const char *currentFileName = GetLogFileName();
+#ifdef _IOS_
+            char fileName[300];
+            GetFilePath(fileName, 300, currentFileName);
+            currentFileName = fileName;
+#endif
+            boost::mutex::scoped_lock lock(m);
+            CFile backupData(currentFileName);
+            if(backupData.GetSize() < kMaxFileSize)
+            {
+                if(!mHasDate)
+                {
+                    boost::posix_time::ptime now = boost::posix_time::second_clock::universal_time();
+                    std::string strDate("&date=");
+                    std::string date = boost::posix_time::to_simple_string(now);
+                    CleanString(date);
+                    strDate += date;
+                    mData += strDate;
+                }            
+                backupData.WriteLine(mData);
+                
+            }
+            backupData.Close();
+            lock.unlock();
+            
         }
             
         

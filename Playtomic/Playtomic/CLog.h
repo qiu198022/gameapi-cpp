@@ -145,14 +145,14 @@ public:
 	/**
 	*	send the complete queue of event to the Playtomic server
 	*/
-	void ForceSend(void);
+	void ForceSend(bool hasDate = false);
 
 	/**
 	*	add a new log event to the event queue
 	*	@param	event	the new event to queue
 	*	@param	commit	set to true if you want to force to send the whole queue
 	*/
-	void SendEvent(const std::string& event, bool commit);
+	void SendEvent(const std::string& event, bool commit, bool hasDate = false);
 
 	/**
 	*	not implemented
