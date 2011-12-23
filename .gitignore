@@ -9,6 +9,8 @@ Debug-iphonesimulator/
 Debug-universal/
 DLLRelease/
 DllDebug/
+.metadata/
+.metadata
 build/
 prebuilt/
 classes/
