@@ -59,6 +59,12 @@ android:layout_height="210px">
             <Button android:id="@+id/cmdLoadPlaytime" 
             android:layout_width="350px" android:layout_height="wrap_content" 
             android:text="@string/load_playtime"></Button>
+            <Button android:id="@+id/cmdFreeze" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/freeze"></Button>
+            <Button android:id="@+id/cmdUnFreeze" 
+            android:layout_width="350px" android:layout_height="wrap_content" 
+            android:text="@string/unfreeze"></Button>
         </LinearLayout>
     
     </ScrollView>

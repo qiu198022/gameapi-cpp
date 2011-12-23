@@ -67,14 +67,16 @@ CLog::CLog(int gameId, std::string& gameguid)
 	gPlaytomic->TimerManager()->AddTimer(mTimer);
     
     const char *currentFileName = CLogRequest::GetLogFileName();
+   
 #ifdef _IOS_
     char fileName[300];
     GetFilePath(fileName, 300, currentFileName);
     currentFileName = fileName;
 #endif
-    if( CFile::Exist(currentFileName ))
+    SetCurrentBackupFile(std::string(currentFileName));
+    if( CFile::Exist(mLogBackupFile ))
     {
-        CFile backup(currentFileName );
+        CFile backup(mLogBackupFile );
         
         std::string fileData;
         backup.Rewind();
@@ -83,13 +85,14 @@ CLog::CLog(int gameId, std::string& gameguid)
             SendEvent(fileData,true,true);
         }
         backup.Close();
-        CFile::Remove(CLogRequest::GetLogFileName());
+        CFile::Remove(mLogBackupFile);
     }
 }
 
 CLog::~CLog()
 {
 	gPlaytomic->TimerManager()->RemoveTimer(mTimer);
+    delete mTimer;
 }
 
 void CLog::View( void )
@@ -359,4 +362,10 @@ void CLog::IncreasePlays( void )
 	mPlays++;
 }
 
+    
+void CLog::SetCurrentBackupFile(const std::string& filePath)
+{
+    mLogBackupFile = filePath;
+    CLogRequest::SetLogFileName(mLogBackupFile.c_str());
+}
 }

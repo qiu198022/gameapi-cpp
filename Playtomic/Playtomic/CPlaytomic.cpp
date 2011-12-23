@@ -61,23 +61,24 @@ namespace Playtomic
 		double currentTime = timer.elapsed();
 		while (1)
 		{
+            boost::this_thread::interruption_point();
 			double elapsed = timer.elapsed() - currentTime;
 			currentTime = timer.elapsed();
 			instance->Update(elapsed);
 		}
 	}
-CPlaytomic* CPlaytomic::mHamdle = NULL;
+CPlaytomic* CPlaytomic::mHandle = NULL;
 
 
 CPlaytomic::CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate)
 {
 	//this should never happen
-	if(mHamdle)
+	if(mHandle)
 	{
-		delete mHamdle;
+		delete mHandle;
 	}
 	mThread	= NULL;
-	mHamdle = this;
+	mHandle = this;
 	mGameId = gameId;
 	mGameGuid = gameguid;
 
@@ -107,19 +108,40 @@ CPlaytomic::CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate)
 
 CPlaytomic::~CPlaytomic()
 {
-	delete mPlaytomicLog;
 	if (mThread)
 	{
 		mThread->interrupt();
 		mThread = NULL;
 	}
+    CConnectionInterface::Destroy();
+    delete mPlaytomicData;
+    delete mPlaytomicPlayerLevels;
+    delete mPlaytomicLeaderboards;
+    delete mPlaytomicGameVars;
+    delete mPlaytomicGeoIP;
+    delete mPlaytomicLog;
+    delete mTimerManager;
+	
+	
+	
+	
+	
 }
 
 CPlaytomic* CPlaytomic::Get()
 {
-	return mHamdle;
+	return mHandle;
 }
 
+void CPlaytomic::Destroy()
+{
+    if(mHandle)
+    {
+        delete mHandle;
+        mHandle = NULL;
+    }
+}
+    
 int CPlaytomic::GameId() const
 {
 	return mGameId;

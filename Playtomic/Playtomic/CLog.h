@@ -162,6 +162,8 @@ public:
 
 	void IncreaseViews(void);
 	void IncreasePlays(void);
+    
+    void SetCurrentBackupFile(const std::string& filePath);
 private:
 	/** 
 	*	this is a call back to the timer 
@@ -170,6 +172,7 @@ private:
 	std::string		mTrackUrl;
 	std::string		mSourceUrl;
 	std::string		mBaseUrl;
+    std::string     mLogBackupFile;
 	bool			mEnable;
 	
 	CTimer*						mTimer;

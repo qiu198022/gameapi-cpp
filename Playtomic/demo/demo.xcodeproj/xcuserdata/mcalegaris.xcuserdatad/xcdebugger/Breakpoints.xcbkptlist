@@ -105,7 +105,7 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "CDemo.cpp"
-         timestampString = "345742438.061401"
+         timestampString = "346270410.671349"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "13"
@@ -124,7 +124,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "88"
          endingLineNumber = "88"
-         landmarkName = "CLog::View( void )"
+         landmarkName = "CLog::CLog(int gameId, std::string&amp; gameguid)"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -133,26 +133,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "0"
          filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CLog.cpp"
-         timestampString = "345753047.32974"
+         timestampString = "346270794.440229"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "327"
-         endingLineNumber = "327"
-         landmarkName = "CLog::SendEvent( const std::string&amp; event, bool commit, bool hasDate )"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "0"
-         filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CLog.cpp"
-         timestampString = "345753047.32974"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "312"
-         endingLineNumber = "312"
+         startingLineNumber = "328"
+         endingLineNumber = "328"
          landmarkName = "CLog::ForceSend( bool hasDate)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CLog.cpp"
+         timestampString = "346270794.440229"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "313"
+         endingLineNumber = "313"
+         landmarkName = "CLog::Unfreeze( void )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -237,6 +237,62 @@
          startingLineNumber = "170"
          endingLineNumber = "170"
          landmarkName = "CFile::ReadLine(std::string &amp;dest)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "CDemo.cpp"
+         timestampString = "346270408.907503"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "CDemo::Init()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CPlaytomic.cpp"
+         timestampString = "346272341.255948"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
+         landmarkName = "CPlaytomic::Destroy()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CPlaytomic.cpp"
+         timestampString = "346272341.255948"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
+         landmarkName = "CPlaytomic::~CPlaytomic()"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "modules/CScoreMenu.cpp"
+         timestampString = "346273073.869555"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "11"
+         endingLineNumber = "11"
+         landmarkName = "CSCoreMenu::ShowOptionMenu()"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

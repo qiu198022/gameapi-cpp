@@ -37,10 +37,16 @@
 #include "boost/thread/locks.hpp"
 #include "boost/thread.hpp"
 
-#ifdef _IOS_
+#if defined(_IOS_) || defined(__ANDROID__)
 #include "FilePaths.h"
 #endif
 
+#ifdef __ANDROID__
+#include <android/log.h>
+#define  LOG_TAG    "CLOGREQUEST"
+
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+#endif
 
 const char* sLogBackupFileName = "pFailedLogs.txt";
 const size_t kMaxFileSize = 1024*50;
@@ -133,8 +139,12 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
         {
             
             const char *currentFileName = GetLogFileName();
-#ifdef _IOS_
+#if defined(__ANDROID__)
+            LOGI("open file %s", currentFileName);
+#endif
+#if defined(_IOS_)// || defined(__ANDROID__)
             char fileName[300];
+
             GetFilePath(fileName, 300, currentFileName);
             currentFileName = fileName;
 #endif
@@ -155,6 +165,9 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
                 
             }
             backupData.Close();
+#if defined(__ANDROID__)
+            LOGI("file closed");
+#endif
             lock.unlock();
             
         }

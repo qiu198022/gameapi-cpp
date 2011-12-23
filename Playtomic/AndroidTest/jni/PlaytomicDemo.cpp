@@ -36,6 +36,7 @@
 #include "Playtomic/DataStructures.h"
 #include "Playtomic/CGameVars.h"
 #include "Playtomic/CGeoIp.h"
+#include "Playtomic/CLogRequest.h"
 #include <android/log.h>
 #include "JavaInterface.h"
 #define  LOG_TAG    "playtomicTest"
@@ -43,9 +44,16 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 using namespace Playtomic;
 
-CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate)
+CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, const std::string& filePath)
 {
+	CLogRequest::SetLogFileName(filePath.c_str());
 	mPlaytomicInstance = new CPlaytomic(gameId, gameguid, autoUpdate);
+	mLevels.sLevelCount = 0;
+}
+
+CPlaytomicDemo::~CPlaytomicDemo()
+{
+	CPlaytomic::Destroy();
 }
 
 void CPlaytomicDemo::LogView()
@@ -466,3 +474,12 @@ void CPlaytomicDemo::LocationFinish(CPlaytomicResponsePtr& response)
 	}
 }
 
+void CPlaytomicDemo::Freeze()
+{
+	gPlaytomic->Log()->Freeze();
+}
+
+void CPlaytomicDemo::Unfreeze()
+{
+	gPlaytomic->Log()->Unfreeze();
+}

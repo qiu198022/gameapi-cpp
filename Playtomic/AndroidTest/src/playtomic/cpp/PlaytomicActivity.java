@@ -163,8 +163,40 @@ public class PlaytomicActivity extends Activity {
 				_loadViews();
 			}
 		});
+		
+		button = (Button) findViewById(R.id.cmdFreeze);
+		button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				_Freeze();
+			}
+		});
+
+		button = (Button) findViewById(R.id.cmdUnFreeze);
+		button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				_UnFreeze();
+			}
+		});
+    }
+    @Override
+    public void onPause()
+    {
+    	super.onPause();
+    	Freeze();
+    }
+    @Override
+    public void onResume()
+    {
+    	super.onResume();
+    	UnFreeze();
     }
     
+    @Override
+    public void onDestroy()
+    {
+    	super.onDestroy();
+    	Destroy();
+    }
    
     private native void initCpp();
     
@@ -253,6 +285,18 @@ public class PlaytomicActivity extends Activity {
 	}
 	private native void loadViews();
 	
+	
+	private void _Freeze() {
+		Freeze();
+	}
+	private native void Freeze();
+	
+	private void _UnFreeze() {
+		UnFreeze();
+	}
+	private native void UnFreeze();
+	
+	private native void Destroy();
 	
 	public void printLog(String logLine)
 	{

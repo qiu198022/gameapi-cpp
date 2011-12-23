@@ -30,6 +30,13 @@
 
 #include "File.h"
 
+#ifdef __ANDROID__
+#include <android/log.h>
+#define  LOG_TAG    "playtomicTest"
+
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+#endif
+
 bool CFile::Exist(const std::string& fileName)
 {
     return   Exist(fileName.c_str());
@@ -96,6 +103,9 @@ bool CFile::Open(const char *pFileName)
     mFile = fopen(pFileName, "a+");
     if(mFile == NULL)
     {
+#if defined(__ANDROID__)
+        LOGI("failed to open %s", pFileName);
+#endif
         perror(" ");
         return false;
     }
@@ -173,6 +183,10 @@ bool CFile::ReadLine(std::string &dest)
 
 size_t CFile::GetSize()
 {
+    if(mFile == NULL)
+    {
+        return 0;
+    }
     size_t currPos = ftell(mFile);
     
     fseek(mFile, 0, SEEK_END);

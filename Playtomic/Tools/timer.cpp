@@ -129,6 +129,11 @@ CTimerManager::CTimerManager()
 
 }
 
+CTimerManager::~CTimerManager()
+{
+    
+}
+
 void CTimerManager::AddTimer(CTimer* timer)
 {
 	mAddList.push_back(timer);

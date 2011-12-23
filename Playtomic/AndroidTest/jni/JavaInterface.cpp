@@ -23,18 +23,47 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void * reserved)
 }
 
 extern "C" {
+
+void Java_playtomic_cpp_PlaytomicActivity_Destroy( JNIEnv* env, jobject thiz)
+{
+	if(instance)
+	{
+		delete instance;
+		instance = NULL;
+	}
+}
+
 void Java_playtomic_cpp_PlaytomicActivity_initCpp( JNIEnv* env, jobject thiz )
 {
 	gThiz = env->NewGlobalRef(thiz);
 	gPlaytomicActivity = (jclass) env->NewGlobalRef(env->FindClass("playtomic/cpp/PlaytomicActivity"));
 
+
+	jclass cls_env = env->FindClass("android/os/Environment");
+	jmethodID mid_getExtStorage = env->GetStaticMethodID(cls_env, "getExternalStorageDirectory",  "()Ljava/io/File;");
+	jobject obj_File = env->CallStaticObjectMethod(cls_env, mid_getExtStorage);
+
+	jclass file = env->FindClass("java/io/File");
+	jmethodID mid_getPath = env->GetMethodID(file, "getPath", "()Ljava/lang/String;");
+
+	jstring obj_Path = (jstring)(env->CallObjectMethod(obj_File, mid_getPath));
+
+	const char* path = env->GetStringUTFChars(obj_Path, NULL);
+
+
+	std::string fullPath(path);
+
+	fullPath += "/pLogBackup.txt";
+
+	env->ReleaseStringUTFChars(obj_Path, path);
 	if(instance == NULL)
 	{
 		std::string guid("9f3f3b43cb234025");
-    	instance = new CPlaytomicDemo(4603, guid,true);
+    	instance = new CPlaytomicDemo(4603, guid,true, fullPath);
     }
 	instance->LogView();
 }
+
 
 
 void Java_playtomic_cpp_PlaytomicActivity_logPlay( JNIEnv* env, jobject thiz )
@@ -187,6 +216,22 @@ void Java_playtomic_cpp_PlaytomicActivity_loadViews( JNIEnv* env, jobject thiz )
 	if(instance !=NULL)
 	{
 		instance->GetViews();
+	}
+}
+
+void Java_playtomic_cpp_PlaytomicActivity_Freeze( JNIEnv* env, jobject thiz )
+{
+	if(instance !=NULL)
+	{
+		instance->Freeze();
+	}
+}
+
+void Java_playtomic_cpp_PlaytomicActivity_UnFreeze( JNIEnv* env, jobject thiz )
+{
+	if(instance !=NULL)
+	{
+		instance->Unfreeze();
 	}
 }
 }

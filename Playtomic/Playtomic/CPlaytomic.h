@@ -63,6 +63,7 @@ class DllExport CPlaytomic
 {
 public:
 	static CPlaytomic* Get();
+    static void        Destroy();
 public:
 	/**
 	*  Playtomic constructor
@@ -101,7 +102,7 @@ public:
 	CData* Data() const;
 
 private:
-	static		CPlaytomic*	mHamdle;
+	static		CPlaytomic*	mHandle;
 	int			mGameId;
 	std::string	mGameGuid;
 	std::string mSourceUrl;

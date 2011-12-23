@@ -45,46 +45,53 @@ struct SThreadedRequest
 	CPostPtr		sPost;
 	RequestDelegate sTargetDelegate;
 	void operator()();
-};
+    void RequestFinish(CPlaytomicResponsePtr& response);
+};  
+
+void SThreadedRequest::RequestFinish(CPlaytomicResponsePtr &response)
+{
+    boost::this_thread::interruption_point();
+    sTargetDelegate(response);
+}
 
 void SThreadedRequest::operator()()
 {
 	CRequest request;
 	SRequestResult data;
-
+    
 	request.CreateQuery(sUrl.c_str());
-
+    
 	if(sPost.get() != NULL)
 	{
-
+        
 		request.SetPostData(sPost.get());
 	}
 	ERequestResult res = request.Perform(&data);
-
+    
 	if(res != e_Ok)
 	{
 		//send error message
 		//return ( CPlaytomicResponsePtr(new CPlaytomicResponse(1)));
 		CPlaytomicResponsePtr rtn(new CPlaytomicResponse(1));
-		sTargetDelegate(rtn);
+		RequestFinish(rtn);
 		return;
 	}
-
+    
 	if(data.data == NULL)
 	{
 		//send error message
 		CPlaytomicResponsePtr rtn(new CPlaytomicResponse(true, 0));
-		sTargetDelegate(rtn);
+		RequestFinish(rtn);
 		return;
 	}
-
+    
 	Json::Reader parser;
 	FData root;
 	bool parserResult = parser.parse(data.data,root,false);
-
+    
 	Json::Value status;
 	status = root.get("Status", status);
-
+    
 	FData errorCode;
 	errorCode = root.get("ErrorCode",errorCode);
 	if ( status.asInt() == 1)
@@ -93,7 +100,7 @@ void SThreadedRequest::operator()()
 		returnData = root.get("Data",returnData);
 		//send message
 		CPlaytomicResponsePtr rtn(CPlaytomicResponsePtr( new CPlaytomicResponse(true,errorCode.asInt(),returnData, returnData.size())));
-		sTargetDelegate(rtn);
+		RequestFinish(rtn);
 		return;
 	}
 	else
@@ -103,15 +110,52 @@ void SThreadedRequest::operator()()
 			
 			//send Message
 			CPlaytomicResponsePtr rtn( CPlaytomicResponsePtr(new CPlaytomicResponse(1)));
-			sTargetDelegate(rtn);
+			RequestFinish(rtn);
 			return;
 		}
 		//return;
 		//send message
 		CPlaytomicResponsePtr rtn(CPlaytomicResponsePtr(new CPlaytomicResponse(false, errorCode.asInt())));
-		sTargetDelegate(rtn);
+		RequestFinish(rtn);
 	}
 }
+
+class CAsyncRequest
+{
+public:
+    CAsyncRequest( CConnectionInterface* owner) { mOwner = owner;}
+    void Start(const std::string url, CPostPtr post, RequestDelegate targetDelegate);
+    
+    void Stop();
+
+private:
+    void ProcessRequest(const std::string url, CPostPtr post, RequestDelegate targetDelegate);
+
+    ThreadPtr mThreadPtr;
+    CConnectionInterface* mOwner;
+};
+
+void CAsyncRequest::ProcessRequest(const std::string url, CPostPtr post , RequestDelegate targetDelegate)
+{
+    SThreadedRequest request;
+    request.sUrl = url;
+    request.sPost = post;
+    request.sTargetDelegate = targetDelegate;
+    request();
+    mOwner->ThreadFinish(this);
+}
+
+void CAsyncRequest::Start(const std::string url, CPostPtr post, RequestDelegate targetDelegate)
+{
+    mThreadPtr = ThreadPtr(new boost::thread(boost::bind( &CAsyncRequest::ProcessRequest, this, url, post, targetDelegate))); 
+}
+
+void CAsyncRequest::Stop()
+{
+    mThreadPtr->interrupt();
+}
+
+
 
 CConnectionInterface* CConnectionInterface::sHandle = NULL;
 
@@ -147,7 +191,14 @@ CConnectionInterface::CConnectionInterface()
 
 CConnectionInterface::~CConnectionInterface()
 {
-
+    std::list<CAsyncRequest*>::iterator it = mThreadList.begin();
+    
+    for(; it != mThreadList.end(); it++)
+    {
+        (*it)->Stop();
+        delete (*it);
+    }
+    mThreadList.clear();
 }
 
 void CConnectionInterface::Init()
@@ -209,10 +260,21 @@ void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate 
 
 void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData )
 {
-	SThreadedRequest x;
-	x.sPost = postData;
-	x.sUrl = url;
-	x.sTargetDelegate = targetDelegate;
-	boost::thread thread(x);
+//	SThreadedRequest x;
+//    x->sPost = postData;
+//    x->sUrl = url;
+//    x->sTargetDelegate = targetDelegate
+//	boost::thread thread(x)  //= new boost::threa(x); 
+//    mThreadList.push_bthreadis)));
+    
+    CAsyncRequest* request = new CAsyncRequest(this);
+    request->Start(url, postData, targetDelegate);
+    mThreadList.push_back(request);
+}
+
+void CConnectionInterface::ThreadFinish(CAsyncRequest *thread)
+{
+    mThreadList.remove(thread);
+    delete thread;
 }
 

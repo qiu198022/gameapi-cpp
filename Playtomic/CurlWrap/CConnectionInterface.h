@@ -34,15 +34,23 @@
 
 #include "CPlaytomicResponse.h"
 #include "FastDelegate.h"
+#include <list>
 
 #ifndef _CPOST_H_
 #include "CPost.h"
 #endif
 
+namespace boost {
+    class thread;
+}
+
+
 typedef fastdelegate::FastDelegate1<CPlaytomicResponsePtr&> RequestDelegate;
 
-
+typedef boost::shared_ptr<boost::thread> ThreadPtr;
 typedef boost::shared_ptr<CPost> CPostPtr;
+
+class CAsyncRequest;
 
 class CConnectionInterface
 {
@@ -60,11 +68,14 @@ public:
 	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate);
 	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData);
 
+    void    ThreadFinish(CAsyncRequest* thread);
 private:
 	CConnectionInterface();
 	~CConnectionInterface();
 
 	static CConnectionInterface* sHandle;
+    
+    std::list<CAsyncRequest*> mThreadList;
 };
 
 #define gConnectionInterface CConnectionInterface::Get()

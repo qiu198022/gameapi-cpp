@@ -15,6 +15,7 @@ public final class R {
     }
     public static final class id {
         public static final int ScrollView01=0x7f050000;
+        public static final int cmdFreeze=0x7f050013;
         public static final int cmdGeoIP=0x7f050008;
         public static final int cmdLeaderboardList=0x7f05000a;
         public static final int cmdLeaderboardSave=0x7f050009;
@@ -32,8 +33,9 @@ public final class R {
         public static final int cmdLogLevelCounterMetric=0x7f050004;
         public static final int cmdLogLevelRangedMetric=0x7f050006;
         public static final int cmdLogPlay=0x7f050002;
+        public static final int cmdUnFreeze=0x7f050014;
         public static final int linearLayout1=0x7f050001;
-        public static final int txLog=0x7f050013;
+        public static final int txLog=0x7f050015;
     }
     public static final class layout {
         public static final int main=0x7f030000;

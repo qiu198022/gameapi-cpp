@@ -137,6 +137,7 @@
 		47C9828314744635004BBEAF /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C69147195C500494B85 /* MD5.h */; };
 		47C9828414744635004BBEAF /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6B147195C500494B85 /* StringHelper.h */; };
 		47C9828514744635004BBEAF /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
+		47FB27BD14A1072000B55FBC /* FilePaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47FB27BC14A1072000B55FBC /* FilePaths.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +219,7 @@
 		47C95CD214A0C6D7004A0CE3 /* FilePaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePaths.h; sourceTree = "<group>"; };
 		47C95CD714A0C7A5004A0CE3 /* FilePaths.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FilePaths.mm; sourceTree = "<group>"; };
 		47C9828914744635004BBEAF /* PlaytomicIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = PlaytomicIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		47FB27BC14A1072000B55FBC /* FilePaths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilePaths.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 				47536C4C147195C500494B85 /* CLogRequest.h */,
 				47536C4D147195C500494B85 /* CPlayerLevels.cpp */,
 				47C95CD214A0C6D7004A0CE3 /* FilePaths.h */,
+				47FB27BC14A1072000B55FBC /* FilePaths.cpp */,
 				47C95CD714A0C7A5004A0CE3 /* FilePaths.mm */,
 				47536C4E147195C500494B85 /* CPlayerLevels.h */,
 				47536C4F147195C500494B85 /* CPlaytomic.cpp */,
@@ -663,6 +666,7 @@
 				47C9826214744635004BBEAF /* timer.cpp in Sources */,
 				477D3E42149A34AC00A69F5D /* File.cpp in Sources */,
 				47C95CD814A0C7A5004A0CE3 /* FilePaths.mm in Sources */,
+				47FB27BD14A1072000B55FBC /* FilePaths.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

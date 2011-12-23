@@ -8,7 +8,8 @@
 class CPlaytomicDemo : public Playtomic::IPlayerLevelDelegate, public Playtomic::ILeaderboardDelegate
 {
 public:
-	CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate = false);
+	CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, const std::string& filePath);
+	~CPlaytomicDemo();
 
 	void LogView();
 	void LogPlay();
@@ -48,6 +49,9 @@ public:
 	void ViewFinish(CPlaytomicResponsePtr& response);
 	void PlayTimeFinish(CPlaytomicResponsePtr& response);
 	void PlaysFinish(CPlaytomicResponsePtr& response);
+
+	void Freeze();
+	void Unfreeze();
 
 private:
 	Playtomic::CPlaytomic* mPlaytomicInstance;

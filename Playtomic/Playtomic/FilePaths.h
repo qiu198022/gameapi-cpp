@@ -9,8 +9,8 @@
 #ifndef Playtomic_FilePaths_h
 #define Playtomic_FilePaths_h
 
-#ifdef _IOS_
-void GetFilePath(char* dest, int maxLenght, const char* pFileName);
+#if defined(_IOS_) || defined(__ANDROID__)
+void GetFilePath(char* dest, int maxLength, const char* pFileName);
 #endif
 
 #endif
