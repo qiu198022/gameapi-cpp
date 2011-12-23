@@ -1,3 +1,0 @@
-INDEX VERSION 1.126+/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/.metadata/.plugins/org.eclipse.jdt.core
-2924750976.index
-1104972658.index
