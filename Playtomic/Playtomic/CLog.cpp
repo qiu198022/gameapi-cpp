@@ -36,7 +36,7 @@
 #include "../Tools/timer.h"
 #include "../Tools/File.h"
 
-#ifdef _IOS_
+#ifdef _IOSSDK_
 #include "FilePaths.h"
 #endif
 
@@ -67,8 +67,7 @@ CLog::CLog(int gameId, std::string& gameguid)
 	gPlaytomic->TimerManager()->AddTimer(mTimer);
     
     const char *currentFileName = CLogRequest::GetLogFileName();
-   
-#ifdef _IOS_
+#ifdef _IOSSDK_
     char fileName[300];
     GetFilePath(fileName, 300, currentFileName);
     currentFileName = fileName;

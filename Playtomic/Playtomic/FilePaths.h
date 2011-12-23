@@ -9,7 +9,7 @@
 #ifndef Playtomic_FilePaths_h
 #define Playtomic_FilePaths_h
 
-#if defined(_IOS_) || defined(__ANDROID__)
+#if defined(_IOSSDK_) || defined(__ANDROID__)
 void GetFilePath(char* dest, int maxLength, const char* pFileName);
 #endif
 

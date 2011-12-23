@@ -769,7 +769,7 @@
 					"./Dependencies/macos/BoostIos/**",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_CFLAGS = "-D_IOS_";
+				OTHER_CFLAGS = "-D_IOSSDK_";
 				PRODUCT_NAME = PlaytomicIOS;
 				SDKROOT = iphoneos5.0;
 				SYMROOT = ./Playtomic;
@@ -790,7 +790,7 @@
 					"./Dependencies/macos/currlib/**",
 					"./Dependencies/macos/BoostIos/**",
 				);
-				OTHER_CFLAGS = "-D_IOS_";
+				OTHER_CFLAGS = "-D_IOSSDK_";
 				PRODUCT_NAME = PlaytomicIOS;
 				SDKROOT = iphoneos5.0;
 				SYMROOT = ./Playtomic;

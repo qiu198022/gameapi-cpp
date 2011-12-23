@@ -41,7 +41,7 @@
 
 namespace Playtomic {
     
-class CGenericMetric
+class DllExport CGenericMetric
 {
 public:
     CGenericMetric();
@@ -52,7 +52,7 @@ public:
 };
 
     
-class CLevelAverage
+class DllExport CLevelAverage
 {
 public:
     CLevelAverage();
@@ -64,14 +64,14 @@ public:
     int mTotal;
 };
  
-struct RangedEntry
+struct DllExport RangedEntry
 {
     std::string sName;
     int         sInt;
 };
 typedef boost::shared_ptr<RangedEntry> RangedEntryPtr;
     
-class CRangedMetric
+class DllExport CRangedMetric
 {
 public:
     CRangedMetric();

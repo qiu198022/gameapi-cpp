@@ -7,7 +7,7 @@
 //
 
 #include "FilePaths.h"
-#ifdef _IOS_
+#ifdef _IOSSDK_
 #import <UIKit/UIKit.h>
 
 void GetFilePath(char* dest, int maxLength, const char* pFileName)

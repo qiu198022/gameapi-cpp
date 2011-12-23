@@ -37,7 +37,7 @@
 #include "boost/thread/locks.hpp"
 #include "boost/thread.hpp"
 
-#if defined(_IOS_) || defined(__ANDROID__)
+#if defined(_IOSSDK_) || defined(__ANDROID__)
 #include "FilePaths.h"
 #endif
 
@@ -138,7 +138,7 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
         else
         {  
             const char *currentFileName = GetLogFileName();
-#if defined(_IOS_)
+#if defined(_IOSSDK_)
             char fileName[300];
 
             GetFilePath(fileName, 300, currentFileName);
