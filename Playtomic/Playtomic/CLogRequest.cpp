@@ -136,13 +136,9 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
             return;
         }
         else
-        {
-            
+        {  
             const char *currentFileName = GetLogFileName();
-#if defined(__ANDROID__)
-            LOGI("open file %s", currentFileName);
-#endif
-#if defined(_IOS_)// || defined(__ANDROID__)
+#if defined(_IOS_)
             char fileName[300];
 
             GetFilePath(fileName, 300, currentFileName);
@@ -165,11 +161,8 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
                 
             }
             backupData.Close();
-#if defined(__ANDROID__)
-            LOGI("file closed");
-#endif
-            lock.unlock();
-            
+            lock.unlock();           
+
         }
             
         

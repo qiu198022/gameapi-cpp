@@ -137,9 +137,8 @@ void CDataMenu::ProcessOption(int optionId)
 		response = Playtomic::gPlaytomic->Data()->Plays();
 		if (response->ResponseSucceded())
 		{
-			FData value;
-			value = response->ResponseData().get("Plays",value);
-			std::cout << "plays = " << value.asInt() << std::endl; 
+            Playtomic::CGenericMetric metricData(response->ResponseData());
+			std::cout << "plays = " << metricData.mValue << std::endl; 
 		}
 		else
 		{
