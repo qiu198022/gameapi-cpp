@@ -36,10 +36,9 @@
 #include "../Tools/StringHelper.h"
 #include "boost/thread/locks.hpp"
 #include "boost/thread.hpp"
-
-#if defined(_IOSSDK_) || defined(__ANDROID__)
 #include "FilePaths.h"
-#endif
+#include "CPlaytomic.h"
+
 
 #ifdef __ANDROID__
 #include <android/log.h>
@@ -57,11 +56,17 @@ namespace Playtomic
 
 void CLogRequest::SetLogFileName(const char *newName)
 {
+#ifdef __ANDROID__
+    LOGI("setting log filename from %s to %s", sLogBackupFileName, newName);
+#endif
     sLogBackupFileName = newName;
 }
 
 const char* CLogRequest::GetLogFileName()
 {
+#ifdef __ANDROID__
+    LOGI("get log filename from %s ", sLogBackupFileName);
+#endif
     return sLogBackupFileName;
 }
     
@@ -79,8 +84,19 @@ void CLogRequest::Send( void )
 	fullUrl += mData;
 
     mSendTries++;
-	gConnectionInterface->PerformAsyncRequest(fullUrl.c_str(), fastdelegate::MakeDelegate(this, &CLogRequest::RequestComplete));
-
+    if(gPlaytomic->IsWiFiActive())
+    {
+        gConnectionInterface->PerformAsyncRequest(fullUrl.c_str(), fastdelegate::MakeDelegate(this, &CLogRequest::RequestComplete), false);
+    }
+    else
+    {
+        SaveToFile();
+        if(mMustReleaseOnFinished)
+        {
+            //TODO please change this to an object delete list
+            delete this;
+        }
+    }
 }
 
 void CLogRequest::QueueEvent( const std::string& event )
@@ -127,7 +143,9 @@ void CLogRequest::SetHasDate(bool state)
 
 void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
 {
-    
+#ifdef __ANDROID__
+    LOGI("log request finish %d", response->ResponseError());
+#endif
     if(!response->ResponseSucceded())
     {
         if(mSendTries < e_triesLimit)
@@ -137,32 +155,7 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
         }
         else
         {  
-            const char *currentFileName = GetLogFileName();
-#if defined(_IOSSDK_)
-            char fileName[300];
-
-            GetFilePath(fileName, 300, currentFileName);
-            currentFileName = fileName;
-#endif
-            boost::mutex::scoped_lock lock(m);
-            CFile backupData(currentFileName);
-            if(backupData.GetSize() < kMaxFileSize)
-            {
-                if(!mHasDate)
-                {
-                    boost::posix_time::ptime now = boost::posix_time::second_clock::universal_time();
-                    std::string strDate("&date=");
-                    std::string date = boost::posix_time::to_simple_string(now);
-                    CleanString(date);
-                    strDate += date;
-                    mData += strDate;
-                }            
-                backupData.WriteLine(mData);
-                
-            }
-            backupData.Close();
-            lock.unlock();           
-
+            SaveToFile();
         }
             
         
@@ -172,6 +165,29 @@ void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
 		//TODO please change this to an object delete list
 		delete this;
 	}
+}
+
+void CLogRequest::SaveToFile()
+{
+    const char *currentFileName = GetLogFileName();
+    m.lock();
+    CFile backupData(currentFileName);
+    if(backupData.GetSize() < kMaxFileSize)
+    {
+        if(!mHasDate)
+        {
+            boost::posix_time::ptime now = boost::posix_time::second_clock::universal_time();
+            std::string strDate("&date=");
+            std::string date = boost::posix_time::to_simple_string(now);
+            CleanString(date);
+            strDate += date;
+            mData += strDate;
+        }            
+        backupData.WriteLine(mData);
+        
+    }
+    backupData.Close();
+    m.unlock();
 }
 
 }

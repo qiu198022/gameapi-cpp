@@ -39,27 +39,42 @@ void Java_playtomic_cpp_PlaytomicActivity_initCpp( JNIEnv* env, jobject thiz )
 	gPlaytomicActivity = (jclass) env->NewGlobalRef(env->FindClass("playtomic/cpp/PlaytomicActivity"));
 
 
-	jclass cls_env = env->FindClass("android/os/Environment");
-	jmethodID mid_getExtStorage = env->GetStaticMethodID(cls_env, "getExternalStorageDirectory",  "()Ljava/io/File;");
-	jobject obj_File = env->CallStaticObjectMethod(cls_env, mid_getExtStorage);
+/*	jclass cls_context = env->FindClass("android/content/Context");
+	jmethodID sys_service = env->GetMethodID(gPlaytomicActivity, "getSystemService", "(Ljava/lang/String;)Ljava/lang/Object;");
 
-	jclass file = env->FindClass("java/io/File");
-	jmethodID mid_getPath = env->GetMethodID(file, "getPath", "()Ljava/lang/String;");
+	jfieldID fid = env->GetStaticFieldID(cls_context, "CONNECTIVITY_SERVICE",
+		                              "Ljava/lang/String;");
 
-	jstring obj_Path = (jstring)(env->CallObjectMethod(obj_File, mid_getPath));
-
-	const char* path = env->GetStringUTFChars(obj_Path, NULL);
+	jstring systemstr = (jstring)env->GetStaticObjectField(cls_context, fid);
 
 
-	std::string fullPath(path);
 
-	fullPath += "/pLogBackup.txt";
+	jobject obj_connectManager = env->CallObjectMethod(thiz, sys_service,systemstr);
 
-	env->ReleaseStringUTFChars(obj_Path, path);
+
+
+	jclass cls_env = env->GetObjectClass(obj_connectManager);//env->FindClass("android/net/ConnectivityManager");
+	jmethodID mid_getExtStorage = env->GetMethodID(cls_env, "getActiveNetworkInfo", "()Landroid/net/NetworkInfo;");
+	jobject obj_netInfo = env->CallObjectMethod(obj_connectManager, mid_getExtStorage);
+
+	jclass cls_netInfo = env->FindClass("android/net/NetworkInfo");
+	jmethodID mid_getType = env->GetMethodID(cls_netInfo, "getTypeName",  "()Ljava/lang/String;");
+	jmethodID mid_getType = env->GetMethodID(cls_netInfo, "getTypeName",  "()I");
+	int type = (jstring)env->CallIntMethod(obj_netInfo, mid_getType);
+
+	LOGI("connection type %d", type);
+
+*/
+
+	//std::string fullPath(path);
+
+	//fullPath += "/pLogBackup.txt";
+
+	//env->ReleaseStringUTFChars(obj_Path, path);
 	if(instance == NULL)
 	{
 		std::string guid("9f3f3b43cb234025");
-    	instance = new CPlaytomicDemo(4603, guid,true, fullPath);
+    	instance = new CPlaytomicDemo(4603, guid,true, g_jvm, gThiz);//fullPath);
     }
 	instance->LogView();
 }

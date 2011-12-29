@@ -34,6 +34,7 @@
 // NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include "PlaytomicDefines.h"
+#include "ConnectionInfo.h"
 
 namespace boost {
     class thread;
@@ -74,6 +75,8 @@ public:
 	*/
 	CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate = false);
 	~CPlaytomic();
+    
+    void Init();
 
 	int GetGameId();
 	
@@ -100,13 +103,14 @@ public:
 	CLeaderboard* Leaderboards() const;
 	CPlayerLevels* PlayerLevels() const;
 	CData* Data() const;
-
+    bool    IsWiFiActive() const;
 private:
-	static		CPlaytomic*	mHandle;
-	int			mGameId;
-	std::string	mGameGuid;
-	std::string mSourceUrl;
-	std::string mBaseUrl;
+	static          CPlaytomic*	mHandle;
+	int             mGameId;
+    EConnectionType mConnectionType;
+	std::string     mGameGuid;
+	std::string     mSourceUrl;
+	std::string     mBaseUrl;
 	
 	CTimerManager*				mTimerManager;
 	CLog*				mPlaytomicLog;	

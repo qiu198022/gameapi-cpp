@@ -52,6 +52,9 @@ public:
 	friend class CTimer;
 	CLog(int gameId, std::string& gameguid);
 	~CLog();
+    
+    //check if there is any log from previus sesion that need to be send
+    void Init();
 	/**
 	* A view occurs whenever somebody views your game. This should go somewhere
 	* very early in your code, like before the pre-loader.

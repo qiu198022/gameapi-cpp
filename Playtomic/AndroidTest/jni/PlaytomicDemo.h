@@ -4,11 +4,12 @@
 #include "Playtomic/CPlaytomic.h"
 #include "Playtomic/CPlayerLevels.h"
 #include "Playtomic/CLeaderboard.h"
+#include <jni.h>
 
 class CPlaytomicDemo : public Playtomic::IPlayerLevelDelegate, public Playtomic::ILeaderboardDelegate
 {
 public:
-	CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, const std::string& filePath);
+	CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, JavaVM* vmPtr, jobject activity);
 	~CPlaytomicDemo();
 
 	void LogView();

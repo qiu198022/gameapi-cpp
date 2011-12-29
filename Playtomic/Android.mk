@@ -28,6 +28,12 @@ LOCAL_LDLIBS += $(LOCAL_PATH)/Dependencies/Android/Boost/lib/libboost_thread.a \
                 $(LOCAL_PATH)/Dependencies/Android/Boost/lib/libboost_date_time.a \
                 $(LOCAL_PATH)/Dependencies/Android/curllib/lib/libcurl.a
 
+LOCAL_SHARED_LIBRARIES := \
+        libandroid_runtime \
+        libnativehelper \
+        libdvm \
+        libcutils \
+        libutils 
 
 include $(BUILD_SHARED_LIBRARY)
 

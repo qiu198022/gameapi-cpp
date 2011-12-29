@@ -95,6 +95,7 @@ CPlaytomic::CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate)
 	mPlaytomicLeaderboards = new CLeaderboard;
 	mPlaytomicPlayerLevels = new CPlayerLevels;
 	mPlaytomicData		= new CData;
+    mConnectionType = e_disconnected;
 
 	if(autoUpdate)
 	{
@@ -121,11 +122,6 @@ CPlaytomic::~CPlaytomic()
     delete mPlaytomicGeoIP;
     delete mPlaytomicLog;
     delete mTimerManager;
-	
-	
-	
-	
-	
 }
 
 CPlaytomic* CPlaytomic::Get()
@@ -140,6 +136,12 @@ void CPlaytomic::Destroy()
         delete mHandle;
         mHandle = NULL;
     }
+}
+
+void CPlaytomic::Init()
+{
+    mConnectionType = CheckConnectionType();
+    mPlaytomicLog->Init();
 }
     
 int CPlaytomic::GameId() const
@@ -224,4 +226,9 @@ CData* CPlaytomic::Data() const
 	return mPlaytomicData;
 }
 
+bool CPlaytomic::IsWiFiActive() const
+{
+    return mConnectionType == e_wifi;
+}
+    
 }

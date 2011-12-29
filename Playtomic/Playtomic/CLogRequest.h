@@ -58,6 +58,8 @@ public:
     
     static void         SetLogFileName(const char* newName);
     static const char*  GetLogFileName(void);
+    
+    void SaveToFile();
 private:
 	std::string mData;
 	std::string mTrackUrl;

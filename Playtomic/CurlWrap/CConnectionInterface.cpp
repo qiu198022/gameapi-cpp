@@ -39,6 +39,16 @@
 #include "boost/shared_ptr.hpp"
 #include "boost/thread.hpp"
 
+#ifdef __ANDROID__
+#include <android/log.h>
+#define  LOG_TAG    "CLOGConnectionInterface"
+
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+#endif
+
+static boost::mutex mThreadListMutex;
+static boost::mutex mRequestQeueMutex;
+
 struct SThreadedRequest
 {
 	std::string		sUrl;
@@ -52,6 +62,9 @@ void SThreadedRequest::RequestFinish(CPlaytomicResponsePtr &response)
 {
     boost::this_thread::interruption_point();
     sTargetDelegate(response);
+#ifdef __ANDROID__
+	LOGI("Request Finished");
+#endif
 }
 
 void SThreadedRequest::operator()()
@@ -124,26 +137,45 @@ class CAsyncRequest
 {
 public:
     CAsyncRequest( CConnectionInterface* owner) { mOwner = owner;}
-    void Start(const std::string url, CPostPtr post, RequestDelegate targetDelegate);
     
+    void Set(const std::string url, CPostPtr post, RequestDelegate targetDelegate);
+    void Start(const std::string url, CPostPtr post, RequestDelegate targetDelegate);
+    void Start();
     void Stop();
 
 private:
     void ProcessRequest(const std::string url, CPostPtr post, RequestDelegate targetDelegate);
-
+	void ProcessRequest();
     ThreadPtr mThreadPtr;
+    SThreadedRequest request;
     CConnectionInterface* mOwner;
 };
 
-void CAsyncRequest::ProcessRequest(const std::string url, CPostPtr post , RequestDelegate targetDelegate)
+void CAsyncRequest::Set(const std::string url, CPostPtr post, RequestDelegate targetDelegate)
 {
-    SThreadedRequest request;
     request.sUrl = url;
     request.sPost = post;
     request.sTargetDelegate = targetDelegate;
+}
+
+void CAsyncRequest::Start()
+{
+   mThreadPtr = ThreadPtr(new boost::thread(boost::bind( &CAsyncRequest::ProcessRequest, this))); 
+}
+
+void CAsyncRequest::ProcessRequest(const std::string url, CPostPtr post , RequestDelegate targetDelegate)
+{
+
     request();
     mOwner->ThreadFinish(this);
 }
+
+void CAsyncRequest::ProcessRequest()
+{
+	request();
+	mOwner->ThreadFinish(this);
+}
+
 
 void CAsyncRequest::Start(const std::string url, CPostPtr post, RequestDelegate targetDelegate)
 {
@@ -191,8 +223,16 @@ CConnectionInterface::CConnectionInterface()
 
 CConnectionInterface::~CConnectionInterface()
 {
-    std::list<CAsyncRequest*>::iterator it = mThreadList.begin();
+    std::list<CAsyncRequest*>::iterator it = mRequestQeue.begin();
     
+    for(; it != mRequestQeue.end(); it++)
+    {
+        (*it)->Stop();
+        delete (*it);
+    }
+    mThreadList.clear();
+    
+    it = mThreadList.begin();
     for(; it != mThreadList.end(); it++)
     {
         (*it)->Stop();
@@ -203,6 +243,9 @@ CConnectionInterface::~CConnectionInterface()
 
 void CConnectionInterface::Init()
 {
+#ifdef __ANDROID__
+    LOGI("Cconnection interface init!");
+#endif
 	curl_global_init(CURL_GLOBAL_ALL);
 }
 
@@ -253,28 +296,47 @@ CPlaytomicResponsePtr CConnectionInterface::PerformSyncRequest(const char* url, 
 	
 }
 
-void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate)
+void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, bool forceToSend)
 {
-	PerformAsyncRequest(url, targetDelegate, CPostPtr());
+	PerformAsyncRequest(url, targetDelegate, CPostPtr(), forceToSend);
 }
 
-void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData )
+void CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData , bool forceToSend)
 {
-//	SThreadedRequest x;
-//    x->sPost = postData;
-//    x->sUrl = url;
-//    x->sTargetDelegate = targetDelegate
-//	boost::thread thread(x)  //= new boost::threa(x); 
-//    mThreadList.push_bthreadis)));
     
     CAsyncRequest* request = new CAsyncRequest(this);
-    request->Start(url, postData, targetDelegate);
-    mThreadList.push_back(request);
+    request->Set(url, postData, targetDelegate);
+    if( mThreadList.size() < kThreadLimit || forceToSend)
+    {
+		mThreadListMutex.lock();
+		mThreadList.push_back(request);
+		mThreadListMutex.unlock();
+        request->Start();
+    }
+    else
+    {
+        mRequestQeueMutex.lock();
+        mRequestQeue.push_back(request);
+        mRequestQeueMutex.unlock();
+    }
 }
 
 void CConnectionInterface::ThreadFinish(CAsyncRequest *thread)
 {
+    mThreadListMutex.lock();
     mThreadList.remove(thread);
-    delete thread;
+    mThreadListMutex.unlock();
+    delete thread;    
+    if(mRequestQeue.size() > 0 && mThreadList.size() < kThreadLimit)
+    {
+        mRequestQeueMutex.lock();
+        CAsyncRequest* newRequest = mRequestQeue.front();
+        mRequestQeue.pop_front();
+        newRequest->Start();
+        mRequestQeueMutex.unlock();
+        mThreadListMutex.lock();
+        mThreadList.push_back(newRequest);
+        mThreadListMutex.unlock();
+    }
 }
 

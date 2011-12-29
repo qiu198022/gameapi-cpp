@@ -166,7 +166,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "106"
          endingLineNumber = "106"
-         landmarkName = "CLogRequest::RequestComplete( CPlaytomicResponsePtr&amp; response )"
+         landmarkName = "CLogRequest::MassQueue(std::list&lt;std::string&gt;&amp; queue )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -250,7 +250,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "16"
          endingLineNumber = "16"
-         landmarkName = "CDemo::Init()"
+         landmarkName = "CDemo::Start()"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -375,8 +375,48 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "218"
-         endingLineNumber = "218"
-         landmarkName = "CConnectionInterface::PerformSyncRequest(const char* url, CPost* postData)"
+         endingLineNumber = "218">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "modules/LogMenu.cpp"
+         timestampString = "346708287.506362"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "97"
+         endingLineNumber = "97"
+         landmarkName = "CLogMenu::ProcessOption(int optionId)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "modules/LogMenu.cpp"
+         timestampString = "346708298.153678"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "68"
+         endingLineNumber = "68"
+         landmarkName = "CLogMenu::ProcessOption(int optionId)"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/CurlWrap/CConnectionInterface.cpp"
+         timestampString = "346708342.451662"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "305"
+         endingLineNumber = "305"
+         landmarkName = "CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData , bool forceToSend)"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

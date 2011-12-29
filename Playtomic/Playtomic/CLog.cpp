@@ -35,10 +35,7 @@
 #include "../Tools/StringHelper.h"
 #include "../Tools/timer.h"
 #include "../Tools/File.h"
-
-#ifdef _IOSSDK_
 #include "FilePaths.h"
-#endif
 
 
 namespace Playtomic
@@ -67,25 +64,8 @@ CLog::CLog(int gameId, std::string& gameguid)
 	gPlaytomic->TimerManager()->AddTimer(mTimer);
     
     const char *currentFileName = CLogRequest::GetLogFileName();
-#ifdef _IOSSDK_
-    char fileName[300];
-    GetFilePath(fileName, 300, currentFileName);
-    currentFileName = fileName;
-#endif
     SetCurrentBackupFile(std::string(currentFileName));
-    if( CFile::Exist(mLogBackupFile ))
-    {
-        CFile backup(mLogBackupFile );
-        
-        std::string fileData;
-        backup.Rewind();
-        while(backup.ReadLine(fileData))
-        {
-            SendEvent(fileData,true,true);
-        }
-        backup.Close();
-        CFile::Remove(mLogBackupFile);
-    }
+    
 }
 
 CLog::~CLog()
@@ -94,6 +74,22 @@ CLog::~CLog()
     delete mTimer;
 }
 
+void CLog::Init()
+{
+    if( gPlaytomic->IsWiFiActive() && CFile::Exist(mLogBackupFile ))
+    {
+        CFile backup(mLogBackupFile  );
+        
+        std::string fileData;
+        backup.Rewind();
+        while(backup.ReadLine(fileData))
+        {
+            SendEvent(fileData,true,true);
+        }
+        backup.Close();
+        CFile::Remove(mLogBackupFile );
+    }
+}
 void CLog::View( void )
 {
 	char IdString[50];

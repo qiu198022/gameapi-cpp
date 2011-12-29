@@ -50,6 +50,8 @@ typedef fastdelegate::FastDelegate1<CPlaytomicResponsePtr&> RequestDelegate;
 typedef boost::shared_ptr<boost::thread> ThreadPtr;
 typedef boost::shared_ptr<CPost> CPostPtr;
 
+const int kThreadLimit = 8;
+
 class CAsyncRequest;
 
 class CConnectionInterface
@@ -65,8 +67,8 @@ public:
 
 	CPlaytomicResponsePtr PerformSyncRequest(const char* url, CPost* postData = NULL);
 
-	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate);
-	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData);
+	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, bool forceToSend = true);
+	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData, bool forceToSend = true);
 
     void    ThreadFinish(CAsyncRequest* thread);
 private:
@@ -76,6 +78,7 @@ private:
 	static CConnectionInterface* sHandle;
     
     std::list<CAsyncRequest*> mThreadList;
+    std::list<CAsyncRequest*> mRequestQeue;
 };
 
 #define gConnectionInterface CConnectionInterface::Get()

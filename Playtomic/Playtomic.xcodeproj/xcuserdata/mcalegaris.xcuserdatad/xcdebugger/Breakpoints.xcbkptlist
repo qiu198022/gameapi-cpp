@@ -13,7 +13,9 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "97"
-         endingLineNumber = "97">
+         endingLineNumber = "97"
+         landmarkName = "CLogRequest::QueueEvent( const std::string&amp; event )"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -26,7 +28,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "99"
          endingLineNumber = "99"
-         landmarkName = "CLogRequest::MassQueue(std::list&lt;std::string&gt;&amp; queue )"
+         landmarkName = "CLogRequest::QueueEvent( const std::string&amp; event )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -43,20 +45,6 @@
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Playtomic/CLog.cpp"
-         timestampString = "345745711.292071"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "71"
-         endingLineNumber = "71"
-         landmarkName = "CLog::CLog(int gameId, std::string&amp; gameguid)"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"

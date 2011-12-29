@@ -39,15 +39,19 @@
 #include "Playtomic/CLogRequest.h"
 #include <android/log.h>
 #include "JavaInterface.h"
+#include "Playtomic/CPlaytomicAndroid.h"
+
+
 #define  LOG_TAG    "playtomicTest"
 
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 using namespace Playtomic;
 
-CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, const std::string& filePath)
+CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, JavaVM* vmPtr,jobject activity)
 {
-	CLogRequest::SetLogFileName(filePath.c_str());
-	mPlaytomicInstance = new CPlaytomic(gameId, gameguid, autoUpdate);
+	//CLogRequest::SetLogFileName(filePath.c_str());
+	mPlaytomicInstance = new CPlaytomicAndroid(gameId, gameguid, vmPtr, activity, autoUpdate);
+	mPlaytomicInstance->Init();
 	mLevels.sLevelCount = 0;
 }
 

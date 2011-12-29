@@ -8,6 +8,7 @@ void CDemo::Init()
 	std::string key("9f3f3b43cb234025");
 	
 	mInstance = new Playtomic::CPlaytomic(4603, key, true);
+    mInstance->Init();
     mInstance->Log()->View();
 	mCurrentModule = new CMainMenu(this);
 }

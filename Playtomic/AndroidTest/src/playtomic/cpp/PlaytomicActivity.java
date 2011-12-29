@@ -342,8 +342,10 @@ public class PlaytomicActivity extends Activity {
 	static {
 		System.loadLibrary("Playtomic");
         System.loadLibrary("PlaytomicDemo");
-        int somevar = 1;
-        somevar = 2;
+        int somevar;
+        int somevar2 = 2;
+        somevar = somevar2;
+        somevar2 = somevar;
     }
 }
 

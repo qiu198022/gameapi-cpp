@@ -29,10 +29,11 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "File.h"
+#include "FilePaths.h"
 
 #ifdef __ANDROID__
 #include <android/log.h>
-#define  LOG_TAG    "playtomicTest"
+#define  LOG_TAG    "playtomicFile"
 
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 #endif
@@ -44,18 +45,22 @@ bool CFile::Exist(const std::string& fileName)
 
 bool CFile::Exist(const char *pFileName)
 {
-    FILE* file = fopen(pFileName, "r");
+    char fileName[300];
+    GetFilePath(fileName, 300, pFileName);
+    FILE* file = fopen(fileName, "r");
     return (file != NULL);
 }
 
 bool CFile::Remove(const std::string& fileName)
 {
-    return   Exist(fileName.c_str());
+    return   Remove(fileName.c_str());
 }
 
 bool CFile::Remove(const char *pFileName)
 {
-    return ( remove(pFileName) );
+    char fileName[300];
+    GetFilePath(fileName, 300, pFileName);
+    return ( remove(fileName) );
 }
 
 CFile::CFile()
@@ -96,16 +101,16 @@ bool CFile::Open(const std::string &fileName)
 
 bool CFile::Open(const char *pFileName)
 {
+
     if (mFile)
     {
         fclose(mFile);
     }
-    mFile = fopen(pFileName, "a+");
+    char fileName[300];
+    GetFilePath(fileName, 300, pFileName);
+    mFile = fopen(fileName, "a+");
     if(mFile == NULL)
     {
-#if defined(__ANDROID__)
-        LOGI("failed to open %s", pFileName);
-#endif
         perror(" ");
         return false;
     }
