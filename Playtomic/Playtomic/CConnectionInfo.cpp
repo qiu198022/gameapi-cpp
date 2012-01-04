@@ -5,7 +5,7 @@
 //  Created by matias calegaris on 12/28/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
-#include "ConnectionInfo.h"
+#include "CConnectionInfo.h"
 #ifdef __ANDROID__
 
 #include <jni.h>
@@ -18,18 +18,56 @@
 #endif
 namespace Playtomic {
 
+class CConnectionInfoAndroid : public CConnectionInfoBase
+{
+public:
+    virtual void Init();
+    virtual EConnectionType GetConnectionType();
+    
+private:
+
+};
+
+#ifndef __ANDROID__
+class CConnectionInfoGeneric : public CConnectionInfoBase
+{
+public:
+    virtual void Init();
+    virtual EConnectionType GetConnectionType();
+    
+private:
+};
+#endif
+ 
+#ifndef _IOSSDK_
+CConnectionInfoBase* CConnectionInfoBase::CreateInstance()
+{
+#if defined( __ANDROID__)
+    return new CConnectionInfoAndroid;
+#else
+    return new CConnectionInfoGeneric;
+#endif
+}
+#endif
+    
 
 #ifdef __ANDROID__
-EConnectionType CheckConnectionType()
+
+void CConnectionInfoAndroid::Init()
+{
+}
+    
+    
+CConnectionInfoBase::EConnectionType CConnectionInfoAndroid::GetConnectionType()
 {
     
-    LOGI("ask wifi type");
+
 //jni wtf
 // Acquire a pointer to the current JavaVM
     JavaVM * jVM = CPlaytomicAndroid::GetJavaVM();
     if(jVM == NULL)
     {
-            LOGI("invalid vm");
+
         return e_disconnected;
     }
     jobject activity = CPlaytomicAndroid::GetActivity();
@@ -48,7 +86,7 @@ EConnectionType CheckConnectionType()
 	        return e_disconnected;
 	    }
     }
-    LOGI("get context info");
+
     jclass cls_context = env->FindClass("android/content/Context");
 	jmethodID sys_service = env->GetMethodID(cls_context, "getSystemService", "(Ljava/lang/String;)Ljava/lang/Object;");
     
@@ -56,25 +94,18 @@ EConnectionType CheckConnectionType()
                                          "Ljava/lang/String;");
     
 	jstring systemstr = (jstring)env->GetStaticObjectField(cls_context, fid);
-    
-    
-    LOGI("call activity for manager");
+
 	jobject obj_connectManager = env->CallObjectMethod(activity, sys_service,systemstr);
-    LOGI("get manager table");
     jclass cls_env = env->GetObjectClass(obj_connectManager);
 	jmethodID mid_getExtStorage = env->GetMethodID(cls_env, "getActiveNetworkInfo", "()Landroid/net/NetworkInfo;");
-    LOGI("get net info manager : %d", obj_connectManager);
 	jobject obj_netInfo = env->CallObjectMethod(obj_connectManager, mid_getExtStorage);
-    LOGI("check for valid net infor :%d", obj_netInfo);
     int type = -1;
     if( obj_netInfo)
     {
-        jclass cls_netInfo = env->GetObjectClass(obj_netInfo);//env->FindClass("android/net/NetworkInfo");
-        LOGI("get method id %d", cls_netInfo);
+        jclass cls_netInfo = env->GetObjectClass(obj_netInfo);
         jmethodID mid_getType = env->GetMethodID(cls_netInfo, "getType",  "()I");
-        LOGI("call method %d", mid_getType);
         type = env->CallIntMethod(obj_netInfo, mid_getType);
-        LOGI("type wtf");
+
     }
     LOGI("type : %d", type);
     switch (type)
@@ -90,7 +121,13 @@ EConnectionType CheckConnectionType()
 }
 #else
 #ifndef __IOSSDK__
-EConnectionType CheckConnectionType()
+    
+void CConnectionInfoGeneric::Init()
+{
+    
+}
+    
+CConnectionInfoBase::EConnectionType CConnectionInfoGeneric::GetConnectionType()
 {
     return e_wifi;
 }

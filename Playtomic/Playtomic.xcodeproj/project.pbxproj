@@ -79,6 +79,10 @@
 		477D3E3E149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
 		477D3E41149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
 		477D3E42149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
+		4797548414B355850070D256 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 4797548214B355850070D256 /* Reachability.h */; };
+		4797548814B3560F0070D256 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4797548314B355850070D256 /* Reachability.m */; };
+		4797548914B3561F0070D256 /* FilePaths.mm in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E90D14AB58960077F745 /* FilePaths.mm */; };
+		4797548B14B359E70070D256 /* CConnectionInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4797548A14B359E70070D256 /* CConnectionInfo.mm */; };
 		47A808C514880A5B00DE454A /* DataStructures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A808C314880A5B00DE454A /* DataStructures.cpp */; };
 		47A808C614880A5B00DE454A /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A808C414880A5B00DE454A /* DataStructures.h */; };
 		47C9824E14744635004BBEAF /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
@@ -137,9 +141,8 @@
 		47C9828514744635004BBEAF /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
 		47E9E90E14AB58960077F745 /* FilePaths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E90B14AB58960077F745 /* FilePaths.cpp */; };
 		47E9E90F14AB58960077F745 /* FilePaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 47E9E90C14AB58960077F745 /* FilePaths.h */; };
-		47E9E91014AB58960077F745 /* FilePaths.mm in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E90D14AB58960077F745 /* FilePaths.mm */; };
-		47E9E91A14AB74D00077F745 /* ConnectionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 47E9E91914AB74D00077F745 /* ConnectionInfo.h */; };
-		47E9E91C14AB75020077F745 /* ConnectionInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E91B14AB75020077F745 /* ConnectionInfo.cpp */; };
+		47E9E91A14AB74D00077F745 /* CConnectionInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 47E9E91914AB74D00077F745 /* CConnectionInfo.h */; };
+		47E9E91C14AB75020077F745 /* CConnectionInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E91B14AB75020077F745 /* CConnectionInfo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,14 +221,17 @@
 		47719FE214AA08E100CC77E3 /* CPlaytomicAndroid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPlaytomicAndroid.cpp; sourceTree = "<group>"; };
 		477D3E3C149A31F000A69F5D /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		477D3E40149A34AC00A69F5D /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
+		4797548214B355850070D256 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4797548314B355850070D256 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4797548A14B359E70070D256 /* CConnectionInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CConnectionInfo.mm; sourceTree = "<group>"; };
 		47A808C314880A5B00DE454A /* DataStructures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataStructures.cpp; sourceTree = "<group>"; };
 		47A808C414880A5B00DE454A /* DataStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStructures.h; sourceTree = "<group>"; };
 		47C9828914744635004BBEAF /* PlaytomicIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = PlaytomicIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E9E90B14AB58960077F745 /* FilePaths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FilePaths.cpp; sourceTree = "<group>"; };
 		47E9E90C14AB58960077F745 /* FilePaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePaths.h; sourceTree = "<group>"; };
 		47E9E90D14AB58960077F745 /* FilePaths.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FilePaths.mm; sourceTree = "<group>"; };
-		47E9E91914AB74D00077F745 /* ConnectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionInfo.h; sourceTree = "<group>"; };
-		47E9E91B14AB75020077F745 /* ConnectionInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectionInfo.cpp; sourceTree = "<group>"; };
+		47E9E91914AB74D00077F745 /* CConnectionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CConnectionInfo.h; sourceTree = "<group>"; };
+		47E9E91B14AB75020077F745 /* CConnectionInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CConnectionInfo.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +255,7 @@
 		47536C0C1471954600494B85 = {
 			isa = PBXGroup;
 			children = (
+				4797548114B355850070D256 /* Reachability */,
 				47536C1E147195C500494B85 /* CurlWrap */,
 				47536C28147195C500494B85 /* json */,
 				47536C3C147195C500494B85 /* Playtomic */,
@@ -325,10 +332,11 @@
 		47536C3C147195C500494B85 /* Playtomic */ = {
 			isa = PBXGroup;
 			children = (
+				4797548A14B359E70070D256 /* CConnectionInfo.mm */,
 				47719FE014AA077300CC77E3 /* CPlaytomicAndroid.h */,
 				47719FE214AA08E100CC77E3 /* CPlaytomicAndroid.cpp */,
-				47E9E91914AB74D00077F745 /* ConnectionInfo.h */,
-				47E9E91B14AB75020077F745 /* ConnectionInfo.cpp */,
+				47E9E91914AB74D00077F745 /* CConnectionInfo.h */,
+				47E9E91B14AB75020077F745 /* CConnectionInfo.cpp */,
 				47A808C314880A5B00DE454A /* DataStructures.cpp */,
 				47A808C414880A5B00DE454A /* DataStructures.h */,
 				47536C60147195C500494B85 /* PlaytomicDefines.h */,
@@ -423,6 +431,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		4797548114B355850070D256 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				4797548214B355850070D256 /* Reachability.h */,
+				4797548314B355850070D256 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -466,7 +483,8 @@
 				47A808C614880A5B00DE454A /* DataStructures.h in Headers */,
 				477D3E3D149A31F000A69F5D /* File.h in Headers */,
 				47E9E90F14AB58960077F745 /* FilePaths.h in Headers */,
-				47E9E91A14AB74D00077F745 /* ConnectionInfo.h in Headers */,
+				47E9E91A14AB74D00077F745 /* CConnectionInfo.h in Headers */,
+				4797548414B355850070D256 /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,8 +666,7 @@
 				47A808C514880A5B00DE454A /* DataStructures.cpp in Sources */,
 				477D3E41149A34AC00A69F5D /* File.cpp in Sources */,
 				47E9E90E14AB58960077F745 /* FilePaths.cpp in Sources */,
-				47E9E91014AB58960077F745 /* FilePaths.mm in Sources */,
-				47E9E91C14AB75020077F745 /* ConnectionInfo.cpp in Sources */,
+				47E9E91C14AB75020077F745 /* CConnectionInfo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +674,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4797548914B3561F0070D256 /* FilePaths.mm in Sources */,
+				4797548814B3560F0070D256 /* Reachability.m in Sources */,
 				47C9824E14744635004BBEAF /* CConnectionInterface.cpp in Sources */,
 				47C9824F14744635004BBEAF /* CPlaytomicResponse.cpp in Sources */,
 				47C9825014744635004BBEAF /* CPost.cpp in Sources */,
@@ -679,6 +698,7 @@
 				47C9826114744635004BBEAF /* StringHelper.cpp in Sources */,
 				47C9826214744635004BBEAF /* timer.cpp in Sources */,
 				477D3E42149A34AC00A69F5D /* File.cpp in Sources */,
+				4797548B14B359E70070D256 /* CConnectionInfo.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

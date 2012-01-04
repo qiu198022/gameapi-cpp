@@ -14,7 +14,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "97"
          endingLineNumber = "97"
-         landmarkName = "CLogRequest::QueueEvent( const std::string&amp; event )"
+         landmarkName = "CLogRequest::Send( void )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -28,7 +28,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "99"
          endingLineNumber = "99"
-         landmarkName = "CLogRequest::QueueEvent( const std::string&amp; event )"
+         landmarkName = "CLogRequest::Send( void )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -56,6 +56,18 @@
          endingLineNumber = "116"
          landmarkName = "CPlaytomic::~CPlaytomic()"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Playtomic/CConnectionInfo.cpp"
+         timestampString = "347309060.909342"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "19"
+         endingLineNumber = "19">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

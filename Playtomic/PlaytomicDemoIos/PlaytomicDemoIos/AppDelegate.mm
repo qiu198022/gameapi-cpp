@@ -28,6 +28,7 @@
     //[path getCString:buff maxLength:256 encoding:NSUTF8StringEncoding];
    // Playtomic::CLogRequest::SetLogFileName( buff );
 	Playtomic::CPlaytomic *mInstance = new Playtomic::CPlaytomic(4603, key, true);
+    mInstance->Init();
     mInstance->Log()->View();
     mInstance->Log()->Play();
     

@@ -133,6 +133,7 @@
     <ClCompile Include="..\Tools\MD5.cpp" />
     <ClCompile Include="..\Tools\StringHelper.cpp" />
     <ClCompile Include="..\Tools\timer.cpp" />
+    <ClCompile Include="CConnectionInfo.cpp" />
     <ClCompile Include="CData.cpp" />
     <ClCompile Include="CGameVars.cpp" />
     <ClCompile Include="CGeoIp.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="..\Tools\MD5.h" />
     <ClInclude Include="..\Tools\StringHelper.h" />
     <ClInclude Include="..\Tools\timer.h" />
+    <ClInclude Include="CConnectionInfo.h" />
     <ClInclude Include="CData.h" />
     <ClInclude Include="CGameVars.h" />
     <ClInclude Include="CGeoIp.h" />

@@ -3,7 +3,7 @@ set vstudio="Microsoft Visual Studio 10.0"
 set programFiles="Program Files (x86)"
 set DEVENV_DIR=C:\%programFiles%\%vstudio%\Common7\IDE
 
-set SOLUTION_DIR=Z:\Documents\gameapi-cpp\Playtomic
+set SOLUTION_DIR=Y:\Documents\gameapi-cpp\Playtomic
 echo start build
 
 rmdir /s /q prebuilt\vstudio
