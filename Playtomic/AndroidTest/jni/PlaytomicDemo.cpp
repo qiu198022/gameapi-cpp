@@ -61,8 +61,7 @@ CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdat
 	Playtomic::CExceptionHandler::SetHandlers();
 	Playtomic::CExceptionHandler::SetSignalCallbackk(&HandleCrash);
 	mLevels.sLevelCount = 0;
-	void (*func)() =0;
-	    func();
+
 }
 
 CPlaytomicDemo::~CPlaytomicDemo()

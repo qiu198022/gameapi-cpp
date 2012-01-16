@@ -53,8 +53,7 @@ void handleCrash(int signal)
     {
         NSLog(@"response failed error code = #%d", response->ResponseError());
     }
-    void (*func)() =0;
-    func();
+
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

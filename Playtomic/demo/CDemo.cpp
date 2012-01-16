@@ -17,9 +17,7 @@ void CDemo::Init()
 	Playtomic::CExceptionHandler::SetSignalCallbackk(&processCrash);
     mInstance->Init();
     mInstance->Log()->View();
-    void (*func)() =0;
-    func();
-
+    
 	mCurrentModule = new CMainMenu(this);	
 }
 
