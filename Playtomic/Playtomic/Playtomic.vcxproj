@@ -135,6 +135,7 @@
     <ClCompile Include="..\Tools\timer.cpp" />
     <ClCompile Include="CConnectionInfo.cpp" />
     <ClCompile Include="CData.cpp" />
+    <ClCompile Include="CExceptionHandler.cpp" />
     <ClCompile Include="CGameVars.cpp" />
     <ClCompile Include="CGeoIp.cpp" />
     <ClCompile Include="CLeaderboard.cpp" />
@@ -146,6 +147,8 @@
     <ClCompile Include="CPlaytomic.cpp" />
     <ClCompile Include="CScore.cpp" />
     <ClCompile Include="DataStructures.cpp" />
+    <ClCompile Include="windows\CExceptionHandler_WinImp.cpp" />
+    <ClCompile Include="windows\StackWalker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CurlWrap\CConnectionInterface.h" />
@@ -171,6 +174,7 @@
     <ClInclude Include="..\Tools\timer.h" />
     <ClInclude Include="CConnectionInfo.h" />
     <ClInclude Include="CData.h" />
+    <ClInclude Include="CExceptionHandler.h" />
     <ClInclude Include="CGameVars.h" />
     <ClInclude Include="CGeoIp.h" />
     <ClInclude Include="CLeaderboard.h" />
@@ -184,6 +188,7 @@
     <ClInclude Include="CScore.h" />
     <ClInclude Include="DataStructures.h" />
     <ClInclude Include="PlaytomicDefines.h" />
+    <ClInclude Include="windows\StackWalker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

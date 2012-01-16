@@ -78,8 +78,6 @@ public:
     
     void Init();
 
-	int GetGameId();
-	
 	int GameId() const;
 	void GameId(int val);
 	const std::string& GetGameGuid() const;

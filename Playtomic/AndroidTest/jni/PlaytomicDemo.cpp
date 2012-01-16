@@ -40,6 +40,7 @@
 #include <android/log.h>
 #include "JavaInterface.h"
 #include "Playtomic/CPlaytomicAndroid.h"
+#include "Playtomic/CExceptionHandler.h"
 
 
 #define  LOG_TAG    "playtomicTest"
@@ -47,16 +48,26 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 using namespace Playtomic;
 
+void HandleCrash(int signal)
+{
+	LOGI("crash handler!");
+}
+
 CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, JavaVM* vmPtr,jobject activity)
 {
 	//CLogRequest::SetLogFileName(filePath.c_str());
 	mPlaytomicInstance = new CPlaytomicAndroid(gameId, gameguid, vmPtr, activity, autoUpdate);
 	mPlaytomicInstance->Init();
+	Playtomic::CExceptionHandler::SetHandlers();
+	Playtomic::CExceptionHandler::SetSignalCallbackk(&HandleCrash);
 	mLevels.sLevelCount = 0;
+	void (*func)() =0;
+	    func();
 }
 
 CPlaytomicDemo::~CPlaytomicDemo()
 {
+	Playtomic::CExceptionHandler::UnsetHandlers();
 	CPlaytomic::Destroy();
 }
 

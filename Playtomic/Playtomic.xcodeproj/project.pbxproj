@@ -21,6 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		471163CC14BE26CF003CE243 /* CExceptionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 471163CA14BE26CF003CE243 /* CExceptionHandler.cpp */; };
+		471163CD14BE26CF003CE243 /* CExceptionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 471163CA14BE26CF003CE243 /* CExceptionHandler.cpp */; };
+		471163CE14BE26CF003CE243 /* CExceptionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 471163CB14BE26CF003CE243 /* CExceptionHandler.h */; };
+		471163CF14BE26CF003CE243 /* CExceptionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 471163CB14BE26CF003CE243 /* CExceptionHandler.h */; };
 		47536C6E147195C500494B85 /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
 		47536C6F147195C500494B85 /* CConnectionInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C20147195C500494B85 /* CConnectionInterface.h */; };
 		47536C70147195C500494B85 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C21147195C500494B85 /* Common.h */; };
@@ -83,6 +87,8 @@
 		4797548814B3560F0070D256 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4797548314B355850070D256 /* Reachability.m */; };
 		4797548914B3561F0070D256 /* FilePaths.mm in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E90D14AB58960077F745 /* FilePaths.mm */; };
 		4797548B14B359E70070D256 /* CConnectionInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4797548A14B359E70070D256 /* CConnectionInfo.mm */; };
+		47987B4214C073120084E703 /* CExceptionHandler_UnixImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47987B4114C073120084E703 /* CExceptionHandler_UnixImp.cpp */; };
+		47987B4314C073120084E703 /* CExceptionHandler_UnixImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47987B4114C073120084E703 /* CExceptionHandler_UnixImp.cpp */; };
 		47A808C514880A5B00DE454A /* DataStructures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47A808C314880A5B00DE454A /* DataStructures.cpp */; };
 		47A808C614880A5B00DE454A /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = 47A808C414880A5B00DE454A /* DataStructures.h */; };
 		47C9824E14744635004BBEAF /* CConnectionInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C1F147195C500494B85 /* CConnectionInterface.cpp */; };
@@ -146,6 +152,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		471163CA14BE26CF003CE243 /* CExceptionHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CExceptionHandler.cpp; sourceTree = "<group>"; };
+		471163CB14BE26CF003CE243 /* CExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CExceptionHandler.h; sourceTree = "<group>"; };
 		47536C171471954600494B85 /* libPlaytomic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPlaytomic.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47536C1F147195C500494B85 /* CConnectionInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CConnectionInterface.cpp; sourceTree = "<group>"; };
 		47536C20147195C500494B85 /* CConnectionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CConnectionInterface.h; sourceTree = "<group>"; };
@@ -224,6 +232,7 @@
 		4797548214B355850070D256 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4797548314B355850070D256 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4797548A14B359E70070D256 /* CConnectionInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CConnectionInfo.mm; sourceTree = "<group>"; };
+		47987B4114C073120084E703 /* CExceptionHandler_UnixImp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CExceptionHandler_UnixImp.cpp; path = Unix/CExceptionHandler_UnixImp.cpp; sourceTree = "<group>"; };
 		47A808C314880A5B00DE454A /* DataStructures.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataStructures.cpp; sourceTree = "<group>"; };
 		47A808C414880A5B00DE454A /* DataStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStructures.h; sourceTree = "<group>"; };
 		47C9828914744635004BBEAF /* PlaytomicIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = PlaytomicIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,6 +341,9 @@
 		47536C3C147195C500494B85 /* Playtomic */ = {
 			isa = PBXGroup;
 			children = (
+				47987B4514C0731B0084E703 /* Unix */,
+				471163CA14BE26CF003CE243 /* CExceptionHandler.cpp */,
+				471163CB14BE26CF003CE243 /* CExceptionHandler.h */,
 				4797548A14B359E70070D256 /* CConnectionInfo.mm */,
 				47719FE014AA077300CC77E3 /* CPlaytomicAndroid.h */,
 				47719FE214AA08E100CC77E3 /* CPlaytomicAndroid.cpp */,
@@ -440,6 +452,14 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		47987B4514C0731B0084E703 /* Unix */ = {
+			isa = PBXGroup;
+			children = (
+				47987B4114C073120084E703 /* CExceptionHandler_UnixImp.cpp */,
+			);
+			name = Unix;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -485,6 +505,7 @@
 				47E9E90F14AB58960077F745 /* FilePaths.h in Headers */,
 				47E9E91A14AB74D00077F745 /* CConnectionInfo.h in Headers */,
 				4797548414B355850070D256 /* Reachability.h in Headers */,
+				471163CE14BE26CF003CE243 /* CExceptionHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +547,7 @@
 				47C9828414744635004BBEAF /* StringHelper.h in Headers */,
 				47C9828514744635004BBEAF /* timer.h in Headers */,
 				477D3E3E149A31F000A69F5D /* File.h in Headers */,
+				471163CF14BE26CF003CE243 /* CExceptionHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +689,8 @@
 				477D3E41149A34AC00A69F5D /* File.cpp in Sources */,
 				47E9E90E14AB58960077F745 /* FilePaths.cpp in Sources */,
 				47E9E91C14AB75020077F745 /* CConnectionInfo.cpp in Sources */,
+				471163CC14BE26CF003CE243 /* CExceptionHandler.cpp in Sources */,
+				47987B4214C073120084E703 /* CExceptionHandler_UnixImp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,6 +723,8 @@
 				47C9826214744635004BBEAF /* timer.cpp in Sources */,
 				477D3E42149A34AC00A69F5D /* File.cpp in Sources */,
 				4797548B14B359E70070D256 /* CConnectionInfo.mm in Sources */,
+				471163CD14BE26CF003CE243 /* CExceptionHandler.cpp in Sources */,
+				47987B4314C073120084E703 /* CExceptionHandler_UnixImp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

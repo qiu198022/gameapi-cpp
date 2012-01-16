@@ -10,8 +10,15 @@
 #import "Playtomic/CPlaytomic.h"
 #include "Playtomic/CLog.h"
 #include "Playtomic/CData.h"
+#include "Playtomic/CExceptionHandler.h"
 //#include "Playtomic/CLogRequest.h"
 #include <string>
+
+void handleCrash(int signal)
+{
+    NSLog(@"crash!");
+    //you can try to save any data you want to save here
+}
 
 @implementation AppDelegate
 
@@ -29,6 +36,8 @@
    // Playtomic::CLogRequest::SetLogFileName( buff );
 	Playtomic::CPlaytomic *mInstance = new Playtomic::CPlaytomic(4603, key, true);
     mInstance->Init();
+    Playtomic::CExceptionHandler::SetHandlers();
+    Playtomic::CExceptionHandler::SetSignalCallbackk(&handleCrash);
     mInstance->Log()->View();
     mInstance->Log()->Play();
     
@@ -44,6 +53,9 @@
     {
         NSLog(@"response failed error code = #%d", response->ResponseError());
     }
+    void (*func)() =0;
+    func();
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

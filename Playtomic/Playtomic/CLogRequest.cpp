@@ -84,6 +84,7 @@ void CLogRequest::Send( void )
 	fullUrl += mData;
 
     mSendTries++;
+	
     if(gPlaytomic->IsWiFiActive())
     {
         gConnectionInterface->PerformAsyncRequest(fullUrl.c_str(), fastdelegate::MakeDelegate(this, &CLogRequest::RequestComplete), false);
@@ -143,9 +144,6 @@ void CLogRequest::SetHasDate(bool state)
 
 void CLogRequest::RequestComplete( CPlaytomicResponsePtr& response )
 {
-#ifdef __ANDROID__
-    LOGI("log request finish %d", response->ResponseError());
-#endif
     if(!response->ResponseSucceded())
     {
         if(mSendTries < e_triesLimit)

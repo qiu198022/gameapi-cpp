@@ -103,20 +103,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "CDemo.cpp"
-         timestampString = "346270410.671349"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "13"
-         endingLineNumber = "13"
-         landmarkName = "CDemo::Init()"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          isPathRelative = "0"
          filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CLog.cpp"
          timestampString = "345753047.32974"
@@ -124,7 +110,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "88"
          endingLineNumber = "88"
-         landmarkName = "CLog::CLog(int gameId, std::string&amp; gameguid)"
+         landmarkName = "CLog::Init()"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -138,7 +124,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "328"
          endingLineNumber = "328"
-         landmarkName = "CLog::ForceSend( bool hasDate)"
+         landmarkName = "CLog::SendEvent( const std::string&amp; event, bool commit, bool hasDate )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -151,9 +137,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "313"
-         endingLineNumber = "313"
-         landmarkName = "CLog::Unfreeze( void )"
-         landmarkType = "5">
+         endingLineNumber = "313">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -166,7 +150,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "106"
          endingLineNumber = "106"
-         landmarkName = "CLogRequest::MassQueue(std::list&lt;std::string&gt;&amp; queue )"
+         landmarkName = "CLogRequest::QueueEvent( const std::string&amp; event )"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -180,7 +164,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "72"
          endingLineNumber = "72"
-         landmarkName = "CLog::CLog(int gameId, std::string&amp; gameguid)"
+         landmarkName = "CLog::~CLog()"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -238,18 +222,6 @@
          endingLineNumber = "170"
          landmarkName = "CFile::ReadLine(std::string &amp;dest)"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "CDemo.cpp"
-         timestampString = "346270408.907503"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "16"
-         endingLineNumber = "16">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -404,7 +376,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "0"
@@ -416,6 +388,20 @@
          endingLineNumber = "305"
          landmarkName = "CConnectionInterface::PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData , bool forceToSend)"
          landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/mcalegaris/Documents/gameapi-cpp/Playtomic/Playtomic/CExceptionHandler.cpp"
+         timestampString = "348174346.984305"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
+         landmarkName = "HandleSignal(int signal)"
+         landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

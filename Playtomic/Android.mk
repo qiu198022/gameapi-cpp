@@ -5,6 +5,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE    := Playtomic
 
 MY_FILES := $(wildcard $(LOCAL_PATH)/Playtomic/*.cpp)
+MY_FILES += $(wildcard $(LOCAL_PATH)/Playtomic/Android/*.cpp)
 MY_FILES += $(wildcard $(LOCAL_PATH)/CurlWrap/*.cpp)
 MY_FILES += $(wildcard $(LOCAL_PATH)/json/src/*.cpp)
 MY_FILES += $(wildcard $(LOCAL_PATH)/Tools/*.cpp)
