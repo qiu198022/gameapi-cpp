@@ -79,6 +79,8 @@
 		47536CA1147195C500494B85 /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6B147195C500494B85 /* StringHelper.h */; };
 		47536CA2147195C500494B85 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6C147195C500494B85 /* timer.cpp */; };
 		47536CA3147195C500494B85 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
+		47659A6014C745BC0007317D /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 47659A5F14C745BC0007317D /* memory.h */; };
+		47659A6114C745BC0007317D /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 47659A5F14C745BC0007317D /* memory.h */; };
 		477D3E3D149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
 		477D3E3E149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
 		477D3E41149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
@@ -225,6 +227,7 @@
 		47536C6B147195C500494B85 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		47536C6C147195C500494B85 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
 		47536C6D147195C500494B85 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
+		47659A5F14C745BC0007317D /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
 		47719FE014AA077300CC77E3 /* CPlaytomicAndroid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPlaytomicAndroid.h; sourceTree = "<group>"; };
 		47719FE214AA08E100CC77E3 /* CPlaytomicAndroid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPlaytomicAndroid.cpp; sourceTree = "<group>"; };
 		477D3E3C149A31F000A69F5D /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
@@ -439,6 +442,7 @@
 				47536C6D147195C500494B85 /* timer.h */,
 				477D3E3C149A31F000A69F5D /* File.h */,
 				477D3E40149A34AC00A69F5D /* File.cpp */,
+				47659A5F14C745BC0007317D /* memory.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -506,6 +510,7 @@
 				47E9E91A14AB74D00077F745 /* CConnectionInfo.h in Headers */,
 				4797548414B355850070D256 /* Reachability.h in Headers */,
 				471163CE14BE26CF003CE243 /* CExceptionHandler.h in Headers */,
+				47659A6014C745BC0007317D /* memory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +553,7 @@
 				47C9828514744635004BBEAF /* timer.h in Headers */,
 				477D3E3E149A31F000A69F5D /* File.h in Headers */,
 				471163CF14BE26CF003CE243 /* CExceptionHandler.h in Headers */,
+				47659A6114C745BC0007317D /* memory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
