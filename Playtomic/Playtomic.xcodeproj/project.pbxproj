@@ -36,7 +36,7 @@
 		47536C76147195C500494B85 /* CRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C27147195C500494B85 /* CRequest.h */; };
 		47536C77147195C500494B85 /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2A147195C500494B85 /* autolink.h */; };
 		47536C78147195C500494B85 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2B147195C500494B85 /* config.h */; };
-		47536C79147195C500494B85 /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2C147195C500494B85 /* features.h */; };
+		47536C79147195C500494B85 /* featuresjson.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2C147195C500494B85 /* featuresjson.h */; };
 		47536C7A147195C500494B85 /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2D147195C500494B85 /* forwards.h */; };
 		47536C7B147195C500494B85 /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2E147195C500494B85 /* json.h */; };
 		47536C7C147195C500494B85 /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2F147195C500494B85 /* reader.h */; };
@@ -79,8 +79,8 @@
 		47536CA1147195C500494B85 /* StringHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6B147195C500494B85 /* StringHelper.h */; };
 		47536CA2147195C500494B85 /* timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47536C6C147195C500494B85 /* timer.cpp */; };
 		47536CA3147195C500494B85 /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C6D147195C500494B85 /* timer.h */; };
-		47659A6014C745BC0007317D /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 47659A5F14C745BC0007317D /* memory.h */; };
-		47659A6114C745BC0007317D /* memory.h in Headers */ = {isa = PBXBuildFile; fileRef = 47659A5F14C745BC0007317D /* memory.h */; };
+		47659A6014C745BC0007317D /* CustomMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 47659A5F14C745BC0007317D /* CustomMemory.h */; };
+		47659A6114C745BC0007317D /* CustomMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 47659A5F14C745BC0007317D /* CustomMemory.h */; };
 		477D3E3D149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
 		477D3E3E149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
 		477D3E41149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
@@ -121,7 +121,7 @@
 		47C9826914744635004BBEAF /* CRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C27147195C500494B85 /* CRequest.h */; };
 		47C9826A14744635004BBEAF /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2A147195C500494B85 /* autolink.h */; };
 		47C9826B14744635004BBEAF /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2B147195C500494B85 /* config.h */; };
-		47C9826C14744635004BBEAF /* features.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2C147195C500494B85 /* features.h */; };
+		47C9826C14744635004BBEAF /* featuresjson.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2C147195C500494B85 /* featuresjson.h */; };
 		47C9826D14744635004BBEAF /* forwards.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2D147195C500494B85 /* forwards.h */; };
 		47C9826E14744635004BBEAF /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2E147195C500494B85 /* json.h */; };
 		47C9826F14744635004BBEAF /* reader.h in Headers */ = {isa = PBXBuildFile; fileRef = 47536C2F147195C500494B85 /* reader.h */; };
@@ -168,7 +168,7 @@
 		47536C27147195C500494B85 /* CRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRequest.h; sourceTree = "<group>"; };
 		47536C2A147195C500494B85 /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
 		47536C2B147195C500494B85 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		47536C2C147195C500494B85 /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = features.h; sourceTree = "<group>"; };
+		47536C2C147195C500494B85 /* featuresjson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = featuresjson.h; sourceTree = "<group>"; };
 		47536C2D147195C500494B85 /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forwards.h; sourceTree = "<group>"; };
 		47536C2E147195C500494B85 /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
 		47536C2F147195C500494B85 /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 		47536C6B147195C500494B85 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		47536C6C147195C500494B85 /* timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = timer.cpp; sourceTree = "<group>"; };
 		47536C6D147195C500494B85 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
-		47659A5F14C745BC0007317D /* memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
+		47659A5F14C745BC0007317D /* CustomMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMemory.h; sourceTree = "<group>"; };
 		47719FE014AA077300CC77E3 /* CPlaytomicAndroid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPlaytomicAndroid.h; sourceTree = "<group>"; };
 		47719FE214AA08E100CC77E3 /* CPlaytomicAndroid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPlaytomicAndroid.cpp; sourceTree = "<group>"; };
 		477D3E3C149A31F000A69F5D /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 			children = (
 				47536C2A147195C500494B85 /* autolink.h */,
 				47536C2B147195C500494B85 /* config.h */,
-				47536C2C147195C500494B85 /* features.h */,
+				47536C2C147195C500494B85 /* featuresjson.h */,
 				47536C2D147195C500494B85 /* forwards.h */,
 				47536C2E147195C500494B85 /* json.h */,
 				47536C2F147195C500494B85 /* reader.h */,
@@ -442,7 +442,7 @@
 				47536C6D147195C500494B85 /* timer.h */,
 				477D3E3C149A31F000A69F5D /* File.h */,
 				477D3E40149A34AC00A69F5D /* File.cpp */,
-				47659A5F14C745BC0007317D /* memory.h */,
+				47659A5F14C745BC0007317D /* CustomMemory.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -478,7 +478,7 @@
 				47536C76147195C500494B85 /* CRequest.h in Headers */,
 				47536C77147195C500494B85 /* autolink.h in Headers */,
 				47536C78147195C500494B85 /* config.h in Headers */,
-				47536C79147195C500494B85 /* features.h in Headers */,
+				47536C79147195C500494B85 /* featuresjson.h in Headers */,
 				47536C7A147195C500494B85 /* forwards.h in Headers */,
 				47536C7B147195C500494B85 /* json.h in Headers */,
 				47536C7C147195C500494B85 /* reader.h in Headers */,
@@ -510,7 +510,7 @@
 				47E9E91A14AB74D00077F745 /* CConnectionInfo.h in Headers */,
 				4797548414B355850070D256 /* Reachability.h in Headers */,
 				471163CE14BE26CF003CE243 /* CExceptionHandler.h in Headers */,
-				47659A6014C745BC0007317D /* memory.h in Headers */,
+				47659A6014C745BC0007317D /* CustomMemory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +525,7 @@
 				47C9826914744635004BBEAF /* CRequest.h in Headers */,
 				47C9826A14744635004BBEAF /* autolink.h in Headers */,
 				47C9826B14744635004BBEAF /* config.h in Headers */,
-				47C9826C14744635004BBEAF /* features.h in Headers */,
+				47C9826C14744635004BBEAF /* featuresjson.h in Headers */,
 				47C9826D14744635004BBEAF /* forwards.h in Headers */,
 				47C9826E14744635004BBEAF /* json.h in Headers */,
 				47C9826F14744635004BBEAF /* reader.h in Headers */,
@@ -553,7 +553,7 @@
 				47C9828514744635004BBEAF /* timer.h in Headers */,
 				477D3E3E149A31F000A69F5D /* File.h in Headers */,
 				471163CF14BE26CF003CE243 /* CExceptionHandler.h in Headers */,
-				47659A6114C745BC0007317D /* memory.h in Headers */,
+				47659A6114C745BC0007317D /* CustomMemory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

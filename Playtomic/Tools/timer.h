@@ -38,6 +38,7 @@ class CTimer;
 #include <cstring>
 #include "FastDelegate.h"
 
+
 typedef fastdelegate::FastDelegate1<CTimer*> TimerDelegate;
 
 class CTimerDelegate

@@ -22,6 +22,7 @@ void HandleSignal(int signal)
     stackTrace += "signal = ";
     stackTrace += sigtype[signal];
     stackTrace += "\n";
+
     if(CExceptionHandler::mCallback)
     {
         CExceptionHandler::mCallback(signal);

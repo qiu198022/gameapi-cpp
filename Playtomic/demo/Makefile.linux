@@ -8,10 +8,11 @@ BIN=demo
 all: ${BIN}
 
 ${BIN}: ${OBJ}
-	${CXX} -o ${BIN} ${OBJ} ${LDFLAGS} -L../lib -lplaytomic -lboost_thread-mt -lcurl
+	${CXX} -o ${BIN} ${OBJ} ${LDFLAGS} -L../lib -lplaytomic -lboost_thread-mt -lboost_date_time-mt -lcurl
 
+CXXFLAGS +=-I../CurlWrap -I../json/include -I../Tools
 .cpp.o:
-	${CXX} -c -I../ -Imodules -o $@ ${CXXFLAGS} $<
+	${CXX} -c -I../ -Imodules -o $@ ${CXXFLAGS}  $<
 
 clean:
 	rm -f ${OBJ}

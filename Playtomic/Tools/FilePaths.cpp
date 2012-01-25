@@ -7,7 +7,7 @@
 //
 #include "FilePaths.h"
 #include <string>
-
+#include <string.h>
 #ifdef __ANDROID__
 #include <jni.h>
 #include "CPlaytomicAndroid.h"

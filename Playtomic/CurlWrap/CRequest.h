@@ -32,7 +32,7 @@
 #ifndef __CREQUEST_H__
 #define __CREQUEST_H__
 
-#include "Curl/curl.h"
+#include "curl/curl.h"
 #include "Common.h"
 
 class CPost;

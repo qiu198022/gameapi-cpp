@@ -74,7 +74,7 @@ CPlaytomicResponsePtr CData::General( const std::string& mode,int day,int month,
 	std::string url(kDataGeneralUrl1);
 	url += gPlaytomic->GetGameGuid() + kDataGeneralUrl2 + mode + kDataGeneralUrl3 + date + kDataGeneralUrl4;
 	sprintf_s(date,59,"%d%s%d%s%d", day, kDataGeneralUrl5, month, kDataGeneralUrl6, year);
-	url += date; url += kDataGeneralUrl6;
+	url += date;
 
 	return GetData(url);
 }

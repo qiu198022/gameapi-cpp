@@ -1,6 +1,7 @@
 include ../config/config.linux.Mk
 include objects.Mk
-
+CXXFLAGS +=-I../CurlWrap -I../json/include
+CXXFLAGS +=-I../json/include
 LIB=../lib/libplaytomic.so
 
 .SUFFIXES: .cpp .o
@@ -10,8 +11,9 @@ all: ${LIB}
 ${LIB}: ${OBJ}
 	${CXX} -shared -o ${LIB} ${OBJ} ${LDFLAGS}
 
+
 .cpp.o:
-	${CXX} -c ${CXXFLAGS} -o $@ -I../Tools -I../CurlWrap $<
+	${CXX} -c ${CXXFLAGS} -o $@ -I../Tools $<
 
 clean:
 	rm -f ${OBJ}

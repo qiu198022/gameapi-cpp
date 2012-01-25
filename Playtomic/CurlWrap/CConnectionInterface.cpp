@@ -243,9 +243,6 @@ CConnectionInterface::~CConnectionInterface()
 
 void CConnectionInterface::Init()
 {
-#ifdef __ANDROID__
-    LOGI("Cconnection interface init!");
-#endif
 	curl_global_init(CURL_GLOBAL_ALL);
 }
 
@@ -268,7 +265,6 @@ CPlaytomicResponsePtr CConnectionInterface::PerformSyncRequest(const char* url, 
 	{
 		return CPlaytomicResponsePtr(new CPlaytomicResponse(true, 0));
 	}
-
 	Json::Reader parser;
 	FData root;
 	bool parserResult = parser.parse(data.data,root,false);

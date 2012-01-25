@@ -30,7 +30,7 @@
 
 #include "File.h"
 #include "FilePaths.h"
-
+#include <string.h>
 #ifdef __ANDROID__
 #include <android/log.h>
 #define  LOG_TAG    "playtomicFile"

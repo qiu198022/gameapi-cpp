@@ -43,13 +43,6 @@
 size_t WriteMemory(void *contents, size_t size, size_t nmemb, void* userp)
 {
 	size_t realsize = size * nmemb;
-#if defined(__ANDROID__) && defined(_DEBUG_ANDROID_CONNECTION_)
-    LOGI("copy data Size= %d nmemb = %d", size, nmemb);
-    if(realsize > 0)
-    {
-        LOGI("text = %s", (char*)contents);
-    }
-#endif
 	SRequestResult *mem =(SRequestResult*)userp;
 
 	SRequestResult newBuffer;
@@ -140,8 +133,11 @@ ERequestResult CRequest::Perform(SRequestResult* dest)
 		mLastResult = e_unknown;
 		return mLastResult;
 	}
-
+	
 	curl_easy_setopt(mHandle, CURLOPT_WRITEDATA, dest);
+	curl_easy_setopt(mHandle, CURLOPT_CONNECTTIMEOUT, 30);
+	curl_easy_setopt(mHandle, CURLOPT_TIMEOUT, 60);
+	curl_easy_setopt(mHandle, CURLOPT_NOSIGNAL, 1);
 	CURLcode res;
 	res = curl_easy_perform(mHandle);
 	

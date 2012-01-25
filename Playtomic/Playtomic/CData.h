@@ -32,10 +32,11 @@
 #ifndef __PLAYTOMIC_DATA_H__
 #define __PLAYTOMIC_DATA_H__
 
+#include "PlaytomicDefines.h"
 #include "CConnectionInterface.h"
 #include <string>
 #include "CPlaytomicDelegate.h"
-#include "PlaytomicDefines.h"
+
 
 namespace Playtomic
 {
