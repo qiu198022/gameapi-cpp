@@ -8,6 +8,7 @@ MY_FILES += $(wildcard Unix/*.cpp)
 MY_FILES += $(wildcard ../CurlWrap/*.cpp)
 MY_FILES += $(wildcard ../json/src/*.cpp)
 MY_FILES += $(wildcard ../Tools/*.cpp)
+MY_FILES += $(wildcard Linux/*.cpp)
 LOCAL_SRC_FILES = $(MY_FILES:%.cpp=%.o) 
 
 OBJ = ${LOCAL_SRC_FILES}

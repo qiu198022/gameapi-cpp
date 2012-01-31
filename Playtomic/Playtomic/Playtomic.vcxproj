@@ -148,6 +148,7 @@
     <ClCompile Include="CScore.cpp" />
     <ClCompile Include="DataStructures.cpp" />
     <ClCompile Include="windows\CExceptionHandler_WinImp.cpp" />
+    <ClCompile Include="windows\CPlaytomic_winImp.cpp" />
     <ClCompile Include="windows\StackWalker.cpp" />
   </ItemGroup>
   <ItemGroup>

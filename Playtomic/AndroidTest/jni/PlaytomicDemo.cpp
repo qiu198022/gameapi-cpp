@@ -48,9 +48,11 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 using namespace Playtomic;
 
-void HandleCrash(int signal)
+void HandleCrash(int signal, std::string& dest)
 {
 	LOGI("crash handler!");
+	dest += "your game state information";
+
 }
 
 CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdate, JavaVM* vmPtr,jobject activity)
@@ -60,6 +62,9 @@ CPlaytomicDemo::CPlaytomicDemo(int gameId, std::string& gameguid, bool autoUpdat
 	mPlaytomicInstance->Init();
 	Playtomic::CExceptionHandler::SetHandlers();
 	Playtomic::CExceptionHandler::SetSignalCallbackk(&HandleCrash);
+
+	void (*func)() = 0;
+	func();
 	mLevels.sLevelCount = 0;
 
 }

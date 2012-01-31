@@ -105,6 +105,7 @@ CPlaytomic::CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate)
 		autoUpdateThread.instance = this;
 		mThread = new boost::thread(autoUpdateThread);
 	}
+    
 
 }
 
@@ -142,6 +143,7 @@ void CPlaytomic::Destroy()
 
 void CPlaytomic::Init()
 {
+    GetDeviceFromSystem();
     mPlaytomicLog->Init();
 }
     
@@ -225,6 +227,11 @@ CPlayerLevels* CPlaytomic::PlayerLevels() const
 CData* CPlaytomic::Data() const
 { 
 	return mPlaytomicData;
+}
+
+const std::string& CPlaytomic::GetDevice() const
+{
+    return mDevice;
 }
 
 bool CPlaytomic::IsWiFiActive()

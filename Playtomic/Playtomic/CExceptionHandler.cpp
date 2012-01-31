@@ -22,12 +22,18 @@ void HandleSignal(int signal)
     stackTrace += "signal = ";
     stackTrace += sigtype[signal];
     stackTrace += "\n";
+    
+    stackTrace += gPlaytomic->GetDevice();
+    
+    std::string extraInfo( " ");
 
     if(CExceptionHandler::mCallback)
     {
-        CExceptionHandler::mCallback(signal);
+        CExceptionHandler::mCallback(signal, extraInfo);
     }
 	CExceptionHandler::GetStackTrace(stackTrace);
+    stackTrace += "\n\ngame infromation: \n";
+    stackTrace += extraInfo;
 	CExceptionHandler::SendStackTrace(stackTrace.c_str());
     CExceptionHandler::UnsetHandlers();
 }

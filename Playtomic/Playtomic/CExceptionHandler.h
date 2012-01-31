@@ -6,7 +6,7 @@
 namespace Playtomic
 {
 
-typedef void (*signalCallback)(int);
+    typedef void (*signalCallback)(int, std::string& dest);
 class DllExport CExceptionHandler
 {
 public:

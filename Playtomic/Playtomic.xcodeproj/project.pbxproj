@@ -85,6 +85,8 @@
 		477D3E3E149A31F000A69F5D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = 477D3E3C149A31F000A69F5D /* File.h */; };
 		477D3E41149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
 		477D3E42149A34AC00A69F5D /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 477D3E40149A34AC00A69F5D /* File.cpp */; };
+		478E85BB14D6DD56008C9CA8 /* CPlaytomic_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 478E85BA14D6DD56008C9CA8 /* CPlaytomic_iOS.mm */; };
+		478E85C714D6EDF4008C9CA8 /* CPlatomic_macimp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 478E85C614D6EDF4008C9CA8 /* CPlatomic_macimp.cpp */; };
 		4797548414B355850070D256 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 4797548214B355850070D256 /* Reachability.h */; };
 		4797548814B3560F0070D256 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4797548314B355850070D256 /* Reachability.m */; };
 		4797548914B3561F0070D256 /* FilePaths.mm in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E90D14AB58960077F745 /* FilePaths.mm */; };
@@ -232,6 +234,8 @@
 		47719FE214AA08E100CC77E3 /* CPlaytomicAndroid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPlaytomicAndroid.cpp; sourceTree = "<group>"; };
 		477D3E3C149A31F000A69F5D /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
 		477D3E40149A34AC00A69F5D /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
+		478E85BA14D6DD56008C9CA8 /* CPlaytomic_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CPlaytomic_iOS.mm; path = ios/CPlaytomic_iOS.mm; sourceTree = "<group>"; };
+		478E85C614D6EDF4008C9CA8 /* CPlatomic_macimp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPlatomic_macimp.cpp; path = MacOs/CPlatomic_macimp.cpp; sourceTree = "<group>"; };
 		4797548214B355850070D256 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4797548314B355850070D256 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4797548A14B359E70070D256 /* CConnectionInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CConnectionInfo.mm; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 		47536C3C147195C500494B85 /* Playtomic */ = {
 			isa = PBXGroup;
 			children = (
+				478E85C814D6EDFA008C9CA8 /* MacOs */,
+				478E85BD14D6DD71008C9CA8 /* ios */,
 				47987B4514C0731B0084E703 /* Unix */,
 				471163CA14BE26CF003CE243 /* CExceptionHandler.cpp */,
 				471163CB14BE26CF003CE243 /* CExceptionHandler.h */,
@@ -445,6 +451,22 @@
 				47659A5F14C745BC0007317D /* CustomMemory.h */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		478E85BD14D6DD71008C9CA8 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				478E85BA14D6DD56008C9CA8 /* CPlaytomic_iOS.mm */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		478E85C814D6EDFA008C9CA8 /* MacOs */ = {
+			isa = PBXGroup;
+			children = (
+				478E85C614D6EDF4008C9CA8 /* CPlatomic_macimp.cpp */,
+			);
+			name = MacOs;
 			sourceTree = "<group>";
 		};
 		4797548114B355850070D256 /* Reachability */ = {
@@ -697,6 +719,7 @@
 				47E9E91C14AB75020077F745 /* CConnectionInfo.cpp in Sources */,
 				471163CC14BE26CF003CE243 /* CExceptionHandler.cpp in Sources */,
 				47987B4214C073120084E703 /* CExceptionHandler_UnixImp.cpp in Sources */,
+				478E85C714D6EDF4008C9CA8 /* CPlatomic_macimp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +754,7 @@
 				4797548B14B359E70070D256 /* CConnectionInfo.mm in Sources */,
 				471163CD14BE26CF003CE243 /* CExceptionHandler.cpp in Sources */,
 				47987B4314C073120084E703 /* CExceptionHandler_UnixImp.cpp in Sources */,
+				478E85BB14D6DD56008C9CA8 /* CPlaytomic_iOS.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

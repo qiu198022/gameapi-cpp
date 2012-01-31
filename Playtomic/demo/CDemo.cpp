@@ -4,8 +4,9 @@
 #include "Playtomic/CExceptionHandler.h"
 #include <iostream>
 
-void processCrash(int signal)
+void processCrash(int signal, std::string& dest)
 {
+    dest += "more information about your game state";
 	//you can try to save any data you want to save here
 }
 void CDemo::Init()
@@ -19,7 +20,7 @@ void CDemo::Init()
     mInstance->Log()->View();
     
 	mCurrentModule = new CMainMenu(this);	
-}
+  }
 
 void CDemo::Start()
 {

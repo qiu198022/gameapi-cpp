@@ -61,8 +61,6 @@ void CConnectionInfoAndroid::Init()
 CConnectionInfoBase::EConnectionType CConnectionInfoAndroid::GetConnectionType()
 {
     
-
-//jni wtf
 // Acquire a pointer to the current JavaVM
     JavaVM * jVM = CPlaytomicAndroid::GetJavaVM();
     if(jVM == NULL)

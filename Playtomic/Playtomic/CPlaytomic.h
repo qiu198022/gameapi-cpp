@@ -106,6 +106,12 @@ public:
     
     //internal calls to update state
     void WiFiBecomeActive();
+    
+    
+    const std::string& GetDevice() const;
+    //implemented for each platform
+    void GetDeviceFromSystem();
+    
 private:
 	static          CPlaytomic*	mHandle;
 	int             mGameId;
@@ -114,6 +120,7 @@ private:
 	std::string     mGameGuid;
 	std::string     mSourceUrl;
 	std::string     mBaseUrl;
+    std::string     mDevice;
 	
 	CTimerManager*				mTimerManager;
 	CLog*				mPlaytomicLog;	
