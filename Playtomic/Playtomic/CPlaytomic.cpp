@@ -61,6 +61,7 @@ namespace Playtomic
 		double currentTime = timer.elapsed();
 		while (1)
 		{
+			boost::this_thread::sleep(boost::posix_time::milliseconds(10000));
             boost::this_thread::interruption_point();
 			double elapsed = timer.elapsed() - currentTime;
 			currentTime = timer.elapsed();

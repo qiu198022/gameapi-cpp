@@ -67,7 +67,18 @@ public:
 
 	CPlaytomicResponsePtr PerformSyncRequest(const char* url, CPost* postData = NULL);
 
+	//perform an asynchronous request
+	//@param url: the web adress
+	//@param targetDelegate: a fast delegate to handle the request response it can be any
+	// class method that takes a CPlaytomicResponsePtr& as parameter
+	//param forceToSend: if set to false it will only send the request when the thread count is low enougth
 	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, bool forceToSend = true);
+	//perform an asynchronous request
+	//@param url: the web adress
+	//@param targetDelegate: a fast delegate to handle the request response it can be any
+	// class method that takes a CPlaytomicResponsePtr& as parameter
+	//param postData: your request form information
+	//param forceToSend: if set to false it will only send the request when the thread count is low enougth
 	void	PerformAsyncRequest(const char* url, RequestDelegate targetDelegate, CPostPtr postData, bool forceToSend = true);
 
     void    ThreadFinish(CAsyncRequest* thread);

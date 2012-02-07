@@ -505,6 +505,7 @@ void CLeaderboard::ListComple( CPlaytomicResponsePtr& response )
 		returnScores.sSucceded = false;
 
 		mDelegate->ListTableComple(returnScores);
+		return;
 	}
 	returnScores.sSucceded = true;
 	FData	scoreTable(Json::arrayValue);
@@ -570,6 +571,7 @@ void CLeaderboard::SaveAndListComple( CPlaytomicResponsePtr& response )
 		returnScores.sSucceded = false;
 
 		mDelegate->SaveAndListComple(returnScores);
+		return;
 	}
 	returnScores.sSucceded = true;
 	FData	scoreTable(Json::arrayValue);

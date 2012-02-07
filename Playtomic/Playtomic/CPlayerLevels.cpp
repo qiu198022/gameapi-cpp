@@ -385,6 +385,7 @@ void CPlayerLevels::LoadLevelComplete( CPlaytomicResponsePtr& response )
 	if(!response->ResponseSucceded())
 	{
 		mDelegate->LoadLevelComplete(returnList);
+		return;
 	}
 	AddLevel(response->ResponseData(), mLevelId, returnList.sLevelList);
 
@@ -412,6 +413,7 @@ void CPlayerLevels::ListAsyncComplete( CPlaytomicResponsePtr& response )
 	if (!returnList.sSucceded)
 	{
 		mDelegate->LevelListComple(returnList);
+		return;
 	}
 	FData	levelArray(Json::arrayValue);
 
@@ -447,6 +449,7 @@ void CPlayerLevels::SaveLevelComplete( CPlaytomicResponsePtr& response )
 	if(!response->ResponseSucceded())
 	{
 		mDelegate->SaveLevelComple(returnList);
+		return;
 	}
 
 	FData id;
