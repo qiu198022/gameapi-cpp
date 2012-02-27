@@ -131,10 +131,6 @@ public:
 	*/
 	void Heatmap(const std::string& name, const std::string& group, int x, int y);
 
-	/**
-	*	not implemented
-	*/
-	void Funnel(void);
 
 	void PlayerLevelStart(const std::string& levelId);
 	void PlayerLevelRetry(const std::string& levelId);
@@ -157,11 +153,6 @@ public:
 	*/
 	void SendEvent(const std::string& event, bool commit, bool hasDate = false);
 
-	/**
-	*	not implemented
-	*/
-	int GetCookie(const std::string& name);
-	void SaveCookie(void);
 
 	void IncreaseViews(void);
 	void IncreasePlays(void);

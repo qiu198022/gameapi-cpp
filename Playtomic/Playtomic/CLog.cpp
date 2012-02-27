@@ -258,10 +258,6 @@ void CLog::Heatmap( const std::string& name, const std::string& group, int x, in
 	SendEvent(event, false);
 }
 
-void CLog::Funnel( void )
-{
-	//TODO unimplemented in ios so i don't know what this function was for
-}
 
 void CLog::PlayerLevelStart( const std::string& levelId )
 {
@@ -337,15 +333,6 @@ void CLog::SendEvent( const std::string& event, bool commit, bool hasDate )
 }
 
 
-int CLog::GetCookie( const std::string& name )
-{
-	return 0;//TODO
-}
-
-void CLog::SaveCookie( void )
-{
-
-}
 
 void CLog::IncreaseViews( void )
 {

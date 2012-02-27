@@ -114,7 +114,6 @@ private:
 	int			mPlays;
 	float		mRating;
 	int			mScore;
-	//TODO add date
     std::string mDate;
 	std::string	mRelativeDate;
 	CustomData	mCustomData;
