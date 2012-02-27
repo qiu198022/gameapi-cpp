@@ -100,7 +100,7 @@ void CLog::View( void )
 void CLog::Play( void )
 {
 	char IdString[50];
-	sprintf_s(IdString,49,"p/%d", mViews + 1);
+	sprintf_s(IdString,49,"p/%d", mPlays + 1);
 	SendEvent(IdString,true);
 }
 
