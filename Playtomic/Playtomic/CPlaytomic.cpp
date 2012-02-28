@@ -85,7 +85,7 @@ CPlaytomic::CPlaytomic(int gameId, std::string& gameguid, bool autoUpdate)
 
 	gConnectionInterface->Init();
 
-	mSourceUrl = "http://cpptest.com";
+	mSourceUrl = "http://cpp.com";
 	mBaseUrl = "cpp.com";
 
 	mTimerManager = new CTimerManager();

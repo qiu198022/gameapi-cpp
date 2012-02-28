@@ -20,7 +20,7 @@ namespace Playtomic
 #endif
         void *array[128];
         // get void*'s for all entries on the stack
-        size_t size = backtrace(array, 128);
+        int size = backtrace(array, 128);
 
         char** symbols = backtrace_symbols(array, size);
         
