@@ -138,6 +138,7 @@ void CLog::CustomMetric( const std::string& name, const std::string& group, bool
 
 	std::string event("c/");
 	event += name + "/" + group;
+    SendEvent(event, false);
 }
 
 void CLog::LevelCounterMetric( const std::string& name, const std::string level, bool unique )
