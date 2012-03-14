@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="playtomicvs2008"
+	>
+	<UserMacro
+		Name="include_dir"
+		Value="$(SolutionDir)/Dependencies/currlib/include;$(SolutionDir)/Dependencies/Boost;$(SolutionDir)  ;$(SolutionDir)\json\include ;$(SolutionDir)\CurlWrap; $(SolutionDir)\Tools;"
+	/>
+	<UserMacro
+		Name="lib_debug"
+		Value="libcurld.lib winmm.lib ws2_32.lib wldap32.lib"
+	/>
+	<UserMacro
+		Name="lib_release"
+		Value="libcurl.lib winmm.lib ws2_32.lib wldap32.lib"
+	/>
+	<UserMacro
+		Name="lib_pathDebug"
+		Value="$(SolutionDir)\Dependencies\currlib\lib\debug;$(SolutionDir)\Dependencies\Boost\lib\debug"
+	/>
+	<UserMacro
+		Name="lib_pathRelease"
+		Value="$(SolutionDir)\Dependencies\currlib\lib\release;$(SolutionDir)\Dependencies\Boost\lib\release"
+	/>
+</VisualStudioPropertySheet>

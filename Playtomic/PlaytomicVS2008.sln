@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Playtomic2008", "Playtomic\Playtomic2008.vcproj", "{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demoVS2008", "demo\demoVS2008.vcproj", "{ACAF1677-D520-41B0-9056-5104A77E77D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527} = {82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DebugDLL|Win32 = DebugDLL|Win32
+		Release|Win32 = Release|Win32
+		ReleaseDll|Win32 = ReleaseDll|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.Debug|Win32.ActiveCfg = Debug|Win32
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.Debug|Win32.Build.0 = Debug|Win32
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.DebugDLL|Win32.ActiveCfg = DebugDll|Win32
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.DebugDLL|Win32.Build.0 = DebugDll|Win32
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.Release|Win32.ActiveCfg = Release|Win32
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.Release|Win32.Build.0 = Release|Win32
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.ReleaseDll|Win32.ActiveCfg = ReleaseDll|Win32
+		{82CC3FE8-E5FE-404D-90D7-DE6A57FA1527}.ReleaseDll|Win32.Build.0 = ReleaseDll|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.Debug|Win32.Build.0 = Debug|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.DebugDLL|Win32.ActiveCfg = DebugDll|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.DebugDLL|Win32.Build.0 = DebugDll|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.Release|Win32.ActiveCfg = Release|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.Release|Win32.Build.0 = Release|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.ReleaseDll|Win32.ActiveCfg = ReleaseDll|Win32
+		{ACAF1677-D520-41B0-9056-5104A77E77D0}.ReleaseDll|Win32.Build.0 = ReleaseDll|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
